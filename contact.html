@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="images/favicon-32.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -16,7 +16,7 @@
   <header class="site-header">
     <nav class="nav">
       <a href="index.html" class="nav__logo" aria-label="Pack with Love home"><img src="images/logo-horizontal.svg" alt="Pack with Love logo" /></a>
-      <button class="nav__toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <ul class="nav__links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -28,9 +28,9 @@
     </nav>
   </header>
 
-  <section class="page-banner">
+  <section class="page-hero">
     <div class="container">
-      <p class="crumb"><a href="index.html">Home</a> / Contact</p>
+      <p class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact</p>
       <h1>Get in Touch</h1>
       <p>We'd love to hear from you &mdash; whether you'd like to give, join the club, partner on a project, or simply learn more.</p>
     </div>
@@ -39,9 +39,9 @@
   <section class="section section--white">
     <div class="container split">
       <!-- Contact form -->
-      <div class="split__text">
+      <div class="split__text" data-reveal>
         <span class="eyebrow">Send a message</span>
-        <h2 class="section-title" style="margin-bottom:24px">Say hello</h2>
+        <h2 class="section-title" style="margin-bottom:26px">Say hello</h2>
         <!-- TODO: To make this form send email, replace action="#" with a free
              form service endpoint (e.g. Formspree: action="https://formspree.io/f/yourID" method="POST"). -->
         <form class="form-card" action="#" method="POST">
@@ -71,19 +71,19 @@
       </div>
 
       <!-- Contact info -->
-      <div>
+      <div data-reveal data-delay="1">
         <div class="card" style="margin-bottom:24px">
-          <h3 style="margin-bottom:14px">Reach us directly</h3>
+          <h3 style="margin-bottom:16px">Reach us directly</h3>
           <p style="color:var(--text)">
-            <strong style="color:var(--navy);font-family:var(--font-head)">Email</strong><br>
+            <strong>Email</strong><br>
             <!-- TODO: replace with your real club email -->
             <a href="mailto:hello@packwithlove.org">hello@packwithlove.org</a>
           </p>
           <p style="color:var(--text)">
-            <strong style="color:var(--navy);font-family:var(--font-head)">Founder</strong><br>
+            <strong>Founder</strong><br>
             Joanna Zhang, Founding President
           </p>
-          <p style="color:var(--muted);font-size:.95rem;margin-top:10px">
+          <p style="color:var(--muted);font-size:.95rem;margin-top:12px">
             Because our members are young students, an Adult Advisor helps review and respond to messages.
           </p>
         </div>

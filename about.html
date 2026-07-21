@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="images/favicon-32.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -16,7 +16,7 @@
   <header class="site-header">
     <nav class="nav">
       <a href="index.html" class="nav__logo" aria-label="Pack with Love home"><img src="images/logo-horizontal.svg" alt="Pack with Love logo" /></a>
-      <button class="nav__toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <ul class="nav__links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" class="active">About</a></li>
@@ -28,10 +28,10 @@
     </nav>
   </header>
 
-  <!-- Page banner -->
-  <section class="page-banner">
+  <!-- Page hero -->
+  <section class="page-hero">
     <div class="container">
-      <p class="crumb"><a href="index.html">Home</a> / About</p>
+      <p class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; About</p>
       <h1>Who We Are</h1>
       <p>An independent, youth-led service club where creativity, teamwork, and compassion become real care for children and communities.</p>
     </div>
@@ -40,7 +40,7 @@
   <!-- Our story -->
   <section class="section section--white">
     <div class="container split">
-      <div>
+      <div data-reveal>
         <span class="eyebrow">Our story</span>
         <h2 class="section-title">Founded by a sixth grader with a big heart</h2>
         <p>
@@ -57,21 +57,21 @@
           programs, while remaining fully independent and youth-led.
         </p>
       </div>
-      <div>
+      <div class="split__figure" data-reveal data-delay="1">
         <img src="images/coloring-cover.jpg" alt="Pack with Love coloring book cover with two smiling children" />
       </div>
     </div>
   </section>
 
   <!-- Mission / vision -->
-  <section class="section section--cream">
+  <section class="section section--sand">
     <div class="container grid grid-2">
-      <div class="card">
+      <div class="card" data-reveal>
         <div class="card__icon">🎯</div>
         <h3>Our Mission</h3>
         <p style="color:var(--text)">To help young people use creativity, teamwork, and care to create practical and meaningful projects for children &mdash; in partnership with trusted local communities.</p>
       </div>
-      <div class="card">
+      <div class="card" data-reveal data-delay="1">
         <div class="card__icon">✨</div>
         <h3>A Double Purpose</h3>
         <p style="color:var(--text)">To care for children and communities, <em>and</em> to help young people grow through meaningful service. We don't measure success only by how many items we give.</p>
@@ -81,8 +81,8 @@
 
   <!-- Christian foundation -->
   <section class="section section--navy">
-    <div class="container narrow center">
-      <span class="eyebrow" style="color:var(--gold)">Our foundation</span>
+    <div class="container narrow center" data-reveal>
+      <span class="eyebrow center-tick">Our foundation</span>
       <h2>Rooted in Christian love, compassion, and service</h2>
       <p class="section-intro" style="margin-top:18px">
         We believe every child is created with God-given dignity and deserves to be seen, valued,
@@ -100,57 +100,57 @@
   <!-- Values -->
   <section class="section section--white">
     <div class="container">
-      <div class="center" style="max-width:680px;margin:0 auto 44px">
-        <span class="eyebrow">What we promise</span>
+      <div class="center section-head" data-reveal>
+        <span class="eyebrow center-tick">What we promise</span>
         <h2 class="section-title accent-underline">The promises we keep for every project</h2>
       </div>
       <ul class="values">
-        <li class="value"><span class="dot"></span><div><h4>Listen First</h4><p>We learn about the children and the setting before deciding what to create.</p></div></li>
-        <li class="value"><span class="dot"></span><div><h4>Create with Care</h4><p>We choose designs and items that are safe, useful, joyful, and culturally respectful.</p></div></li>
-        <li class="value"><span class="dot"></span><div><h4>Keep Children at the Center</h4><p>Children are people to love, never a photo opportunity.</p></div></li>
-        <li class="value"><span class="dot"></span><div><h4>Support Trusted Partners</h4><p>Our work strengthens the relationships local partners already have with families.</p></div></li>
-        <li class="value"><span class="dot"></span><div><h4>Grow Young Leaders</h4><p>Students carry real, age-appropriate responsibility; adults hold the guardrails.</p></div></li>
-        <li class="value"><span class="dot"></span><div><h4>Learn Before We Grow</h4><p>We reflect and improve before taking on bigger quantities or new partners.</p></div></li>
+        <li class="value" data-reveal><span class="dot"></span><div><h4>Listen First</h4><p>We learn about the children and the setting before deciding what to create.</p></div></li>
+        <li class="value" data-reveal data-delay="1"><span class="dot"></span><div><h4>Create with Care</h4><p>We choose designs and items that are safe, useful, joyful, and culturally respectful.</p></div></li>
+        <li class="value" data-reveal><span class="dot"></span><div><h4>Keep Children at the Center</h4><p>Children are people to love, never a photo opportunity.</p></div></li>
+        <li class="value" data-reveal data-delay="1"><span class="dot"></span><div><h4>Support Trusted Partners</h4><p>Our work strengthens the relationships local partners already have with families.</p></div></li>
+        <li class="value" data-reveal><span class="dot"></span><div><h4>Grow Young Leaders</h4><p>Students carry real, age-appropriate responsibility; adults hold the guardrails.</p></div></li>
+        <li class="value" data-reveal data-delay="1"><span class="dot"></span><div><h4>Learn Before We Grow</h4><p>We reflect and improve before taking on bigger quantities or new partners.</p></div></li>
       </ul>
     </div>
   </section>
 
   <!-- Founding team -->
-  <section class="section section--cream">
+  <section class="section section--sand">
     <div class="container">
-      <div class="center" style="max-width:680px;margin:0 auto 44px">
-        <span class="eyebrow">Founding team</span>
+      <div class="center section-head" data-reveal>
+        <span class="eyebrow center-tick">Founding team</span>
         <h2 class="section-title">Young leaders, guided by caring adults</h2>
         <p class="section-intro" style="margin-top:22px">Students lead in age-appropriate ways. Adult Advisors build the guardrails for safety, finances, production, and partnerships &mdash; students help carry the vision forward.</p>
       </div>
       <div class="grid grid-3">
-        <div class="card center">
-          <div class="card__icon" style="margin:0 auto 16px;background:rgba(15,58,93,.1)">JZ</div>
+        <div class="card center" data-reveal>
+          <div class="card__icon" style="margin:0 auto 20px;background:rgba(15,58,93,.1);border-color:rgba(15,58,93,.14);font-family:var(--font-display);font-weight:600;color:var(--navy)">JZ</div>
           <h3>Joanna Zhang</h3>
-          <p style="color:var(--coral-dark);font-weight:600">Founder &amp; Founding President</p>
+          <p style="color:var(--coral-deep);font-weight:600">Founder &amp; Founding President</p>
           <p>Leads the club's vision, guides the yearly theme, and supports creative direction with the leadership team.</p>
         </div>
-        <div class="card center">
-          <div class="card__icon" style="margin:0 auto 16px;background:rgba(255,104,104,.14)">EY</div>
+        <div class="card center" data-reveal data-delay="1">
+          <div class="card__icon" style="margin:0 auto 20px;font-family:var(--font-display);font-weight:600;color:var(--coral-deep)">EY</div>
           <h3>Ethan Yao</h3>
-          <p style="color:var(--coral-dark);font-weight:600">Founding Young Designer</p>
+          <p style="color:var(--coral-deep);font-weight:600">Founding Young Designer</p>
           <p>Creates artwork for T-shirts, cards, coloring pages, simple gifts, and other project materials.</p>
         </div>
-        <div class="card center">
-          <div class="card__icon" style="margin:0 auto 16px;background:rgba(219,185,120,.25)">VS</div>
+        <div class="card center" data-reveal data-delay="2">
+          <div class="card__icon" style="margin:0 auto 20px;background:rgba(219,185,120,.22);border-color:rgba(219,185,120,.3);font-family:var(--font-display);font-weight:600;color:var(--gold-deep)">VS</div>
           <h3>Vera Sun</h3>
-          <p style="color:var(--coral-dark);font-weight:600">Finance &amp; Impact Young Leader</p>
+          <p style="color:var(--coral-deep);font-weight:600">Finance &amp; Impact Young Leader</p>
           <p>Helps share the purpose and impact of each project through age-appropriate updates and thank-you messages.</p>
         </div>
       </div>
-      <p class="center" style="margin-top:26px;color:var(--muted)">Adult Advisors oversee finances, safety, purchasing, logistics, and partner commitments so students can create and serve safely.</p>
+      <p class="center" style="margin-top:30px;color:var(--muted)">Adult Advisors oversee finances, safety, purchasing, logistics, and partner commitments so students can create and serve safely.</p>
     </div>
   </section>
 
   <!-- CTA -->
   <section class="section section--white">
     <div class="container">
-      <div class="cta">
+      <div class="cta" data-reveal>
         <h2>Come create with love</h2>
         <p>Whether you give, join, or partner with us, there's a place for you in this story.</p>
         <a href="support.html" class="btn btn-white btn-lg">Get Involved</a>

@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="images/favicon-32.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -16,7 +16,7 @@
   <header class="site-header">
     <nav class="nav">
       <a href="index.html" class="nav__logo" aria-label="Pack with Love home"><img src="images/logo-horizontal.svg" alt="Pack with Love logo" /></a>
-      <button class="nav__toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <button class="nav__toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <ul class="nav__links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -28,9 +28,9 @@
     </nav>
   </header>
 
-  <section class="page-banner">
+  <section class="page-hero">
     <div class="container">
-      <p class="crumb"><a href="index.html">Home</a> / Support</p>
+      <p class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Support</p>
       <h1>Support the Project</h1>
       <p>Your generosity helps a child open a backpack made just for them. There are three ways to be part of the story.</p>
     </div>
@@ -39,16 +39,16 @@
   <!-- Quick chooser -->
   <section class="section section--white" style="padding-bottom:0">
     <div class="container grid grid-3">
-      <a href="#donate" class="card center" style="text-decoration:none">
-        <div class="card__icon" style="margin:0 auto 16px">💝</div>
+      <a href="#donate" class="card center" style="text-decoration:none" data-reveal>
+        <div class="card__icon" style="margin:0 auto 20px">💝</div>
         <h3>Donate</h3><p>Fund complete backpack sets.</p>
       </a>
-      <a href="#join" class="card center" style="text-decoration:none">
-        <div class="card__icon" style="margin:0 auto 16px;background:rgba(219,185,120,.25)">🙋</div>
+      <a href="#join" class="card center" style="text-decoration:none" data-reveal data-delay="1">
+        <div class="card__icon" style="margin:0 auto 20px;background:rgba(219,185,120,.22);border-color:rgba(219,185,120,.3)">🙋</div>
         <h3>Join the Club</h3><p>For students and families.</p>
       </a>
-      <a href="#partner" class="card center" style="text-decoration:none">
-        <div class="card__icon" style="margin:0 auto 16px;background:rgba(15,58,93,.1)">🤝</div>
+      <a href="#partner" class="card center" style="text-decoration:none" data-reveal data-delay="2">
+        <div class="card__icon" style="margin:0 auto 20px;background:rgba(15,58,93,.1);border-color:rgba(15,58,93,.14)">🤝</div>
         <h3>Partner With Us</h3><p>For churches &amp; organizations.</p>
       </a>
     </div>
@@ -57,25 +57,25 @@
   <!-- Donate -->
   <section class="section section--white" id="donate">
     <div class="container split">
-      <div class="split__text">
+      <div class="split__text" data-reveal>
         <span class="eyebrow">Give a gift of love</span>
         <h2 class="section-title">Fund a backpack set</h2>
         <p>Every complete set includes the four core items &mdash; a backpack, coloring book, T-shirt, and coloring set &mdash; ready to be packed and shared with a child in Senegal.</p>
         <p>Our first-year goal is at least <strong>100 complete sets</strong>, growing toward <strong>1,000</strong> as support allows. Gifts of every size move us closer.</p>
-        <div class="hero__actions" style="margin-top:20px">
+        <div class="hero__actions" style="margin-top:22px">
           <!-- TODO: replace the # below with your official ACO donation link -->
           <a href="#" class="btn btn-primary btn-lg">♥ Donate Now</a>
           <a href="contact.html" class="btn btn-secondary btn-lg">Ask About Giving</a>
         </div>
-        <div class="note" style="margin-top:26px">
+        <div class="note" style="margin-top:28px">
           <strong>A note on giving:</strong> All donations are received and managed through ACO's
           approved financial channels. Pack with Love students and advisors never personally collect or
           hold funds. Whether a gift is tax-deductible depends on the receiving organization and applicable law.
         </div>
       </div>
-      <div>
+      <div data-reveal data-delay="1">
         <div class="card">
-          <h3 style="margin-bottom:16px">Ways to help</h3>
+          <h3 style="margin-bottom:18px">Ways to help</h3>
           <ul class="prose" style="margin:0 0 0 18px;color:var(--text)">
             <li>Fund one or more complete backpack sets</li>
             <li>Sponsor a village's worth of sets</li>
@@ -83,16 +83,16 @@
             <li>Offer a professional service (design, printing, shipping)</li>
             <li>Share the project with friends, family, and your church</li>
           </ul>
-          <p style="margin-top:18px;color:var(--muted);font-size:.95rem">Not sure how to help? <a href="contact.html">Reach out</a> and we'll find the right fit.</p>
+          <p style="margin-top:20px;color:var(--muted);font-size:.95rem">Not sure how to help? <a href="contact.html">Reach out</a> and we'll find the right fit.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Join -->
-  <section class="section section--cream" id="join">
+  <section class="section section--sand" id="join">
     <div class="container split reverse">
-      <div class="split__text">
+      <div class="split__text" data-reveal>
         <span class="eyebrow">For students &amp; families</span>
         <h2 class="section-title">Join the club</h2>
         <p>Pack with Love is designed primarily for elementary and middle school students who want to use
@@ -101,11 +101,11 @@
         <p>Students may join with parent or guardian permission. Because many members are young, parent
           involvement is an important and welcomed part of participation. Membership never requires a
           financial contribution.</p>
-        <a href="contact.html" class="btn btn-primary" style="margin-top:6px">Ask About Joining →</a>
+        <a href="contact.html" class="btn btn-primary" style="margin-top:8px">Ask About Joining →</a>
       </div>
-      <div>
+      <div data-reveal data-delay="1">
         <div class="card">
-          <h3 style="margin-bottom:14px">What members can do</h3>
+          <h3 style="margin-bottom:16px">What members can do</h3>
           <ul class="prose" style="margin:0 0 0 18px;color:var(--text)">
             <li>Design artwork, coloring pages, and materials</li>
             <li>Help prepare and pack items</li>
@@ -121,18 +121,18 @@
   <!-- Partner -->
   <section class="section section--white" id="partner">
     <div class="container split">
-      <div class="split__text">
+      <div class="split__text" data-reveal>
         <span class="eyebrow">For churches, schools &amp; nonprofits</span>
         <h2 class="section-title">Partner with us</h2>
         <p>We collaborate project by project with churches, VBS and children's ministries, schools,
           nonprofits, and mission programs that serve children and families. Each partnership is
           project-specific, and we listen carefully to your needs before we design anything.</p>
         <p>We're glad to support the relationships and programs you already lead &mdash; never to replace them.</p>
-        <a href="contact.html" class="btn btn-primary" style="margin-top:6px">Start a Conversation →</a>
+        <a href="contact.html" class="btn btn-primary" style="margin-top:8px">Start a Conversation →</a>
       </div>
-      <div>
+      <div data-reveal data-delay="1">
         <div class="card">
-          <h3 style="margin-bottom:14px">How partnership works</h3>
+          <h3 style="margin-bottom:16px">How partnership works</h3>
           <ul class="prose" style="margin:0 0 0 18px;color:var(--text)">
             <li>You share the children's needs and setting</li>
             <li>We design a theme and the core items together</li>
@@ -145,9 +145,9 @@
     </div>
   </section>
 
-  <section class="section section--cream">
+  <section class="section section--blush">
     <div class="container">
-      <div class="cta">
+      <div class="cta" data-reveal>
         <h2>Every child deserves to feel remembered</h2>
         <p>Thank you for helping Pack with Love bring love, joy, and hope to children &mdash; one backpack at a time.</p>
         <a href="contact.html" class="btn btn-white btn-lg">Get in Touch</a>
