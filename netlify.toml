@@ -1,0 +1,31 @@
+# Netlify configuration for Pack with Love
+# This is a plain static HTML site — there is no build step, so Netlify just
+# publishes the files in the repository root exactly as they are.
+
+[build]
+  publish = "."      # serve the site from the repo root (index.html, etc.)
+  command = ""       # no build command — nothing to compile
+
+# Sensible security + caching headers for a static site.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Long-cache static assets (safe: filenames change when you replace them).
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
