@@ -202,17 +202,14 @@ img { max-width: 100%; display: block; }
 
 /* Arched, layered hero art — an editorial "gallery frame" look */
 .hero__art { position: relative; max-width: 420px; margin-left: auto; width: 100%; }
-.hero__frame {
-  position: relative; border-radius: 240px 240px var(--radius-lg) var(--radius-lg);
-  overflow: hidden; box-shadow: var(--shadow-lg); background: #fff;
-  border: 1px solid var(--line);
-}
-.hero__frame img { width: 100%; display: block; }
-/* Soft gold arc echoing the backpack's sunburst */
+.hero__frame { position: relative; }
+.hero__frame picture { display: block; }
+.hero__frame img { width: 100%; display: block; filter: drop-shadow(0 24px 32px rgba(28,46,61,.22)); }
+/* Soft gold arc halo behind the floating backpack (echoes its shape) */
 .hero__art::before {
-  content: ""; position: absolute; inset: -22px -22px auto -22px; height: 60%;
-  border-radius: 260px 260px 0 0; border: 2px solid var(--line-gold);
-  border-bottom: none; z-index: -1;
+  content: ""; position: absolute; inset: 5% 1% auto 1%; height: 72%;
+  border-radius: 46% 46% 30% 30% / 52% 52% 14% 14%;
+  border: 2px solid var(--line-gold); border-bottom: none; z-index: -1;
 }
 .hero__badge {
   position: absolute; bottom: 22px; left: -26px; background: #fff; color: var(--ink);
@@ -445,8 +442,7 @@ img { max-width: 100%; display: block; }
   .section { padding: 72px 0; }
   .hero { padding: 60px 0 80px; }
   .hero__grid, .split { grid-template-columns: 1fr; gap: 44px; }
-  .hero__art { order: -1; max-width: 460px; margin: 0 auto; }
-  .hero__frame { border-radius: 200px 200px var(--radius-lg) var(--radius-lg); }
+  .hero__art { order: -1; max-width: 400px; margin: 0 auto; }
   .split.reverse .split__text { order: 2; }
   .split__figure::after { display: none; }
   .grid-3, .grid-4, .steps { grid-template-columns: repeat(2,1fr); }
