@@ -14,18 +14,21 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
-# Long-cache static assets (safe: filenames change when you replace them).
-[[headers]]
-  for = "/images/*"
-  [headers.values]
-    Cache-Control = "public, max-age=604800"
-
+# CSS/JS share fixed filenames (styles.css, main.js), so they must always be
+# revalidated — otherwise browsers serve a stale stylesheet after every edit.
+# max-age=0 + must-revalidate = instant updates, with cheap 304 responses.
 [[headers]]
   for = "/css/*"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/js/*"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Images change rarely; cache for an hour but still revalidate afterwards.
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
