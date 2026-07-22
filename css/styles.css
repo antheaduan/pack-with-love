@@ -159,7 +159,7 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 6px 24px rgba(28,46,61,.06);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 26px; max-width: var(--maxw); margin: 0 auto; }
-.nav__logo img { height: 44px; width: auto; transition: transform .25s; }
+.nav__logo img { height: 58px; width: auto; transition: transform .25s; }
 .nav__logo:hover img { transform: rotate(-2deg) scale(1.03); }
 .nav__links { display: flex; align-items: center; gap: 4px; list-style: none; }
 .nav__links a {
@@ -193,7 +193,7 @@ img { max-width: 100%; display: block; }
     var(--cream);
   padding: 84px 0 104px;
 }
-.hero__grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: 64px; align-items: center; }
+.hero__grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 72px; align-items: center; }
 .hero__tagline { font-family: var(--font-script); color: var(--coral-deep); font-size: 2.15rem; line-height: 1; margin-bottom: 10px; }
 .hero h1 { margin-bottom: 22px; }
 .hero h1 em { font-style: italic; color: var(--coral-deep); font-weight: 500; }
@@ -201,7 +201,7 @@ img { max-width: 100%; display: block; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 16px; }
 
 /* Arched, layered hero art — an editorial "gallery frame" look */
-.hero__art { position: relative; }
+.hero__art { position: relative; max-width: 420px; margin-left: auto; width: 100%; }
 .hero__frame {
   position: relative; border-radius: 240px 240px var(--radius-lg) var(--radius-lg);
   overflow: hidden; box-shadow: var(--shadow-lg); background: #fff;
