@@ -54,11 +54,9 @@
         <span class="floaty floaty--heart"><svg viewBox="0 0 32 29" fill="currentColor" aria-hidden="true"><path d="M16 29S1 20 1 9.5C1 4.3 5 1 9 1c3 0 5.6 2 7 4 1.4-2 4-4 7-4 4 0 8 3.3 8 8.5C31 20 16 29 16 29z"/></svg></span>
         <span class="floaty floaty--spark2"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c1.1 8 2.9 9.9 12 11-9.1 1.1-10.9 3-12 11-1.1-8-2.9-9.9-12-11 9.1-1.1 10.9-3 12-11z"/></svg></span>
         <span class="floaty floaty--spark3"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c1.1 8 2.9 9.9 12 11-9.1 1.1-10.9 3-12 11-1.1-8-2.9-9.9-12-11 9.1-1.1 10.9-3 12-11z"/></svg></span>
-        <!-- Rotating backpack designs. Each project brings a new theme.
-             To add/replace a design: swap the <img>/<picture> in a .hero__slide
-             (use a transparent-background WebP), and keep one .hero__dot per slide.
-             hero-theme-2 / hero-theme-3 are tinted PLACEHOLDERS — replace with
-             finalized artwork before this goes live. -->
+        <!-- Rotating backpack designs — each project brings a new theme.
+             To add/replace a design: add a .hero__slide with a transparent-background
+             WebP (JPG fallback), and add one matching .hero__dot below. -->
         <div class="hero__carousel" aria-roledescription="carousel" aria-label="Pack with Love backpack designs">
           <div class="hero__slide is-active">
             <picture>
@@ -67,10 +65,16 @@
             </picture>
           </div>
           <div class="hero__slide">
-            <img src="images/hero-theme-2.webp" alt="Placeholder themed color-it-yourself backpack design" />
+            <picture>
+              <source srcset="images/hero-clean-heart.webp" type="image/webp" />
+              <img src="images/hero-clean-heart.jpg" alt="A coral children's backpack with a color-it-yourself panel: a dove and cross above a heart reading 'Create in me a clean heart, O God, and renew a right spirit within me.' — Psalm 51:10, with a 'Name:' line." />
+            </picture>
           </div>
           <div class="hero__slide">
-            <img src="images/hero-theme-3.webp" alt="Placeholder themed color-it-yourself backpack design" />
+            <picture>
+              <source srcset="images/hero-strong-courageous.webp" type="image/webp" />
+              <img src="images/hero-strong-courageous.jpg" alt="A sage-green children's backpack with a color-it-yourself panel: mountains, pine trees, and a cross shield reading 'Be Strong and Courageous' — Joshua 1:9, with a 'Name:' line." />
+            </picture>
           </div>
         </div>
         <div class="hero__dots" role="tablist" aria-label="Choose a backpack design">
