@@ -36,7 +36,41 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  /* ---- 3. Scroll-reveal ---- */
+  /* ---- 3. Hero carousel (rotating backpack designs) ---- */
+  (function () {
+    var carousel = document.querySelector('.hero__carousel');
+    if (!carousel) return;
+    var slides = Array.prototype.slice.call(carousel.querySelectorAll('.hero__slide'));
+    var dots = Array.prototype.slice.call(document.querySelectorAll('.hero__dot'));
+    if (slides.length < 2) return;
+
+    var idx = 0, timer = null;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var INTERVAL = 5000;
+
+    function show(next) {
+      next = (next + slides.length) % slides.length;
+      slides[idx].classList.remove('is-active');
+      if (dots[idx]) dots[idx].classList.remove('is-active');
+      idx = next;
+      slides[idx].classList.add('is-active');
+      if (dots[idx]) dots[idx].classList.add('is-active');
+    }
+    function start() { if (reduce || timer) return; timer = setInterval(function () { show(idx + 1); }, INTERVAL); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { stop(); show(i); start(); });
+    });
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+    // Pause when the tab isn't visible
+    document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
+
+    start();
+  })();
+
+  /* ---- 4. Scroll-reveal ---- */
   var revealables = document.querySelectorAll('[data-reveal]');
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
