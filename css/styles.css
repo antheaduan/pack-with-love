@@ -208,7 +208,14 @@ img { max-width: 100%; display: block; }
 .hero__slide:not(:first-child) { position: absolute; inset: 0; }
 .hero__slide.is-active { opacity: 1; }
 .hero__slide picture { display: block; }
-.hero__slide img { width: 100%; display: block; filter: drop-shadow(0 28px 40px rgba(28,46,61,.26)); }
+.hero__slide img {
+  width: 100%; display: block;
+  /* tight edge line + soft halo + grounding shadow so light designs separate */
+  filter:
+    drop-shadow(0 0 2px rgba(28,46,61,.22))
+    drop-shadow(0 2px 3px rgba(28,46,61,.16))
+    drop-shadow(0 30px 44px rgba(28,46,61,.26));
+}
 /* Navigation dots */
 .hero__dots { display: flex; justify-content: center; gap: 10px; margin-top: 26px; }
 .hero__dot {
@@ -217,11 +224,11 @@ img { max-width: 100%; display: block; }
 }
 .hero__dot:hover { background: rgba(28,46,61,.4); }
 .hero__dot.is-active { width: 26px; background: var(--coral); }
-/* Soft neutral "stage" glow so light- and dark-colored designs both
-   separate cleanly from the warm cream background. */
+/* Bright, tighter white "stage" so even light designs sit on a clear halo
+   that separates them from the warm cream background. */
 .hero__art::before {
-  content: ""; position: absolute; inset: -8% -6%; z-index: -2;
-  background: radial-gradient(circle at 50% 48%, rgba(255,255,255,.78), rgba(255,255,255,.34) 44%, transparent 70%);
+  content: ""; position: absolute; inset: -3% -2%; z-index: -2;
+  background: radial-gradient(circle at 50% 47%, rgba(255,255,255,.96) 0%, rgba(255,255,255,.7) 34%, rgba(255,255,255,.15) 58%, transparent 70%);
 }
 /* Playful floating doodles that fill the space and echo the coloring theme */
 .floaty { position: absolute; z-index: 1; pointer-events: none; opacity: .95; }
