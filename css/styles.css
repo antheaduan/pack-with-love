@@ -150,13 +150,15 @@ img { max-width: 100%; display: block; }
 /* ---- 5. Header / Navigation ---- */
 .site-header {
   position: sticky; top: 0; z-index: 60;
-  background: rgba(255,248,241,.82); backdrop-filter: blur(14px) saturate(1.4);
-  border-bottom: 1px solid transparent;
+  background: rgba(255,252,248,.88); backdrop-filter: blur(16px) saturate(1.5);
+  border-bottom: 1px solid rgba(235,223,207,.7);
+  box-shadow: 0 2px 14px rgba(28,46,61,.04);
   transition: border-color .3s, box-shadow .3s, background .3s;
 }
 .site-header.scrolled {
+  background: rgba(255,253,250,.94);
   border-bottom-color: var(--line);
-  box-shadow: 0 6px 24px rgba(28,46,61,.06);
+  box-shadow: 0 8px 28px rgba(28,46,61,.09);
 }
 .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 26px; max-width: var(--maxw); margin: 0 auto; }
 .nav__logo img { height: 58px; width: auto; transition: transform .25s; }
