@@ -317,6 +317,10 @@ img { max-width: 100%; display: block; }
   border: 2px solid var(--line-gold); z-index: -1;
 }
 .split + .split { margin-top: 72px; }
+/* Floating (frameless) media for a split — product floats with a soft shadow */
+.split__media { position: relative; max-width: 480px; margin: 0 auto; }
+.split__media picture { display: block; }
+.split__media img { width: 100%; display: block; filter: drop-shadow(0 26px 40px rgba(28,46,61,.24)); }
 
 /* ---- 10. Steps / rhythm (Our Project) ---- */
 .steps { display: grid; gap: 22px; grid-template-columns: repeat(5,1fr); counter-reset: step; }
