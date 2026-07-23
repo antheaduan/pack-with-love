@@ -165,7 +165,7 @@ img { max-width: 100%; display: block; }
 .nav__logo:hover img { transform: rotate(-2deg) scale(1.03); }
 .nav__links { display: flex; align-items: center; gap: 4px; list-style: none; }
 .nav__links a {
-  font-family: var(--font-body); font-weight: 500; color: var(--ink);
+  font-family: var(--font-body); font-weight: 600; color: var(--ink);
   padding: 9px 15px; border-radius: 999px; font-size: .97rem; text-decoration: none;
   position: relative; transition: color .2s;
 }
