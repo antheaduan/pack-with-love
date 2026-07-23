@@ -27,8 +27,9 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
-# Images change rarely; cache for an hour but still revalidate afterwards.
+# Images are edited in place under stable filenames during iteration, so
+# always revalidate (cheap 304s) — otherwise a swapped image stays cached.
 [[headers]]
   for = "/images/*"
   [headers.values]
-    Cache-Control = "public, max-age=3600, must-revalidate"
+    Cache-Control = "public, max-age=0, must-revalidate"
