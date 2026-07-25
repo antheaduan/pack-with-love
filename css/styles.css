@@ -245,6 +245,7 @@ img { max-width: 100%; display: block; }
   font-family: var(--font-body); font-weight: 600; line-height: 1.15; font-size: .9rem;
   border: 1px solid var(--line); display: flex; align-items: center; gap: 14px;
 }
+.hero__badge--right { left: auto; right: -24px; }
 .hero__badge .num { font-family: var(--font-display); font-weight: 600; color: var(--coral-deep); font-size: 2rem; line-height: 1; }
 .hero__badge small { display: block; color: var(--muted); font-weight: 500; font-size: .8rem; letter-spacing: .04em; }
 
@@ -502,6 +503,7 @@ img { max-width: 100%; display: block; }
   .gallery { grid-template-columns: repeat(2,1fr); }
   .cta { padding: 46px 26px; }
   .hero__badge { left: 50%; transform: translateX(-50%); bottom: -22px; }
+  .hero__badge--right { right: auto; }
   .footer__grid > div:first-child { grid-column: auto; }
   .footer__grid { grid-template-columns: 1fr; gap: 34px; }
 }
