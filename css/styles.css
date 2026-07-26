@@ -206,7 +206,7 @@ img { max-width: 100%; display: block; }
 .hero__art { position: relative; max-width: 508px; margin: 0 auto; width: 100%; }
 /* Rotating backpack carousel — slides crossfade in the same box */
 .hero__carousel { position: relative; }
-.hero__slide { opacity: 0; transition: opacity .9s ease; }
+.hero__slide { opacity: 0; transition: opacity .7s ease; }
 .hero__slide:not(:first-child) { position: absolute; inset: 0; }
 .hero__slide.is-active { opacity: 1; }
 .hero__slide picture { display: block; }

@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var idx = 0, timer = null;
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var INTERVAL = 2000;
+    var INTERVAL = 3500;
 
     function show(next) {
       next = (next + slides.length) % slides.length;
