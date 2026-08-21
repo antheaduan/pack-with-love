@@ -110,7 +110,7 @@ img { max-width: 100%; display: block; }
   content: ""; width: 26px; height: 2px; border-radius: 2px;
   background: linear-gradient(90deg, var(--coral), var(--gold));
 }
-.eyebrow.center-tick { justify-content: center; }
+.eyebrow.center-tick { display: flex; justify-content: center; }
 .section--navy .eyebrow { color: var(--gold); }
 
 .section-title { margin-bottom: 16px; }
