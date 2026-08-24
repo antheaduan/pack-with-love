@@ -361,6 +361,9 @@ img { max-width: 100%; display: block; }
 .wordless-colors li { display: flex; align-items: center; gap: 9px; font-size: .95rem; color: var(--ink); font-weight: 500; }
 .wordless-colors .sw { width: 17px; height: 17px; border-radius: 50%; flex: 0 0 auto; box-shadow: 0 1px 3px rgba(28,46,61,.22); }
 .wordless-colors small { color: var(--muted); font-weight: 400; }
+.wordless-row { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin: 16px 0 10px; }
+.wordless-row .wordless-colors { margin: 0; flex: 1 1 240px; }
+.wordless-book-img { width: 132px; height: auto; flex: 0 0 auto; filter: drop-shadow(0 12px 22px rgba(28,46,61,.2)); }
 
 /* ---- 11. Gallery ---- */
 .gallery { display: grid; grid-template-columns: repeat(4,1fr); gap: 22px; }
