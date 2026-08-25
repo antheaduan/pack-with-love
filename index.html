@@ -27,9 +27,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=6" />
+  <link rel="stylesheet" href="css/styles.css?v=10" />
 </head>
 <body>
+
+  <a class="skip-link" href="#content">Skip to main content</a>
 
   <!-- ============ HEADER (same on every page) ============ -->
   <header class="site-header">
@@ -49,6 +51,8 @@
       </ul>
     </nav>
   </header>
+
+  <main id="content" tabindex="-1">
 
   <!-- ============ HERO ============ -->
   <section class="hero">
@@ -95,10 +99,10 @@
             </picture>
           </div>
         </div>
-        <div class="hero__dots" role="tablist" aria-label="Choose a backpack design">
-          <button type="button" class="hero__dot is-active" aria-label="Show design 1"></button>
-          <button type="button" class="hero__dot" aria-label="Show design 2"></button>
-          <button type="button" class="hero__dot" aria-label="Show design 3"></button>
+        <div class="hero__dots" role="group" aria-label="Choose a backpack design">
+          <button type="button" class="hero__dot is-active" aria-label="Show design 1" aria-pressed="true"></button>
+          <button type="button" class="hero__dot" aria-label="Show design 2" aria-pressed="false"></button>
+          <button type="button" class="hero__dot" aria-label="Show design 3" aria-pressed="false"></button>
         </div>
       </div>
     </div>
@@ -207,6 +211,8 @@
   </section>
 
   <!-- ============ FOOTER (same on every page) ============ -->
+  </main>
+
   <footer class="site-footer">
     <div class="container footer__grid">
       <div>
@@ -215,7 +221,7 @@
         <p class="footer__tag">Live it out loud!</p>
       </div>
       <div>
-        <h4>Explore</h4>
+        <h2>Explore</h2>
         <ul class="footer__links">
           <li><a href="/">Home</a></li>
           <li><a href="about">About Us</a></li>
@@ -225,7 +231,7 @@
         </ul>
       </div>
       <div>
-        <h4>Get Involved</h4>
+        <h2>Get Involved</h2>
         <ul class="footer__links">
           <li><a href="support">Support / Donate</a></li>
           <li><a href="https://africacriesout.org/youth/pack-with-love.html">Join the Club</a></li>
@@ -240,7 +246,7 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=6"></script>
+  <script src="js/main.js?v=10"></script>
   <!-- Structured data: who we are (for search engines) -->
   <script type="application/ld+json">
   {

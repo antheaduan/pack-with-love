@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', function () {
     function show(next) {
       next = (next + slides.length) % slides.length;
       slides[idx].classList.remove('is-active');
-      if (dots[idx]) dots[idx].classList.remove('is-active');
+      if (dots[idx]) { dots[idx].classList.remove('is-active'); dots[idx].setAttribute('aria-pressed', 'false'); }
       idx = next;
       slides[idx].classList.add('is-active');
-      if (dots[idx]) dots[idx].classList.add('is-active');
+      if (dots[idx]) { dots[idx].classList.add('is-active'); dots[idx].setAttribute('aria-pressed', 'true'); }
     }
     function start() { if (reduce || timer) return; timer = setInterval(function () { show(idx + 1); }, INTERVAL); }
     function stop() { if (timer) { clearInterval(timer); timer = null; } }
