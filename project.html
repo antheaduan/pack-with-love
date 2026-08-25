@@ -6,6 +6,21 @@
   <title>Our Project · Pack with Love</title>
   <meta name="description" content="The Love & Hope Backpack Project — 1,000 backpack sets for children across ten villages in Senegal, one $5,300 shared goal, traveling with the March 2027 ACO Medical Mission. Three ways in: give, do, or learn." />
   <link rel="canonical" href="https://packwithlove.org/project" />
+  <!-- Social preview (Open Graph + Twitter) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Pack with Love" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://packwithlove.org/project" />
+  <meta property="og:title" content="The Love &amp; Hope Backpack Project" />
+  <meta property="og:description" content="The Love & Hope Backpack Project — 1,000 backpack sets for children across ten villages in Senegal, one $5,300 shared goal, traveling with the March 2027 ACO Medical Mission. Three ways in: give, do, or learn." />
+  <meta property="og:image" content="https://packwithlove.org/images/og-cover.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="The Love &amp; Hope Backpack Project — 1,000 backpack sets, one $5,300 shared goal." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Love &amp; Hope Backpack Project" />
+  <meta name="twitter:description" content="The Love & Hope Backpack Project — 1,000 backpack sets for children across ten villages in Senegal, one $5,300 shared goal, traveling with the March 2027 ACO Medical Mission. Three ways in: give, do, or learn." />
+  <meta name="twitter:image" content="https://packwithlove.org/images/og-cover.png" />
   <link rel="icon" type="image/png" href="images/favicon-32.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -46,6 +61,7 @@
       <a href="#ways-in">Ways In</a>
       <a href="#calendar">Calendar</a>
       <a href="#accountability">Accountability</a>
+      <a href="#faq">FAQ</a>
     </div>
   </nav>
 
@@ -285,6 +301,81 @@
     </div>
   </section>
 
+  <!-- TODO (needs a real photo, not stock): once we have one, add a wide image of the
+       students actually working — packing, designing, or at a sales event — between the
+       calendar and this FAQ. Save it as images/team-at-work.jpg (≈1600px wide) and drop in:
+
+         <section class="section section--sand">
+           <div class="container">
+             <figure class="split__figure" data-reveal>
+               <img src="images/team-at-work.jpg" alt="Pack with Love students packing backpack sets" />
+             </figure>
+           </div>
+         </section>
+
+       Do NOT substitute a stock photo — a bought smile undercuts every honest number above it. -->
+
+  <!-- Questions donors actually ask, answered from facts already on this page -->
+  <section class="section section--white" id="faq">
+    <div class="container narrow">
+      <div class="center section-head" data-reveal>
+        <span class="eyebrow center-tick">Before you give</span>
+        <h2 class="section-title accent-underline">Questions we get asked</h2>
+      </div>
+      <div class="faq" data-reveal style="margin-top:44px">
+
+        <details>
+          <summary>What exactly does the $5,300 pay for?</summary>
+          <div class="faq__body">
+            <p>$4,500 covers 1,000 complete backpack sets at $4.50 each &mdash; a backpack, a coloring
+              book, a Gospel Wordless Book, and a coloring set. The remaining $800 covers ocean
+              shipping, import duties, and customs clearance, based on ACO's actual shipping history
+              and a confirmed quote.</p>
+            <p>There is one goal and one number. Every gift &mdash; a direct donation, a child's bake
+              sale, the math class's sales events &mdash; lands on that same $5,300.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Is my donation tax-deductible?</summary>
+          <div class="faq__body">
+            <p>Yes. Donations are received by Africa Cries Out, a registered 501(c)(3) nonprofit
+              (EIN: 81-3022255), and are tax-deductible to the extent allowed by law. ACO issues the
+              receipt.</p>
+            <p>Pack with Love does not itself hold or manage funds. Students help with planning,
+              design, and communication &mdash; they never personally collect or hold money.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Who receives the backpacks, and when?</summary>
+          <div class="faq__body">
+            <p>Children across roughly ten villages in Senegal, through ACO's existing Hope &amp; Care
+              program &mdash; a partner already trusted in those communities, not a new operation we
+              are inventing.</p>
+            <p>The sets travel with the <strong>March 2027 ACO Medical Mission</strong>. That deadline
+              drives the whole calendar: everything has to be funded, produced, ocean-shipped, and
+              cleared through customs before it departs.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Does a child have to do anything to receive a backpack?</summary>
+          <div class="faq__body">
+            <p>No. Every backpack is a gift, unconditional. No child is ever required to attend an
+              activity, believe anything, or share anything in order to receive one.</p>
+            <p>The same holds on our side: a child who claims part of the goal is committing to
+              effort, not to a debt. If a claim turns out to be bigger than the year allows, it gets
+              resized &mdash; that is a normal checkpoint, not a failure.</p>
+          </div>
+        </details>
+
+      </div>
+      <p class="center" style="margin-top:30px;color:var(--muted)">Still have a question?
+        <a href="contact">Ask us directly</a> &mdash; a real person answers.</p>
+    </div>
+  </section>
+
   <section class="section section--sand">
     <div class="container">
       <div class="cta" data-reveal>
@@ -311,5 +402,72 @@
     <div class="container footer__bottom"><p>© 2026 Pack with Love Youth Service Club · Founded by Joanna Zhang · Love First. Create with Joy. Serve with Purpose.</p></div>
   </footer>
   <script src="js/main.js?v=6"></script>
+  <!-- Structured data: who we are (for search engines) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Pack with Love",
+    "alternateName": "Pack with Love Youth Service Club",
+    "url": "https://packwithlove.org/",
+    "logo": "https://packwithlove.org/images/logo-stacked.svg",
+    "image": "https://packwithlove.org/images/og-cover.png",
+    "description": "An independent, youth-led Christian service club helping children feel loved, seen, and remembered. Its founding project, the Love & Hope Backpack Project, sends 1,000 complete backpack sets to children in Senegal.",
+    "founder": {
+      "@type": "Person",
+      "name": "Joanna Zhang"
+    },
+    "foundingDate": "2026",
+    "sameAs": [
+      "https://africacriesout.org/pack-with-love.html"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "general enquiries",
+      "url": "https://packwithlove.org/contact"
+    }
+  }
+  </script>
+  <!-- Structured data: the FAQ above -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What exactly does the $5,300 pay for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "$4,500 covers 1,000 complete backpack sets at $4.50 each — a backpack, a coloring book, a Gospel Wordless Book, and a coloring set. The remaining $800 covers ocean shipping, import duties, and customs clearance, based on ACO's actual shipping history and a confirmed quote. There is one goal and one number: every gift lands on that same $5,300."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my donation tax-deductible?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Donations are received by Africa Cries Out, a registered 501(c)(3) nonprofit (EIN: 81-3022255), and are tax-deductible to the extent allowed by law. ACO issues the receipt. Pack with Love does not itself hold or manage funds."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who receives the backpacks, and when?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Children across roughly ten villages in Senegal, through ACO's existing Hope & Care program. The sets travel with the March 2027 ACO Medical Mission — everything must be funded, produced, ocean-shipped, and cleared through customs before it departs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does a child have to do anything to receive a backpack?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Every backpack is a gift, unconditional. No child is ever required to attend an activity, believe anything, or share anything in order to receive one."
+        }
+      }
+    ]
+  }
+  </script>
 </body>
 </html>
