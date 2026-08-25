@@ -247,6 +247,7 @@ img { max-width: 100%; display: block; }
 }
 .hero__badge--below { position: static; display: flex; width: max-content; max-width: 100%; margin: 26px auto 0; transform: none; }
 .hero__badge .num { font-family: var(--font-display); font-weight: 600; color: var(--coral-deep); font-size: 2rem; line-height: 1; }
+.hero__badge strong { display: block; color: var(--ink); font-weight: 600; line-height: 1.2; }
 .hero__badge small { display: block; color: var(--muted); font-weight: 500; font-size: .8rem; letter-spacing: .04em; }
 
 /* Floating decorative motifs (hearts / sparks) */
@@ -375,6 +376,18 @@ img { max-width: 100%; display: block; }
 .goal-table .total .amt { color: var(--coral-deep); font-size: 1.5rem; }
 .goal-table small { display: block; color: var(--muted); margin-top: 4px; font-size: .9rem; }
 
+/* Campaign progress module */
+.progress { max-width: 620px; margin: 0 auto 40px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 30px 24px; box-shadow: var(--shadow); }
+.progress[hidden] { display: none; }
+.progress__figures { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 14px; }
+.progress__raised { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.7rem, 3.4vw, 2.3rem); color: var(--coral-deep); line-height: 1; }
+.progress__goal { color: var(--muted); font-size: 1rem; }
+.progress__track { height: 14px; border-radius: 999px; background: var(--sand); overflow: hidden; border: 1px solid var(--line); }
+.progress__fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--coral), var(--gold)); width: 0; transition: width .9s cubic-bezier(.16,.8,.3,1); }
+.progress__meta { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-top: 14px; }
+.progress__sets { font-weight: 600; color: var(--ink); font-size: .98rem; }
+.progress__asof { color: var(--muted); font-size: .86rem; }
+
 /* Project Clock timeline */
 .clock { list-style: none; position: relative; margin: 0; padding-left: 30px; }
 .clock::before { content: ""; position: absolute; left: 9px; top: 8px; bottom: 8px; width: 2px; border-radius: 2px; background: linear-gradient(180deg, var(--gold), var(--coral)); opacity: .55; }
@@ -480,6 +493,7 @@ img { max-width: 100%; display: block; }
 .site-footer a:hover { color: var(--gold); }
 .footer__links { list-style: none; display: grid; gap: 12px; }
 .footer__tag { font-family: var(--font-script); color: var(--gold); font-size: 1.55rem; margin-top: 10px; }
+.footer__legal + .footer__bottom { margin-top: 20px; border-top: none; }
 .footer__bottom { border-top: 1px solid rgba(255,255,255,.12); margin-top: 48px; padding-top: 24px; text-align: center; font-size: .88rem; color: #8ea6bd; }
 
 /* ---- 16. Page hero (interior pages) ---- */

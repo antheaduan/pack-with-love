@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=3" />
+  <link rel="stylesheet" href="css/styles.css?v=4" />
 </head>
 <body>
 
@@ -63,7 +63,10 @@
         <img src="images/backpack-green.png" alt="A green children's backpack with a color-it-yourself front panel reading 'Yàlla bëgg na la' — God loves you — with a sunburst, heart, cross, and star, and an Africa Cries Out label." />
         <div class="hero__badge hero__badge--below">
           <span class="num">1,000</span>
-          <span>backpack sets<small>the founding-year commitment</small></span>
+          <span>
+            <strong>backpack sets</strong>
+            <small>the founding-year commitment</small>
+          </span>
         </div>
       </div>
     </div>
@@ -77,14 +80,32 @@
         <h2 class="section-title accent-underline">The goal: $5,300</h2>
         <p class="section-intro" style="margin-top:24px">One public number the whole community raises together. Every gift &mdash; from every giver, every bake sale, every class sale &mdash; lands on this same goal.</p>
       </div>
+
+      <!-- Live progress — reads data/campaign.json (see data/README.md).
+           Hidden by default; the script reveals it only on a successful fetch. -->
+      <div class="progress" data-progress hidden>
+        <div class="progress__figures">
+          <span class="progress__raised" data-progress-raised>$0</span>
+          <span class="progress__goal" data-progress-goal>raised of $5,300 goal</span>
+        </div>
+        <div class="progress__track" role="progressbar" aria-label="Fundraising progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="progress__fill" data-progress-fill></div>
+        </div>
+        <div class="progress__meta">
+          <span class="progress__sets" data-progress-sets></span>
+          <span class="progress__asof" data-progress-asof></span>
+        </div>
+      </div>
       <div class="narrow" data-reveal>
         <table class="goal-table">
           <tr>
-            <td><strong>1,000 backpack sets</strong> &mdash; color-it-yourself backpack, coloring book, Gospel Wordless Book, and coloring set &mdash; designed by children, for children<small>1,000 &times; $4.50 per complete set</small></td>
+            <td><strong>1,000 backpack sets</strong> &mdash; color-it-yourself backpack, coloring book, Gospel Wordless Book, and coloring set &mdash; designed by children, for children
+              <small>1,000 &times; $4.50 per complete set</small></td>
             <td class="amt">$4,500</td>
           </tr>
           <tr>
-            <td><strong>Ocean shipping, import duties &amp; customs clearance</strong><small>Based on ACO's actual shipping history and a confirmed quote</small></td>
+            <td><strong>Ocean shipping, import duties &amp; customs clearance</strong>
+              <small>Based on ACO's actual shipping history and a confirmed quote</small></td>
             <td class="amt">$800</td>
           </tr>
           <tr class="total">
@@ -139,12 +160,14 @@
           <h3>1 &middot; Give</h3>
           <p style="margin-bottom:14px"><strong>Anyone. Any amount.</strong> Family, friends, and community members donate directly toward the $5,300 goal. No claim, no program &mdash; just generosity, fully counted.</p>
           <a href="support.html#donate" class="btn btn-primary">♥ Give Now</a>
+          <p style="margin:12px 0 0;color:var(--muted);font-size:.9rem">Donations are processed securely through our partner Africa Cries Out.</p>
         </div>
         <div class="card" data-reveal data-delay="1">
           <div class="card__icon">🙋</div>
           <h3>2 &middot; Claim &amp; Do</h3>
           <p style="margin-bottom:14px"><strong>Any child, free, parent-guided.</strong> Claim a portion of the goal in real units &mdash; <em>ten backpacks alone, twenty-five with two friends</em> &mdash; and carry it through the Four Moves. A bake sale, a recital, a car wash. A claim is a commitment to effort, not a debt.</p>
-          <a href="contact.html" class="btn btn-secondary">Make a Claim →</a>
+          <a href="https://africacriesout.org/youth/pack-with-love.html" class="btn btn-secondary">Make a Claim →</a>
+          <p style="margin:12px 0 0;color:var(--muted);font-size:.9rem">Claims are set up with a parent on our partner ACO's youth platform.</p>
         </div>
         <div class="card" data-reveal data-delay="2">
           <div class="card__icon">📊</div>
@@ -278,6 +301,7 @@
       <h2>One project, one number, one truth</h2>
       <p class="section-intro" style="margin-top:16px">Every dollar from every rung &mdash; direct gifts, individual claims, the class's team claim, employer matches &mdash; lands on the same $5,300 shared goal and is recorded the moment it arrives, on the contributor's own progress and the shared total together.</p>
       <p style="color:#bcd0e2">All donations are received and managed through ACO's approved financial channels. Students help with planning, design, and communication &mdash; but never personally collect, hold, or manage funds. Children's personal fundraising pages show first names and general grade level only. And every backpack is a gift, unconditional &mdash; no child is ever required to attend an activity or share anything to receive one.</p>
+      <p style="color:#bcd0e2;margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.16)">Donations are received by Africa Cries Out, a registered 501(c)(3) nonprofit (EIN: 【EIN — get from ACO】), and are tax-deductible to the extent allowed by law. Pack with Love does not itself hold or manage funds.</p>
     </div>
   </section>
 
@@ -287,6 +311,7 @@
         <h2>Every $4.50 becomes a backpack in a child's hands</h2>
         <p>One shared goal &mdash; $5,300 &mdash; and a whole community raising it together: givers, young fundraisers, and one very determined math class.</p>
         <a href="support.html" class="btn btn-white btn-lg">♥ Support the Project</a>
+        <p style="margin:14px 0 0;color:rgba(255,255,255,.92);font-size:.9rem">Donations are processed securely through our partner Africa Cries Out.</p>
       </div>
     </div>
   </section>
@@ -300,10 +325,11 @@
       </div>
       <div><h4>Explore</h4><ul class="footer__links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="project.html">Our Project</a></li><li><a href="news.html">News</a></li>
         <li><a href="contact.html">Contact</a></li></ul></div>
-      <div><h4>Get Involved</h4><ul class="footer__links"><li><a href="support.html">Support / Donate</a></li><li><a href="support.html#join">Join the Club</a></li><li><a href="data-to-impact.html">Data to Impact Course</a></li><li><a href="support.html#partner">Partner With Us</a></li></ul></div>
+      <div><h4>Get Involved</h4><ul class="footer__links"><li><a href="support.html">Support / Donate</a></li><li><a href="https://africacriesout.org/youth/pack-with-love.html">Join the Club</a></li><li><a href="data-to-impact.html">Data to Impact Course</a></li><li><a href="support.html#partner">Partner With Us</a></li></ul></div>
     </div>
+    <div class="container footer__legal" style="border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:20px"><p style="color:#8ea6bd;font-size:.86rem;margin:0">Donations are received by Africa Cries Out, a registered 501(c)(3) nonprofit (EIN: 【EIN — get from ACO】), and are tax-deductible to the extent allowed by law. Pack with Love does not itself hold or manage funds.</p></div>
     <div class="container footer__bottom"><p>© 2026 Pack with Love Youth Service Club · Founded by Joanna Zhang · Love First. Create with Joy. Serve with Purpose.</p></div>
   </footer>
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=5"></script>
 </body>
 </html>

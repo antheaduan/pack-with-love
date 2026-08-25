@@ -70,7 +70,63 @@ document.addEventListener('DOMContentLoaded', function () {
     start();
   })();
 
-  /* ---- 4. Scroll-reveal ---- */
+  /* ---- 4. Campaign progress (reads data/campaign.json) ---- */
+  (function () {
+    var mod = document.querySelector('[data-progress]');
+    if (!mod || !window.fetch) return;
+
+    var SET_COST = 4.5;   // one complete backpack set
+    var MAX_SETS = 1000;  // the founding-year commitment
+
+    fetch('data/campaign.json', { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error('bad response'); return r.json(); })
+      .then(function (d) {
+        var goal = Number(d.goal), raised = Number(d.raised);
+        if (!isFinite(goal) || goal <= 0 || !isFinite(raised) || raised < 0) throw new Error('bad data');
+
+        var pct = Math.max(0, Math.min(100, (raised / goal) * 100));
+        var sets = Number(d.backpacks_funded) > 0
+          ? Number(d.backpacks_funded)
+          : Math.floor(raised / SET_COST);
+        sets = Math.min(sets, MAX_SETS);
+
+        var money = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
+        var set = function (sel, text) {
+          var el = mod.querySelector(sel);
+          if (el) el.textContent = text;
+        };
+
+        set('[data-progress-raised]', money(raised));
+        set('[data-progress-goal]', 'raised of ' + money(goal) + ' goal');
+        set('[data-progress-sets]', '= ' + sets.toLocaleString('en-US') +
+            (sets === 1 ? ' backpack set funded' : ' backpack sets funded'));
+
+        if (d.as_of) {
+          var parts = String(d.as_of).split('-');
+          var label = String(d.as_of);
+          if (parts.length === 3) {
+            var dt = new Date(Date.UTC(+parts[0], +parts[1] - 1, +parts[2]));
+            if (!isNaN(dt.getTime())) {
+              label = dt.toLocaleDateString('en-US',
+                { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+            }
+          }
+          set('[data-progress-asof]', 'Updated ' + label);
+        }
+
+        var bar = mod.querySelector('[data-progress-fill]');
+        if (bar) {
+          bar.parentElement.setAttribute('aria-valuenow', String(Math.round(pct)));
+          // let the browser paint the 0% state first so the fill animates
+          requestAnimationFrame(function () { bar.style.width = pct + '%'; });
+        }
+
+        mod.hidden = false;
+      })
+      .catch(function () { /* leave the module hidden — never show $0 of $0 */ });
+  })();
+
+  /* ---- 5. Scroll-reveal ---- */
   var revealables = document.querySelectorAll('[data-reveal]');
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
