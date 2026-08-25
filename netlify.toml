@@ -33,3 +33,17 @@
   for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+
+# Canonical URLs: extensionless is the shared form, so 301 any /page.html
+# request to /page. Netlify already serves /page from page.html.
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/:page.html"
+  to = "/:page"
+  status = 301
+  force = true
