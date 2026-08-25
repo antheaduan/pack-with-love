@@ -268,10 +268,31 @@ img { max-width: 100%; display: block; }
   position: relative;
 }
 .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--line-gold); }
+/* Card icons — inline SVG, one stroke family, tinted from the brand palette.
+   Three tones so a row of cards reads as a set, not three identical badges. */
 .card__icon {
   width: 60px; height: 60px; border-radius: 18px; display: grid; place-items: center;
-  font-size: 1.7rem; margin-bottom: 20px; background: var(--blush);
+  margin-bottom: 20px; background: var(--blush);
   border: 1px solid rgba(255,104,104,.16);
+  color: var(--coral-deep);
+}
+.card__icon svg {
+  width: 28px; height: 28px; display: block;
+  fill: none; stroke: currentColor; stroke-width: 1.8;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.card__icon--gold {
+  background: rgba(219,185,120,.22); border-color: rgba(219,185,120,.34);
+  color: var(--gold-deep);
+}
+.card__icon--navy {
+  background: rgba(15,58,93,.09); border-color: rgba(15,58,93,.16);
+  color: var(--navy);
+}
+
+/* Advisor initials badges reuse the same chip, with display type instead of an icon. */
+.card__icon--initials {
+  font-family: var(--font-display); font-weight: 600; font-size: 1.35rem; letter-spacing: .02em;
 }
 .card h3 { margin-bottom: 10px; }
 .card p { color: var(--muted); margin: 0; }
@@ -399,6 +420,28 @@ img { max-width: 100%; display: block; }
 .progress__meta { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-top: 14px; }
 .progress__sets { font-weight: 600; color: var(--ink); font-size: .98rem; }
 .progress__asof { color: var(--muted); font-size: .86rem; }
+
+/* Goal table → stacked cards on small screens (no horizontal scroll) */
+@media (max-width: 640px){
+  .goal-table,
+  .goal-table tbody,
+  .goal-table tr,
+  .goal-table td { display: block; width: 100%; }
+  .goal-table { border: none; background: none; box-shadow: none; border-radius: 0; overflow: visible; }
+  .goal-table tr {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    box-shadow: var(--shadow); padding: 18px 20px; margin-bottom: 14px;
+  }
+  .goal-table tr:last-child { margin-bottom: 0; }
+  .goal-table td { padding: 0; border-bottom: none; }
+  .goal-table .amt {
+    text-align: right; margin-top: 10px; padding-top: 10px;
+    border-top: 1px dashed var(--line); font-size: 1.25rem;
+  }
+  .goal-table .total td { background: none; }
+  .goal-table .total { background: var(--blush); border-color: var(--line-gold); }
+  .goal-table .total .amt { border-top-color: var(--line-gold); }
+}
 
 /* Project Clock timeline */
 .clock { list-style: none; position: relative; margin: 0; padding-left: 30px; }
