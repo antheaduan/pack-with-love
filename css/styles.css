@@ -325,6 +325,7 @@ img { max-width: 100%; display: block; }
 
 /* ---- 10. Steps / rhythm (Our Project) ---- */
 .steps { display: grid; gap: 22px; grid-template-columns: repeat(5,1fr); counter-reset: step; }
+.steps--4 { grid-template-columns: repeat(4,1fr); }
 .step {
   background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
   padding: 30px 22px 26px; box-shadow: var(--shadow); position: relative;
@@ -364,6 +365,42 @@ img { max-width: 100%; display: block; }
 .wordless-row { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin: 16px 0 10px; }
 .wordless-row .wordless-colors { margin: 0; flex: 1 1 240px; }
 .wordless-book-img { width: 132px; height: auto; flex: 0 0 auto; filter: drop-shadow(0 12px 22px rgba(28,46,61,.2)); }
+
+/* Shared-goal breakdown table */
+.goal-table { width: 100%; border-collapse: separate; border-spacing: 0; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.goal-table td { padding: 18px 24px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.goal-table tr:last-child td { border-bottom: none; }
+.goal-table .amt { text-align: right; white-space: nowrap; font-family: var(--font-display); font-weight: 600; color: var(--ink); font-size: 1.12rem; }
+.goal-table .total td { background: var(--blush); }
+.goal-table .total .amt { color: var(--coral-deep); font-size: 1.5rem; }
+.goal-table small { display: block; color: var(--muted); margin-top: 4px; font-size: .9rem; }
+
+/* Project Clock timeline */
+.clock { list-style: none; position: relative; margin: 0; padding-left: 30px; }
+.clock::before { content: ""; position: absolute; left: 9px; top: 8px; bottom: 8px; width: 2px; border-radius: 2px; background: linear-gradient(180deg, var(--gold), var(--coral)); opacity: .55; }
+.clock li { position: relative; padding: 0 0 26px 4px; }
+.clock li:last-child { padding-bottom: 0; }
+.clock li::before { content: ""; position: absolute; left: -27px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 4px rgba(219,185,120,.22); }
+.clock li.milestone::before { background: var(--coral); box-shadow: 0 0 0 4px rgba(255,104,104,.2); }
+.clock .when { font-family: var(--font-body); font-weight: 600; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-deep); display: block; margin-bottom: 3px; }
+.clock li.milestone .when { color: var(--coral-deep); }
+.clock h4 { margin-bottom: 4px; }
+.clock p { margin: 0; color: var(--muted); font-size: .97rem; }
+
+/* Facts bar (course page) */
+.facts { list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.facts li { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 18px 18px 16px; box-shadow: var(--shadow); }
+.facts .k { font-family: var(--font-body); font-weight: 600; font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-deep); display: block; margin-bottom: 6px; }
+.facts strong { color: var(--ink); font-weight: 600; }
+.facts li p { margin: 0; font-size: .95rem; color: var(--text); }
+
+@media (max-width: 940px){
+  .facts { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 620px){
+  .facts { grid-template-columns: 1fr; }
+  .goal-table td { padding: 14px 16px; }
+}
 
 /* ---- 11. Gallery ---- */
 .gallery { display: grid; grid-template-columns: repeat(4,1fr); gap: 22px; }
