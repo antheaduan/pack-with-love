@@ -1,31 +1,45 @@
 # Campaign data
 
-`campaign.json` is the **single source of truth** for the fundraising progress bar
-shown on the Our Project page.
+`campaign.json` drives the fundraising progress bar on the Our Project page.
 
 ```json
 {
   "goal": 5300,          // the shared goal, in whole dollars
   "raised": 0,           // total raised so far, in whole dollars
   "backpacks_funded": 0, // optional override; if 0 the page computes floor(raised / 4.50)
-  "as_of": "2026-08-25"  // the date this file was last updated (YYYY-MM-DD)
+  "as_of": "2026-08-25", // the date these numbers were last updated (YYYY-MM-DD)
+  "source": null         // optional: a URL to pull the same fields from live (see below)
 }
 ```
 
-## How to update (manual, for now)
+## Option A — manual updates (current setup)
 
-1. Edit `raised` and `as_of` in `campaign.json`.
-2. Commit and push to `main` — the site redeploys and the bar updates.
-   No other file needs to change.
+1. Edit `raised` and `as_of`.
+2. Commit and push to `main`. The site redeploys and the bar updates.
+   Nothing else needs to change.
 
-## Later: connect to a live source
+## Option B — pull live numbers from ACO (one source of truth)
 
-If ACO's donation system exposes an API endpoint that returns this same JSON
-shape, change the fetch URL in `js/main.js` (see the `campaign progress`
-section) and delete this manual step. Keep the field names identical.
+Both packwithlove.org and africacriesout.org show the same campaign. To keep
+the two bars from ever disagreeing, publish the numbers once on ACO and point
+this file at them:
+
+1. On africacriesout.org, serve a JSON file with these same field names, e.g.
+   `https://africacriesout.org/data/pack-with-love.json`:
+   ```json
+   { "goal": 5300, "raised": 1250, "backpacks_funded": 277, "as_of": "2026-11-15" }
+   ```
+2. Send it with a CORS header so this site is allowed to read it:
+   `Access-Control-Allow-Origin: https://packwithlove.org`
+   (or `*` — the file is public information either way).
+3. Set `"source"` in this file to that URL. Done: this page now shows ACO's
+   numbers, and the local values below are only used as a fallback.
+
+If the remote call fails, the page quietly falls back to the `raised`/`goal`
+values in this file, so the bar never breaks.
 
 ## Behavior notes
 
-- If the file can't be fetched, the progress module hides itself entirely —
+- If `campaign.json` itself can't be loaded, the progress module hides entirely —
   the page never shows `$0 of $0` or `NaN`.
 - Backpacks funded is capped at 1,000 (the founding-year commitment).

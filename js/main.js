@@ -78,8 +78,31 @@ document.addEventListener('DOMContentLoaded', function () {
     var SET_COST = 4.5;   // one complete backpack set
     var MAX_SETS = 1000;  // the founding-year commitment
 
-    fetch('data/campaign.json', { cache: 'no-store' })
-      .then(function (r) { if (!r.ok) throw new Error('bad response'); return r.json(); })
+    var getJSON = function (url) {
+      return fetch(url, { cache: 'no-store' }).then(function (r) {
+        if (!r.ok) throw new Error('bad response');
+        return r.json();
+      });
+    };
+
+    // Local file first. If it names a `source` (e.g. ACO's live endpoint), use
+    // that instead — so both sites can show the same number. If the remote call
+    // fails we quietly keep the local numbers rather than hiding the bar.
+    getJSON('data/campaign.json')
+      .then(function (local) {
+        if (!local || !local.source) return local;
+        return getJSON(local.source)
+          .then(function (remote) {
+            remote = remote || {};
+            return {
+              goal: remote.goal != null ? remote.goal : local.goal,
+              raised: remote.raised != null ? remote.raised : local.raised,
+              backpacks_funded: remote.backpacks_funded != null ? remote.backpacks_funded : local.backpacks_funded,
+              as_of: remote.as_of || local.as_of
+            };
+          })
+          .catch(function () { return local; });
+      })
       .then(function (d) {
         var goal = Number(d.goal), raised = Number(d.raised);
         if (!isFinite(goal) || goal <= 0 || !isFinite(raised) || raised < 0) throw new Error('bad data');
