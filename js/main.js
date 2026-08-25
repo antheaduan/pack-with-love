@@ -75,6 +75,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var mod = document.querySelector('[data-progress]');
     if (!mod || !window.fetch) return;
 
+    // Fallbacks only. When a live endpoint is configured it reports the real
+    // set cost (ACO can change it in their admin), and these go unused.
     var SET_COST = 4.5;   // one complete backpack set
     var MAX_SETS = 1000;  // the founding-year commitment
 
@@ -94,10 +96,24 @@ document.addEventListener('DOMContentLoaded', function () {
         return getJSON(local.source)
           .then(function (remote) {
             remote = remote || {};
+            var pick = function (k) { return remote[k] != null ? remote[k] : local[k]; };
+            // Prefer the *_cents fields where the endpoint sends them. The
+            // whole-dollar fields drop the cents, and two bars rounded from
+            // different places disagree by up to a dollar — which is exactly
+            // the disagreement this integration exists to prevent.
+            var money = function (k) {
+              return remote[k + '_cents'] != null
+                ? Number(remote[k + '_cents']) / 100
+                : pick(k);
+            };
             return {
-              goal: remote.goal != null ? remote.goal : local.goal,
-              raised: remote.raised != null ? remote.raised : local.raised,
-              backpacks_funded: remote.backpacks_funded != null ? remote.backpacks_funded : local.backpacks_funded,
+              goal: money('goal'),
+              raised: money('raised'),
+              // Counted from the backpack line item alone, upstream. Dividing
+              // the *total* raised by the set cost would count shipping money
+              // as backpacks.
+              backpacks_funded: pick('backpacks_funded'),
+              set_cost: pick('set_cost'),
               as_of: remote.as_of || local.as_of
             };
           })
@@ -108,9 +124,15 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!isFinite(goal) || goal <= 0 || !isFinite(raised) || raised < 0) throw new Error('bad data');
 
         var pct = Math.max(0, Math.min(100, (raised / goal) * 100));
-        var sets = Number(d.backpacks_funded) > 0
-          ? Number(d.backpacks_funded)
-          : Math.floor(raised / SET_COST);
+
+        // Use the reported count whenever there is one — including a genuine
+        // zero. Only estimate when nobody told us, and say so by using the
+        // fallback cost.
+        var setCost = Number(d.set_cost) > 0 ? Number(d.set_cost) : SET_COST;
+        var reported = Number(d.backpacks_funded);
+        var sets = (d.backpacks_funded != null && isFinite(reported) && reported >= 0)
+          ? reported
+          : Math.floor(raised / setCost);
         sets = Math.min(sets, MAX_SETS);
 
         var money = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
