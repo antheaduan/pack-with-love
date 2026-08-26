@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         set('[data-progress-raised]', money(raised));
         set('[data-progress-goal]', 'raised of ' + money(goal) + ' goal');
-        set('[data-progress-sets]', '= ' + sets.toLocaleString('en-US') +
+        set('[data-progress-sets]', sets.toLocaleString('en-US') +
             (sets === 1 ? ' backpack set funded' : ' backpack sets funded'));
 
         if (d.as_of) {
