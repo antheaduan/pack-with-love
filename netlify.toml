@@ -51,6 +51,6 @@
 # /support retired — its chooser duplicated the Three Ways In ladder.
 [[redirects]]
   from = "/support"
-  to = "/project#ways-in"
+  to = "/give"
   status = 301
   force = true

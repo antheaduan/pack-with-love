@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=55" />
+  <link rel="stylesheet" href="css/styles.css?v=56" />
   <!-- Small page-specific touches for news post cards -->
   <style>
     .post-meta { display:flex; align-items:center; gap:10px; margin-bottom:12px; font-size:.82rem; }
@@ -54,12 +54,12 @@
       <button class="nav__toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <ul class="nav__links">
         <li><a href="/">Home</a></li>
-        <li><a href="about">About</a></li>
-        <li><a href="project">Our Project</a></li>
-        <li><a href="participate">Participate</a></li>
-        <li><a href="data-to-impact">Data to Impact</a></li>
-        <li><a href="news" class="active">News</a></li>
-        <li><a href="project#ways-in" class="btn btn-primary">&hearts; Support</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/project">The Project</a></li>
+        <li><a href="/participate">Join In</a></li>
+        <li><a href="/data-to-impact">The Course</a></li>
+        <li><a href="/news" class="active">News</a></li>
+        <li><a href="/give" class="btn btn-primary">&hearts; Give</a></li>
       </ul>
     </nav>
   </header>
@@ -102,7 +102,7 @@
           Every gift helps a child open a backpack made just for them. Thank you for being part of the
           very first chapter of our story.
         </p>
-        <a href="https://africacriesout.org/pack-with-love.html" class="btn btn-primary" style="margin-top:8px">♥ Donate Now</a>
+        <a href="/give" class="btn btn-primary" style="margin-top:8px">♥ Give a Backpack</a>
         <p style="margin:12px 0 0;color:var(--muted);font-size:.9rem">Donations are processed securely through our partner Africa Cries Out.</p>
       </div>
     </div>
@@ -155,9 +155,10 @@
   <section class="section section--white">
     <div class="container">
       <div class="cta" data-reveal>
-        <h2>Want to follow our journey?</h2>
-        <p>Reach out to stay connected and hear about new updates, milestones, and ways to help.</p>
-        <a href="contact" class="btn btn-white btn-lg">Get in Touch</a>
+        <h2>Want to be part of the story?</h2>
+        <p>Give a backpack today &mdash; or reach out to stay connected and hear about new milestones.</p>
+        <a href="/give" class="btn btn-white btn-lg">&hearts; Give a Backpack</a>
+        <p style="margin-top:14px"><a href="contact" style="color:#bcd0e2">or get in touch &rarr;</a></p>
       </div>
     </div>
   </section>
@@ -171,13 +172,15 @@
         <p>An independent, youth-led Christian service club helping children feel loved, seen, and remembered.</p>
         <p class="footer__tag">Live it out loud!</p>
       </div>
-      <div><h2>Explore</h2><ul class="footer__links"><li><a href="/">Home</a></li><li><a href="about">About Us</a></li><li><a href="project">Our Project</a></li><li><a href="news">News</a></li><li><a href="contact">Contact</a></li></ul></div>
-      <div><h2>Get Involved</h2><ul class="footer__links"><li><a href="https://africacriesout.org/pack-with-love.html">Donate</a></li><li><a href="https://africacriesout.org/youth/pack-with-love.html">Join the Club</a></li><li><a href="data-to-impact">Data to Impact Course</a></li><li><a href="contact#partner">Partner With Us</a></li></ul></div>
+      <div><h2>For Donors</h2><ul class="footer__links"><li><a href="/give">Give a Backpack</a></li><li><a href="/project#goal">Where the Money Goes</a></li><li><a href="/project#accountability">Accountability</a></li><li><a href="/news">News &amp; Impact</a></li></ul></div>
+      <div><h2>For Families</h2><ul class="footer__links"><li><a href="/participate#start">Start a Claim</a></li><li><a href="/participate/handbook#moves">The Four Moves</a></li><li><a href="/data-to-impact">The Course</a></li><li><a href="/participate#calendar">Calendar</a></li></ul></div>
+      <div><h2>For Partners &amp; Press</h2><ul class="footer__links"><li><a href="/about">About Us</a></li><li><a href="/documents/Pack_with_Love_Student_Charter_Amended.pdf">Our Charter (PDF)</a></li><li><a href="/contact#partner">Partner With Us</a></li><li><a href="/contact">Contact</a></li></ul></div>
     </div>
     <div class="container footer__legal" style="border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:20px"><p style="color:#8ea6bd;font-size:.86rem;margin:0">Donations are received by Africa Cries Out, a registered 501(c)(3) nonprofit (EIN: 81-3022255), and are tax-deductible to the extent allowed by law. Pack with Love does not itself hold or manage funds.</p></div>
     <div class="container footer__bottom"><p>© 2026 Pack with Love Youth Service Club · Founded by Joanna Zhang · Love First. Create with Joy. Serve with Purpose.</p></div>
   </footer>
-  <script src="js/main.js?v=55"></script>
+  <a class="give-fab" href="/give">&hearts; Give</a>
+  <script src="js/main.js?v=56"></script>
   <!-- Structured data: who we are (for search engines) -->
   <script type="application/ld+json">
   {

@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=55" />
+  <link rel="stylesheet" href="css/styles.css?v=56" />
 </head>
 <body>
 
@@ -37,12 +37,12 @@
       <button class="nav__toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
       <ul class="nav__links">
         <li><a href="/">Home</a></li>
-        <li><a href="about">About</a></li>
-        <li><a href="project">Our Project</a></li>
-        <li><a href="participate" class="active">Participate</a></li>
-        <li><a href="data-to-impact">Data to Impact</a></li>
-        <li><a href="news">News</a></li>
-        <li><a href="project#ways-in" class="btn btn-primary">&hearts; Support</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/project">The Project</a></li>
+        <li><a href="/participate" class="active">Join In</a></li>
+        <li><a href="/data-to-impact">The Course</a></li>
+        <li><a href="/news">News</a></li>
+        <li><a href="/give" class="btn btn-primary">&hearts; Give</a></li>
       </ul>
     </nav>
   </header>
@@ -52,9 +52,9 @@
       <a href="#ways-in">Ways In</a>
       <a href="#why">Why</a>
       <a href="#capabilities">Skills</a>
-      <a href="#moves">Four Moves</a>
-      <a href="#clock">Calendar</a>
+      <a href="#calendar">Calendar</a>
       <a href="#start">Start a Claim</a>
+      <a href="/participate/handbook">Handbook</a>
     </div>
   </nav>
 
@@ -62,8 +62,8 @@
 
   <section class="page-hero">
     <div class="container">
-      <p class="crumb"><a href="/">Home</a> &nbsp;/&nbsp; <a href="project">Our Project</a> &nbsp;/&nbsp; Participate</p>
-      <h1>Participate</h1>
+      <p class="crumb"><a href="/">Home</a> &nbsp;/&nbsp; <a href="/project">The Project</a> &nbsp;/&nbsp; Join In</p>
+      <h1>Join In</h1>
       <p>How every participant &mdash; one child with a lemonade stand or a whole class &mdash; carries a claim from start to finish.</p>
     </div>
   </section>
@@ -81,7 +81,7 @@
           <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.8 5.7a5.1 5.1 0 0 0-7.2 0L12 7.3l-1.6-1.6a5.1 5.1 0 1 0-7.2 7.2l1.6 1.6L12 21.4l7.2-6.9 1.6-1.6a5.1 5.1 0 0 0 0-7.2Z"/></svg></div>
           <h3>1 &middot; Give</h3>
           <p style="margin-bottom:14px"><strong>Anyone. Any amount.</strong> Family, friends, and community members donate directly toward the $5,300 goal. No claim, no program &mdash; just generosity, fully counted.</p>
-          <a href="https://africacriesout.org/pack-with-love.html" class="btn btn-primary">♥ Give Now</a>
+          <a href="/give" class="btn btn-primary">♥ Give Now</a>
           <p style="margin:12px 0 0;color:var(--muted);font-size:.9rem">Donations are processed securely through our partner Africa Cries Out.</p>
         </div>
         <div class="card" data-reveal data-delay="1">
@@ -196,149 +196,27 @@
       </div>
       </div>
     </div>
-  </section>
-
-  <!-- The Four Moves -->
-  <section class="section section--blush" id="moves">
+  </s  <!-- The Participant Handbook -->
+  <section class="section section--blush" id="handbook">
     <div class="container">
-      <div class="center section-head" data-reveal>
-        <span class="eyebrow center-tick">The whole chain, in four moves</span>
-        <h2 class="section-title">The Four Moves</h2>
-        <p class="section-intro" style="margin-top:24px">Every participant &mdash; one child with a lemonade stand or a whole class with a data project &mdash; walks the same four moves, and every dollar counts twice at once: on their own progress bar and on the shared goal.</p>
+      <div style="max-width:860px;margin:0 auto;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow-lg);padding:40px 44px;display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center" data-reveal>
+        <div>
+          <span class="eyebrow">The framework</span>
+          <h2 class="section-title" style="font-size:clamp(26px,3.4vw,36px);margin:12px 0 12px">The Four Moves &mdash; the participant handbook</h2>
+          <p style="font-size:.97rem;line-height:1.7">Claim &rarr; Plan &rarr; Do &rarr; Report &mdash; the same four moves whether you run
+            a lemonade stand or a year-long data project. The full handbook walks each move in detail:
+            the honest inventory, the three artifacts, the reconciliation path, the RESIZE checkpoint,
+            and how the bridge advance keeps a claim a commitment to effort, never a debt.</p>
+        </div>
+        <div style="text-align:center">
+          <a class="btn btn-primary btn-lg" href="/participate/handbook">Read the Handbook &rarr;</a>
+        </div>
       </div>
-      <div class="moves">
-
-        <!-- Move 1 -->
-        <article class="move" data-reveal>
-          <span class="move__kicker">Move 1</span>
-          <h3>Claim &mdash; Decide what's yours.</h3>
-          <p class="move__quote">&ldquo;What can I actually do &mdash; and how much of this is mine to carry?&rdquo;</p>
-          <p>A claim starts with an honest inventory, not a wish. Brainstorm what you already have:</p>
-          <ul class="move__list">
-            <li><strong>A talent you can perform</strong> &mdash; violin or guitar at the farmers' market, a dance or choir piece at a community event, a mini-recital for neighbors.</li>
-            <li><strong>Something you can make</strong> &mdash; a bake sale, succulent planters, a lemonade stand, handmade cards or bracelets, holiday cookies.</li>
-            <li><strong>Something you can resell</strong> &mdash; bubble tea ordered from a shop and sold at a school event, cold drinks at a game, snacks at a fair. You buy at one price and sell at another, so the math is real: what it cost, what you charge, what is actually left for the project.</li>
-            <li><strong>Work you can offer</strong> &mdash; a car wash, yard work and leaf raking, dog walking, gift-wrapping in December, tutoring younger students.</li>
-            <li><strong>People you already know</strong> &mdash; your parents' company, your church, your neighbors, your teachers and coaches.</li>
-            <li><strong>A team you can gather</strong> &mdash; two friends splitting the roles, a class challenge, a school club you found yourself.</li>
-          </ul>
-          <p>Then size the claim to match what you found &mdash; always in the project's real units, not just dollars: <em>ten backpacks alone, twenty-five with two friends, a hundred through a club</em>. A real claim answers four questions: <strong>What can I do? Who do I know? How many hours do I have? Alone, team, or club?</strong></p>
-          <p>A parent registers the claim from their own ACO account, and ACO reads it once before the page goes live.</p>
-          <p class="move__qhead">From the ten questions &mdash; you answer these here</p>
-          <p class="qrow"><span class="qn">Q1</span><span>What problem are we solving?</span></p>
-          <p class="qrow"><span class="qn">Q2</span><span>Who benefits?</span></p>
-          <p class="qrow"><span class="qn">Q3</span><span>What exactly will we do?</span></p>
-          <p class="qrow"><span class="qn">Q4</span><span>What will it cost?</span></p>
-          <p class="qrow"><span class="qn">Q5</span><span>How much must we raise?</span></p>
-          <div class="chips"><span class="label">Practices</span>
-            <span class="chip chip--solid">Goal setting</span>
-            <span class="chip chip--solid">Leadership</span>
-            <span class="chip">Math &amp; financial literacy</span>
-          </div>
-        </article>
-
-        <!-- Move 2 -->
-        <article class="move" data-reveal>
-          <span class="move__kicker">Move 2</span>
-          <h3>Plan &mdash; Turn the claim into a working plan.</h3>
-          <p class="move__quote">&ldquo;I know what I'm doing and how much I'm raising. Now &mdash; exactly how?&rdquo;</p>
-          <p>The goal is set, the approach is chosen. Now every detail gets decided. A bake sale: bake it yourself or buy wholesale? What does each item cost, and what do you charge? Where &mdash; the school gate, church, the farmers' market? Which Saturday? Who has to give permission? A violin performance: what repertoire, what sign explains the cause, who watches the cash box? A team: who promotes, who contacts, who records, who executes?</p>
-          <p>Every plan ends with the same three artifacts: <strong>the ask</strong> (what you will say), <strong>the schedule</strong> (when and where), and <strong>the tracking sheet</strong> (how you will know where you stand).</p>
-          <p class="move__qhead">From the ten questions &mdash; you answer these here</p>
-          <p class="qrow"><span class="qn">Q6</span><span>Who might support this?</span></p>
-          <p class="qrow"><span class="qn">Q7</span><span>How do we explain it?</span></p>
-          <p class="qrow"><span class="qn">Q8</span><span>How do we ask?</span></p>
-          <div class="chips"><span class="label">Practices</span>
-            <span class="chip chip--solid">Math &amp; financial literacy</span>
-            <span class="chip chip--solid">Teamwork</span>
-            <span class="chip chip--solid">Networking</span>
-            <span class="chip chip--solid">Empathy</span>
-            <span class="chip">Storytelling &mdash; drafted here</span>
-          </div>
-        </article>
-
-        <!-- Move 3 -->
-        <article class="move" data-reveal>
-          <span class="move__kicker">Move 3</span>
-          <h3>Do &mdash; Ask, hear no, keep going.</h3>
-          <p class="move__quote">&ldquo;Can I keep going when it's harder than the plan said?&rdquo;</p>
-          <p>The plan is on paper. Now it meets the real world. The asks happen for real &mdash; face to face, at the school gate, at the market. Some people stop and listen. Some say no. The tracker gets updated either way, and the plan gets revised, not abandoned. The story you drafted in Move&nbsp;2 is now told out loud, to a stranger, in your own voice.</p>
-          <div class="move__panel">
-            <h4>How cash becomes progress</h4>
-            <p>A bake sale collects cash; the page tracks online. One path keeps the two matched.</p>
-            <div class="deflist">
-              <div><span class="term">Count</span><span class="desc">After each activity, count the cash with a parent and enter the gross amount <em>and</em> the costs in your tracking sheet the same day.</span></div>
-              <div><span class="term">Net it</span><span class="desc">What moves your bar is what is actually left for the project &mdash; sales minus what the supplies cost. Direct donations have no costs and count in full. The same rule holds for every claim, the Data to Impact class's team claim included: profit, not gross.</span></div>
-              <div><span class="term">Give it</span><span class="desc">Once a week a parent gives that week's net through <strong>your page's own donation link</strong> &mdash; it sits in their ACO account with a Copy button beside it. Money that arrives that way lands on your bar and the shared goal together.</span></div>
-              <div><span class="term">Match up</span><span class="desc">Each week your tracking sheet and your page should agree. If they don't, find out why <em>that week</em>, not at the end. That is what &ldquo;every dollar traced&rdquo; means in practice.</span></div>
-            </div>
-          </div>
-          <div class="move__panel">
-            <h4>Resize &mdash; the midpoint checkpoint</h4>
-            <p>About halfway through, review your claim with a parent or coach and answer one question honestly: <em>am I ahead, on track, or behind &mdash; and why?</em></p>
-            <div class="deflist">
-              <div><span class="term">Ahead</span><span class="desc">Claim more. The extra comes from the part nobody has claimed yet.</span></div>
-              <div><span class="term">Behind</span><span class="desc">Resize down. What you release returns to the shared pool, where the campaign and the others carry it. <strong>Resizing down is not failing</strong> &mdash; it is Move&nbsp;1 done again with better information, because the inventory you take now includes real data.</span></div>
-              <div><span class="term">On track</span><span class="desc">Keep going. Update your tracker and say so out loud to your team.</span></div>
-            </div>
-            <p>Changing a claim sends the page back to ACO for one quick read before it is public again &mdash; so do it at the checkpoint, not piecemeal.</p>
-          </div>
-          <p class="move__qhead">From the ten questions &mdash; you answer this here</p>
-          <p class="qrow"><span class="qn">Q9</span><span>How do we track the money?</span></p>
-          <div class="chips"><span class="label">Practices</span>
-            <span class="chip chip--solid">Confidence</span>
-            <span class="chip chip--solid">Persuasion</span>
-            <span class="chip chip--solid">Handling rejection</span>
-            <span class="chip">Communication</span>
-            <span class="chip">Storytelling &mdash; told here</span>
-          </div>
-        </article>
-
-        <!-- Move 4 -->
-        <article class="move" data-reveal>
-          <span class="move__kicker">Move 4</span>
-          <h3>Report &mdash; Close the loop.</h3>
-          <p class="move__quote">&ldquo;Does every supporter know what their trust built?&rdquo;</p>
-          <p>Every dollar traced. Every giver thanked. The results presented &mdash; to supporters, to the team, to the next group of participants. The same story is told one final time: not &ldquo;please support us,&rdquo; but &ldquo;here is what your trust built.&rdquo;</p>
-          <div class="move__panel">
-            <h4>Move 2 ended with three artifacts. So does Move 4.</h4>
-            <div class="deflist">
-              <div><span class="term">Account</span><span class="desc">One page: total raised, costs spent, net delivered, and how it compares to the claim. Signed by you, checked by a parent or coach.</span></div>
-              <div><span class="term">Thanks</span><span class="desc">Every supporter named in your tracker hears from you personally &mdash; a note, a card, or a thank you in person. No supporter learns the outcome from silence.</span></div>
-              <div><span class="term">Impact</span><span class="desc">One sentence in your own words: <em>&ldquo;Your trust became ___.&rdquo;</em> It is what you present when the project closes, and what the next group reads when they start Move&nbsp;1.</span></div>
-            </div>
-          </div>
-          <p class="move__qhead">From the ten questions &mdash; you answer this here</p>
-          <p class="qrow"><span class="qn">Q10</span><span>What impact did it create?</span></p>
-          <div class="chips"><span class="label">Practices</span>
-            <span class="chip chip--solid">Accountability</span>
-            <span class="chip">Communication</span>
-            <span class="chip">Storytelling &mdash; completed here</span>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="moves-close">
-        <article class="move" data-reveal>
-          <h3 style="font-size:1.1rem">One story, told three times</h3>
-          <p>Notice where Storytelling appears: drafted in the plan, told out loud in the doing, completed in the report. That is not repetition &mdash; it is how the skill gets built. The full chain runs inside these four moves, and every practice tagged along the way has its place in it.</p>
-        </article>
-        <article class="move" data-reveal data-delay="1">
-          <h3 style="font-size:1.1rem">How claims grow</h3>
-          <div class="deflist">
-            <div><span class="term">Year 1</span><span class="desc">Claim 10 backpacks, alone.</span></div>
-            <div><span class="term">Year 2</span><span class="desc">Found a club, claim 100.</span></div>
-            <div><span class="term">Year 3</span><span class="desc">Help three younger students make their first claims &mdash; or discover a need and propose a project of your own.</span></div>
-          </div>
-          <p class="closing-line">The projects change. The claims grow. That is the formation model.</p>
-        </article>
-      </div>
-
+    </div>
   </section>
 
   <!-- The Project Clock -->
-  <section class="section section--sand" id="clock">
+  <section class="section section--sand" id="calendar">
     <div class="container">
       <div class="center section-head" data-reveal>
         <span class="eyebrow center-tick">The project clock</span>
@@ -361,9 +239,10 @@
         <div data-reveal data-delay="1" style="align-self:stretch">
           <div class="card" style="position:sticky;top:110px">
             <h3 style="margin-bottom:12px">Two clocks, one bridge</h3>
-            <p style="color:var(--text)">This project runs on two clocks. The <strong>production clock</strong> is fixed by the mission: backpacks must be ordered, shipped, and cleared before March 2027 &mdash; so production never waits on the progress bar. It is guaranteed by a <strong>bridge advance from the founding family</strong>, paid to the supplier on schedule.</p>
-            <p style="color:var(--text)">The <strong>fundraising clock</strong> runs the full season, so the January sales events, the holiday season, and every late gift all count. Donations repay the bridge as they arrive; whatever remains uncovered at close becomes the founding family's own gift to the project.</p>
-            <p style="color:var(--coral-deep);font-weight:600;margin-bottom:0">No child owes the gap. A claim is a commitment to effort, not a debt.</p>
+            <p style="color:var(--text)">Production never waits on the progress bar &mdash; it is guaranteed by a bridge advance
+              from the founding family, and donations repay the bridge as they arrive.</p>
+            <p style="color:var(--coral-deep);font-weight:600">No child owes the gap. A claim is a commitment to effort, not a debt.</p>
+            <a href="/participate/handbook#bridge" style="font-weight:700;color:var(--coral-deep)">How the bridge works &rarr;</a>
           </div>
         </div>
       </div>
@@ -402,14 +281,15 @@
         <p>An independent, youth-led Christian service club helping children feel loved, seen, and remembered.</p>
         <p class="footer__tag">Live it out loud!</p>
       </div>
-      <div><h2>Explore</h2><ul class="footer__links"><li><a href="/">Home</a></li><li><a href="about">About Us</a></li><li><a href="project">Our Project</a></li><li><a href="participate">Participate</a></li><li><a href="news">News</a></li>
-        <li><a href="contact">Contact</a></li></ul></div>
-      <div><h2>Get Involved</h2><ul class="footer__links"><li><a href="https://africacriesout.org/pack-with-love.html">Donate</a></li><li><a href="https://africacriesout.org/youth/pack-with-love.html">Join the Club</a></li><li><a href="data-to-impact">Data to Impact Course</a></li><li><a href="contact#partner">Partner With Us</a></li></ul></div>
+      <div><h2>For Donors</h2><ul class="footer__links"><li><a href="/give">Give a Backpack</a></li><li><a href="/project#goal">Where the Money Goes</a></li><li><a href="/project#accountability">Accountability</a></li><li><a href="/news">News &amp; Impact</a></li></ul></div>
+      <div><h2>For Families</h2><ul class="footer__links"><li><a href="/participate#start">Start a Claim</a></li><li><a href="/participate/handbook#moves">The Four Moves</a></li><li><a href="/data-to-impact">The Course</a></li><li><a href="/participate#calendar">Calendar</a></li></ul></div>
+      <div><h2>For Partners &amp; Press</h2><ul class="footer__links"><li><a href="/about">About Us</a></li><li><a href="/documents/Pack_with_Love_Student_Charter_Amended.pdf">Our Charter (PDF)</a></li><li><a href="/contact#partner">Partner With Us</a></li><li><a href="/contact">Contact</a></li></ul></div>
     </div>
     <div class="container footer__legal" style="border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:20px"><p style="color:#8ea6bd;font-size:.86rem;margin:0">Donations are received by Africa Cries Out, a registered 501(c)(3) nonprofit (EIN: 81-3022255), and are tax-deductible to the extent allowed by law. Pack with Love does not itself hold or manage funds.</p></div>
     <div class="container footer__bottom"><p>&copy; 2026 Pack with Love Youth Service Club &middot; Founded by Joanna Zhang &middot; Love First. Create with Joy. Serve with Purpose.</p></div>
   </footer>
-  <script src="js/main.js?v=55"></script>
+  <a class="give-fab" href="/give">&hearts; Give</a>
+  <script src="js/main.js?v=56"></script>
   <!-- Structured data: who we are (for search engines) -->
   <script type="application/ld+json">
   {
