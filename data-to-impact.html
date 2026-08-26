@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=13" />
+  <link rel="stylesheet" href="css/styles.css?v=15" />
 </head>
 <body>
 
@@ -68,7 +68,8 @@
         <li data-reveal data-delay="4"><span class="k">Tuition</span><p><strong>$600</strong> ($25 per session)</p></li>
       </ul>
       <p class="center" style="margin-top:30px">
-        <a href="contact" class="btn btn-primary btn-lg">Ask About Enrolling</a>
+        <a href="https://africacriesout.org/aco-data-to-impact.html" class="btn btn-primary btn-lg" data-enroll>Enroll Now</a>
+        <p class="seats" data-seats hidden aria-live="polite"></p>
       </p>
     </div>
   </section>
@@ -139,19 +140,50 @@
     </div>
   </section>
 
-  <!-- Enrollment = membership + transparency -->
+  <!-- Enrollment = membership + where the money goes -->
   <section class="section section--white">
     <div class="container grid grid-2">
+
       <div class="card" data-reveal>
         <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M9 6V5a3 3 0 0 1 6 0v1"/><path d="M8 20v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6"/><path d="M8 16h8"/></svg></div>
         <h3>Enrollment = membership</h3>
-        <p style="color:var(--text)">Enrolling automatically makes your child a member of the <strong>Pack with Love Club</strong> &mdash; the team that carries this project together for the year. No separate application, prerequisite, or prior involvement required. New to all of this? That's expected; the course starts from zero.</p>
+        <p style="color:var(--text)">Enrolling automatically makes your child a member of the
+          <strong>Pack with Love Club</strong> &mdash; the team that carries this project together for the
+          year. No separate application, prerequisite, or prior involvement required. New to all of this?
+          That's expected; the course starts from zero.</p>
       </div>
+
       <div class="card" data-reveal data-delay="1">
-        <div class="card__icon card__icon--gold" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m20.8 20.8-4.4-4.4"/></svg></div>
-        <h3>Where tuition goes</h3>
-        <p style="color:var(--text)"><strong>Every session is taught by volunteers.</strong> No part of tuition is anyone's salary &mdash; not the instructor's, not an advisor's, not a guest mentor's. The teaching is donated, and the full $600 goes to the project through Africa Cries Out &mdash; to the real costs of making and delivering the backpack sets: production, ocean shipping, and customs. Anything beyond what this year's project needs supports the wider work of ACO's Hope &amp; Care program, the program these backpacks are delivered through.</p><p style="color:var(--text)"><strong>What tuition does not do</strong> is buy fundraising credit. What the class earns at its own sales events is counted separately, as the team's contribution to the shared goal, and none of it is returned to families.</p><p style="color:var(--text)"><strong>It does not show on the public progress bar.</strong> Tuition pays for the same real costs the goal covers &mdash; production, ocean shipping, customs clearance &mdash; but from a separate account. The $5,300 bar exists to show what the community raises <em>together</em>: donations, children's individual claims, and the class's own sales events. Keeping enrollment money out of it means the bar measures fundraising, not how many families signed up.</p><p style="color:var(--text)"><strong>On taxes:</strong> your child receives 24 sessions of instruction in return for this payment, which makes it what the IRS calls a <em>quid pro quo</em> contribution &mdash; only the amount above the value of what you received is deductible, and ACO states that figure on your receipt as the law requires. Please don't assume the full $600 is deductible. We're not tax advisors; ACO's accountant sets that number.</p>
+        <div class="card__icon card__icon--gold" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="2.5" width="16" height="19" rx="2.5"/><rect x="7.5" y="5.5" width="9" height="3.2" rx=".8"/><path d="M8 12.5h.01M12 12.5h.01M16 12.5h.01M8 15.8h.01M12 15.8h.01M16 15.8h.01M8 19h8"/></svg></div>
+        <h3>Tuition is not tax-deductible</h3>
+        <p style="color:var(--text)">What you are buying is the teaching &mdash; twenty-four sessions of it
+          &mdash; and a payment made in exchange for something of value is not a charitable gift. Africa
+          Cries Out issues a receipt marked as a fee for services. Please don't file it with your charitable
+          giving.</p>
       </div>
+
+      <div class="card" data-reveal>
+        <div class="card__icon card__icon--navy" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M21.6 2.4 2 9.8l7.6 3 3 7.6 9-18Z"/><path d="M9.6 12.8 21.6 2.4"/></svg></div>
+        <h3>What your money buys</h3>
+        <p style="color:var(--text)">Backpacks. Every session is taught by volunteers &mdash; no part of
+          tuition is anyone's salary, not the instructor's, not an advisor's, not a guest mentor's. Because
+          the teaching is donated, the full $600 goes to the real costs of making and delivering the sets:
+          production, ocean shipping, and customs. Anything beyond what this year's project needs supports
+          the wider work of ACO's Hope &amp; Care program.</p>
+      </div>
+
+      <div class="card" data-reveal data-delay="1">
+        <div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="3.4" y="12" width="4.6" height="8.6" rx="1.3"/><rect x="9.7" y="4" width="4.6" height="16.6" rx="1.3"/><rect x="16" y="8.4" width="4.6" height="12.2" rx="1.3"/></svg></div>
+        <h3>What counts on the $5,300 bar</h3>
+        <p style="color:var(--text)">Not tuition. The bar exists to show what the community raises
+          <em>together</em> &mdash; donations, children's claims, and the class's own sales events &mdash;
+          so enrollment money stays out of it.</p>
+        <p style="color:var(--text)">And the class's sales count at <strong>full</strong> value, not profit.
+          A child running a bake sale with their own money counts what's left after costs; this class's
+          materials were already paid for out of tuition, which never touched the bar, so subtracting the
+          cost again would remove the same dollars twice.</p>
+      </div>
+
     </div>
     <div class="container narrow" data-reveal style="margin-top:28px">
       <div class="note">
@@ -191,14 +223,18 @@
           events. If enrollment money went onto it, the bar would move because families signed up rather
           than because anyone raised anything, and the number would stop meaning what it says.</p>
         <h3>Is tuition tax-deductible?</h3>
-        <p>Don't assume all of it is. Every session is taught by volunteers and the full $600 goes to the
-          project &mdash; but your child also receives 24 sessions of instruction in exchange, which makes
-          this a <em>quid pro quo</em> contribution. Only the amount above the value of that instruction is
-          deductible, and Africa Cries Out &mdash; a registered 501(c)(3), EIN 81-3022255 &mdash; states
-          that figure on your receipt, as the law requires for payments over $75. We're not tax advisors:
-          ask yours, and go by the receipt.</p>
+        <p><strong>No.</strong> It buys 24 sessions of teaching, and a payment made in exchange for
+          something of equal value is not a charitable gift. Africa Cries Out receipts it as a fee for
+          services, not as a contribution.</p>
+        <p>The money the students raise <em>selling</em> is a different matter entirely: it goes to the
+          shared Pack with Love goal and is not returned to families. That is the line &mdash; the fee buys
+          the teaching, the sales fund the backpacks.</p>
         <h3>Attendance, makeup, and refund policies?</h3>
-        <p><a href="contact">Contact us</a> and we'll walk you through the details before you commit.</p>
+        <p>Both are published in full on the enrollment page: full refund before the course starts, a
+          prorated refund through the first three sessions, and none from Phase 2 onward &mdash; because by
+          then roles are assigned and the project's targets are set with your child counted in. Every missed
+          session comes with a catch-up pack, so a student stays inside the project rather than behind it.
+          <a href="https://africacriesout.org/aco-data-to-impact.html">Read the full policies &rarr;</a></p>
       </div>
     </div>
   </section>
@@ -209,7 +245,8 @@
       <div class="cta" data-reveal>
         <h2>Fifteen seats. One real project.</h2>
         <p>A year of math your child will never ask &ldquo;when will I use this?&rdquo; about.</p>
-        <a href="contact" class="btn btn-white btn-lg">Ask About Enrolling</a>
+        <a href="https://africacriesout.org/aco-data-to-impact.html" class="btn btn-white btn-lg" data-enroll>Enroll Now</a>
+        <p class="seats" data-seats hidden aria-live="polite"></p>
       </div>
     </div>
   </section>
@@ -230,7 +267,7 @@
     <div class="container footer__legal" style="border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:20px"><p style="color:#8ea6bd;font-size:.86rem;margin:0">Donations are received by Africa Cries Out, a registered 501(c)(3) nonprofit (EIN: 81-3022255), and are tax-deductible to the extent allowed by law. Pack with Love does not itself hold or manage funds.</p></div>
     <div class="container footer__bottom"><p>© 2026 Pack with Love Youth Service Club · Founded by Joanna Zhang · Love First. Create with Joy. Serve with Purpose.</p></div>
   </footer>
-  <script src="js/main.js?v=13"></script>
+  <script src="js/main.js?v=15"></script>
   <!-- Structured data: who we are (for search engines) -->
   <script type="application/ld+json">
   {

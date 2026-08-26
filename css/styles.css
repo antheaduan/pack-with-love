@@ -343,6 +343,8 @@ img { max-width: 100%; display: block; }
 }
 .card h3 { margin-bottom: 10px; }
 .card p { color: var(--muted); margin: 0; }
+/* Cards with more than one paragraph need the gap; margin:0 above collapses them. */
+.card p + p { margin-top: 14px; }
 .card--flat { box-shadow: none; }
 
 /* Value chips (About page) */
@@ -704,3 +706,12 @@ p a:not(.btn):not(.read-more),
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0;
 }
+
+/* ---- Course seat counter ------------------------------------------
+   Filled in from ACO's seats endpoint; stays hidden if that endpoint
+   is unreachable, so the page never claims a number it doesn't have. */
+.seats { margin: 12px 0 0; font-size: .92rem; color: var(--muted); }
+.seats strong { color: var(--coral-deep); font-weight: 600; }
+.seats--full strong { color: var(--ink); }
+.section--navy .seats, .cta .seats { color: rgba(255,255,255,.9); }
+.section--navy .seats strong, .cta .seats strong { color: #fff; }

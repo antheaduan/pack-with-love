@@ -171,7 +171,66 @@ document.addEventListener('DOMContentLoaded', function () {
       .catch(function () { /* leave the module hidden — never show $0 of $0 */ });
   })();
 
-  /* ---- 5. Scroll-reveal ---- */
+  /* ---- 5. Course seats (reads data/course.json, optionally live from ACO) ---- */
+  (function () {
+    var nodes = document.querySelectorAll('[data-seats]');
+    if (!nodes.length || !window.fetch) return;
+
+    var getJSON = function (url) {
+      return fetch(url, { cache: 'no-store' }).then(function (r) {
+        if (!r.ok) throw new Error('bad response');
+        return r.json();
+      });
+    };
+
+    getJSON('data/course.json')
+      .then(function (local) {
+        if (!local || !local.source) throw new Error('no live source');
+        return getJSON(local.source).then(function (remote) {
+          remote = remote || {};
+          return {
+            total: remote.seats_total != null ? Number(remote.seats_total) : Number(local.seats_total),
+            taken: Number(remote.seats_taken),
+            open: remote.open !== false
+          };
+        });
+      })
+      .then(function (d) {
+        var total = d.total, taken = d.taken;
+        if (!isFinite(total) || total <= 0 || !isFinite(taken) || taken < 0) throw new Error('bad data');
+        var left = Math.max(0, total - taken);
+        var full = !d.open || left === 0;
+
+        Array.prototype.forEach.call(nodes, function (el) {
+          if (left === 0) {
+            el.classList.add('seats--full');
+            el.innerHTML = '<strong>All ' + total + ' seats are taken for this year.</strong> ' +
+              'Ask us about the waitlist and we\'ll be in touch when a seat opens.';
+          } else if (full) {
+            // Closed by an admin with seats still free — saying "all taken"
+            // here would simply be untrue.
+            el.classList.add('seats--full');
+            el.innerHTML = '<strong>Enrollment is closed for this year.</strong> ' +
+              'Ask us about the waitlist and we\'ll be in touch if that changes.';
+          } else {
+            el.innerHTML = '<strong>' + left + ' of ' + total + ' seats</strong> still open.';
+          }
+          el.hidden = false;
+        });
+
+        // A full course still accepts clicks otherwise, and ACO's page would
+        // decline the payment — better to send them somewhere that can help.
+        if (full) {
+          Array.prototype.forEach.call(document.querySelectorAll('[data-enroll]'), function (a) {
+            a.setAttribute('href', 'contact');
+            a.textContent = 'Join the Waitlist';
+          });
+        }
+      })
+      .catch(function () { /* no reliable count — say nothing rather than guess */ });
+  })();
+
+  /* ---- 6. Scroll-reveal ---- */
   var revealables = document.querySelectorAll('[data-reveal]');
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 

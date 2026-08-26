@@ -49,6 +49,21 @@ Cache-Control: public, s-maxage=300, stale-while-revalidate=600
 Then set `"source"` in this file to that URL. This page will show ACO's
 numbers, and the local values here become the fallback.
 
+**Status: ACO has built this endpoint; it is waiting on their production
+deploy.** `source` stays `null` until they confirm the deploy, so the page
+does not fire a request at a URL that isn't live yet. Flipping it on is a
+one-line change here — no code change.
+
+### Where an undesignated gift goes
+
+A gift that names no line item lands on the Pack with Love parent fund. It
+counts in `raised`, but not in either line item, so `backpacks_funded` does
+not move. An ACO admin then assigns it to whichever line the project most
+needs — deliberately a human decision rather than a fixed split, because the
+shipping shortfall and the backpack shortfall do not appear at the same time.
+In practice this rarely applies to visitors from this site: ACO's campaign page
+requires picking a tab before checkout.
+
 Only two origins are allowlisted — `packwithlove.org` and `www.packwithlove.org`.
 Netlify deploy previews are deliberately not, so a preview shows the local
 numbers from this file instead of live ones. That is the intended behavior.
@@ -83,3 +98,54 @@ reported number whenever there is one and only estimates when there is not.
 - If the remote `source` call fails, the local values here are used, so the bar
   never breaks.
 - Backpacks funded is capped at 1,000 (the founding-year commitment).
+
+
+---
+
+# `course.json`
+
+Drives the seat counter and the enrollment button on the Data to Impact page.
+
+```json
+{
+  "seats_total": 15,
+  "enroll_url": "https://africacriesout.org/aco-data-to-impact.html",
+  "source": null
+}
+```
+
+Same two-step pattern as `campaign.json`. ACO's endpoint:
+
+```
+GET https://africacriesout.org/api/courses/data-to-impact/seats
+```
+```json
+{ "seats_total": 15, "seats_taken": 4, "open": true, "as_of": "2026-09-01" }
+```
+
+Set `source` to that URL once ACO confirms their deploy.
+
+## What the page does with it
+
+| State | Seat line | Enroll button |
+|---|---|---|
+| No `source`, or the endpoint fails | hidden | unchanged |
+| Seats free and `open` | "11 of 15 seats still open." | unchanged |
+| `seats_taken == seats_total` | "All 15 seats are taken for this year." | becomes "Join the Waitlist" → /contact |
+| `open: false` with seats free | "Enrollment is closed for this year." | becomes "Join the Waitlist" → /contact |
+
+The last two rows are separate on purpose: an admin closing enrollment early
+is not the same as the course selling out, and saying "all 15 seats are taken"
+when two are would simply be false.
+
+Retargeting the button matters — ACO's page refuses payment once `open` is
+false or the course is full, so a live button would send a parent to a
+checkout that declines them.
+
+## Note on overselling
+
+`seats_taken` counts only completed payments; ACO deliberately excludes
+pending checkouts so an abandoned cart can't close the course. That leaves a
+narrow window where two families could check out on the last seat at once. With
+15 seats and a small program that is an acceptable trade, and the `open` switch
+gives an admin a manual override.
