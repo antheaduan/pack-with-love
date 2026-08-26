@@ -1171,9 +1171,6 @@ p a:not(.btn):not(.read-more),
 .packshot { position: relative; display: flex; flex-direction: column; align-items: center; }
 .packshot .frame { position: relative; padding: 10px 10px 20px; width: min(100%, 400px); }
 .packshot .frame .hero__carousel { width: 100%; }
-.packshot .caption { position: absolute; bottom: -14px; right: 4%; background: var(--navy); color: #fff;
-  font-family: var(--font-script); font-size: 1.3rem; padding: 8px 18px; border-radius: 999px;
-  transform: rotate(-2deg); white-space: nowrap; }
 .packshot .hero__dots { margin-top: 30px; }
 @media (max-width: 900px) { .home-hero .hero-grid { grid-template-columns: 1fr; } .packshot { margin-top: 16px; } }
 
@@ -1380,7 +1377,8 @@ p a:not(.btn):not(.read-more),
 .teamk .head { text-align: center; max-width: 680px; margin: 0 auto 44px; }
 .teamk h2 { font-size: clamp(28px, 4vw, 44px); margin: 14px 0 10px; }
 .teamk .head p { font-size: 1rem; line-height: 1.65; }
-.kgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.kgrid { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; }
+.kgrid .kid { flex: 0 1 calc((100% - 36px) / 3); }
 .kid { background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
   padding: 26px 24px; text-align: center; box-shadow: var(--shadow); }
 .kid .avatar { width: 64px; height: 64px; border-radius: 18px; margin: 0 auto 14px;
@@ -1394,8 +1392,8 @@ p a:not(.btn):not(.read-more),
 .kid h3 { font-family: var(--font-display); font-weight: 600; color: var(--ink); font-size: 1.25rem; }
 .kid .role { color: var(--coral-text); font-weight: 700; font-size: .84rem; margin: 4px 0 10px; }
 .kid p { font-size: .86rem; line-height: 1.6; }
-@media (max-width: 900px) { .kgrid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 620px) { .kgrid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .kgrid .kid { flex-basis: calc((100% - 18px) / 2); } }
+@media (max-width: 620px) { .kgrid .kid { flex-basis: 100%; } }
 
 /* Adult advisors */
 .adults { padding: 88px 0; background: #fff; }
