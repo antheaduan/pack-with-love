@@ -1004,8 +1004,10 @@ p a:not(.btn):not(.read-more),
 .course-hero .sub { margin: 22px 0 30px; font-size: clamp(1.05rem, 2vw, 1.22rem); line-height: 1.6; color: var(--muted); max-width: 640px; }
 .course-hero .ctas { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
 .course-hero .seats { margin-bottom: 44px; }
-.factband { background: var(--navy); color: #fff; border-radius: 20px 20px 0 0;
-  display: grid; grid-template-columns: repeat(6, 1fr); }
+/* Full-bleed navy strip at the hero's foot — a container-width rounded
+   card here floated awkwardly against the full-bleed sections around it. */
+.factband-wrap { background: var(--navy); }
+.factband { color: #fff; display: grid; grid-template-columns: repeat(6, 1fr); }
 .factband .f { padding: 20px 18px 22px; border-left: 1px solid rgba(255,255,255,.12); }
 .factband .f:first-child { border-left: 0; }
 .factband small { display: block; font-family: var(--font-body); font-size: .66rem; letter-spacing: .16em;
