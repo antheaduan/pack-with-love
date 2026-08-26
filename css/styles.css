@@ -398,7 +398,7 @@ img { max-width: 100%; display: block; }
 /* A smaller float, for a product shot that would otherwise outweigh the
    column of text beside it. Caps the image only — capping the whole block
    squeezes the caption badge underneath it into extra lines. */
-.split__media--sm img { max-width: 300px; margin-inline: auto; }
+.split__media--sm img { max-width: 340px; margin-inline: auto; }
 
 /* ---- 10. Steps / rhythm (Our Project) ---- */
 .steps { display: grid; gap: 22px; grid-template-columns: repeat(5,1fr); counter-reset: step; }
