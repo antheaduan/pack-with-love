@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=43" />
+  <link rel="stylesheet" href="css/styles.css?v=44" />
 </head>
 <body>
 
@@ -51,15 +51,20 @@
 
   <!-- Hero + facts band -->
   <section class="course-hero">
-    <div class="container">
-      <h1>From Data<br>to <em>Impact</em></h1>
-      <p class="sub">A 24-session math course where students run a real product business &mdash; real customers,
-        real prices, real consequences &mdash; and every dollar they earn sends backpacks to children in Senegal.</p>
-      <div class="ctas">
-        <a class="btn btn-primary btn-lg" href="#enroll">Enroll now</a>
-        <a class="btn btn-secondary btn-lg" href="#curriculum">See how it works &darr;</a>
+    <div class="container hero-cols">
+      <div>
+        <h1>From Data<br>to <em>Impact</em></h1>
+        <p class="sub">A 24-session math course where students run a real product business &mdash; real customers,
+          real prices, real consequences &mdash; and every dollar they earn sends backpacks to children in Senegal.</p>
+        <div class="ctas">
+          <a class="btn btn-primary btn-lg" href="#enroll">Enroll now</a>
+          <a class="btn btn-secondary btn-lg" href="#curriculum">See how it works &darr;</a>
+        </div>
+        <p class="seats" data-seats hidden aria-live="polite"></p>
       </div>
-      <p class="seats" data-seats hidden aria-live="polite"></p>
+      <div class="split__media split__media--sm" data-reveal>
+        <img src="images/backpack-green.png" alt="The real product behind the course: a green children's backpack with a color-it-yourself front panel reading 'Yàlla bëgg na la' — God loves you." />
+      </div>
     </div>
     <div class="factband-wrap">
       <ul class="factband container" style="list-style:none;margin:0 auto">
@@ -102,8 +107,8 @@
     <div class="links">
 
     <div class="link link--a" data-reveal>
+      <span class="num" aria-hidden="true">1</span>
       <div class="body">
-        <span class="num" aria-hidden="true">1</span>
         <p class="kicker">01 &middot; Ask &mdash; Statistical thinking</p>
         <h3>One precisely posed question</h3>
         <p><em>What would people actually buy?</em> Pose it sloppily, and every step after inherits the error.</p>
@@ -114,8 +119,8 @@
     <div class="handoff" data-reveal><span>the question shapes the survey</span></div>
 
     <div class="link link--b" data-reveal>
+      <span class="num" aria-hidden="true">2</span>
       <div class="body">
-        <span class="num" aria-hidden="true">2</span>
         <p class="kicker">02 &middot; Research &mdash; Market research</p>
         <h3>30&ndash;50 real people answer</h3>
         <p>Their answers &mdash; not the teacher's opinion, not the loudest student's &mdash; choose the product.</p>
@@ -126,8 +131,8 @@
     <div class="handoff" data-reveal><span>the data chooses the product</span></div>
 
     <div class="link link--a" data-reveal>
+      <span class="num" aria-hidden="true">3</span>
       <div class="body">
-        <span class="num" aria-hidden="true">3</span>
         <p class="kicker">03 &middot; Price &mdash; Unit economics</p>
         <h3>Margin decides if the plan can live</h3>
         <p>The product has a real cost; the survey suggests a price. Break-even math says whether the whole plan works at all.</p>
@@ -138,8 +143,8 @@
     <div class="handoff" data-reveal><span>the math sets the sales plan</span></div>
 
     <div class="link link--b" data-reveal>
+      <span class="num" aria-hidden="true">4</span>
       <div class="body">
-        <span class="num" aria-hidden="true">4</span>
         <p class="kicker">04 &middot; Sell &mdash; Data analysis</p>
         <h3>January: the plan meets customers</h3>
         <p>Real sales tables. Every transaction becomes a data point in a dataset the class generated itself &mdash; then charts, comparisons, conclusions.</p>
@@ -150,8 +155,8 @@
     <div class="handoff" data-reveal><span>the results test the plan</span></div>
 
     <div class="link link--a" data-reveal>
+      <span class="num" aria-hidden="true">5</span>
       <div class="body">
-        <span class="num" aria-hidden="true">5</span>
         <p class="kicker">05 &middot; Face it &mdash; Decisions under uncertainty</p>
         <h3>The hardest lesson in the course</h3>
         <p><em>Our own data says we got something wrong.</em> The class revises the plan the evidence's way, not hope's way &mdash; the one experience no worksheet can offer.</p>
@@ -359,7 +364,7 @@
     <div class="container footer__legal" style="border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:20px"><p style="color:#8ea6bd;font-size:.86rem;margin:0">Donations are received by Africa Cries Out, a registered 501(c)(3) nonprofit (EIN: 81-3022255), and are tax-deductible to the extent allowed by law. Pack with Love does not itself hold or manage funds.</p></div>
     <div class="container footer__bottom"><p>© 2026 Pack with Love Youth Service Club · Founded by Joanna Zhang · Love First. Create with Joy. Serve with Purpose.</p></div>
   </footer>
-  <script src="js/main.js?v=43"></script>
+  <script src="js/main.js?v=44"></script>
   <!-- Structured data: who we are (for search engines) -->
   <script type="application/ld+json">
   {

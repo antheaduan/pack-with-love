@@ -904,19 +904,37 @@ p a:not(.btn):not(.read-more),
   transform: translateX(-50%);
   background: linear-gradient(var(--coral), var(--coral) 92%, var(--gold));
   border-radius: 99px; opacity: .9;
+  transform-origin: top center;
+}
+/* Scroll effect: where the browser supports scroll-driven animations, the
+   spine draws itself downward as the section moves through the viewport.
+   Everywhere else (and under reduced motion) it is simply complete. */
+@media (prefers-reduced-motion: no-preference){
+  @supports (animation-timeline: view()){
+    .chain .links::before {
+      animation: chain-draw linear both;
+      animation-timeline: view();
+      animation-range: entry 10% cover 75%;
+    }
+  }
+}
+@keyframes chain-draw {
+  from { transform: translateX(-50%) scaleY(0); }
+  to   { transform: translateX(-50%) scaleY(1); }
 }
 .chain .link { display: grid; grid-template-columns: 1fr 96px 1fr; align-items: center; position: relative; }
 .chain .link .body { padding: 8px 0; position: relative; }
 .chain .link--a .body { grid-column: 1; text-align: right; padding-right: 8px; }
 .chain .link--b .body { grid-column: 3; text-align: left; padding-left: 8px; }
+/* Ghost numerals live on the empty side of the spine, opposite the text. */
 .chain .link .num {
   position: absolute; top: 50%; transform: translateY(-54%);
   font-family: var(--font-display); font-weight: 700; font-style: italic;
-  font-size: clamp(120px, 16vw, 190px); line-height: 1; color: #fff; opacity: .05;
+  font-size: clamp(120px, 16vw, 190px); line-height: 1; color: #fff; opacity: .07;
   pointer-events: none; user-select: none; z-index: 0;
 }
-.chain .link--a .num { right: -10px; }
-.chain .link--b .num { left: -10px; }
+.chain .link--a .num { left: calc(50% + 70px); }
+.chain .link--b .num { right: calc(50% + 70px); }
 .chain .link .kicker {
   font-family: var(--font-body); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
   font-weight: 600; color: var(--gold); margin-bottom: 10px; position: relative; z-index: 1;
@@ -981,6 +999,7 @@ p a:not(.btn):not(.read-more),
   .chain .link--a p { margin-left: 0; }
   .chain .link .num { font-size: 96px; top: -8px; transform: none; }
   .chain .link--a .num, .chain .link--b .num { right: 6px; left: auto; }
+  .chain .links::before, .chain .links::after { animation: none; transform: none; }
   .chain .handoff { justify-content: flex-start; padding-left: 44px; }
   .chain .handoff span { white-space: normal; text-align: left; }
 }
@@ -1002,6 +1021,8 @@ p a:not(.btn):not(.read-more),
 .course-hero h1 { font-size: clamp(2.75rem, 6.6vw, 4.6rem); line-height: 1.02; letter-spacing: -.015em; max-width: 820px; }
 .course-hero h1 em { font-style: italic; color: var(--coral-display); }
 .course-hero .sub { margin: 22px 0 30px; font-size: clamp(1.05rem, 2vw, 1.22rem); line-height: 1.6; color: var(--muted); max-width: 640px; }
+.course-hero .hero-cols { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+@media (max-width: 860px){ .course-hero .hero-cols { grid-template-columns: 1fr; gap: 34px; } }
 .course-hero .ctas { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
 .course-hero .seats { margin-bottom: 44px; }
 /* Full-bleed navy strip at the hero's foot — a container-width rounded
