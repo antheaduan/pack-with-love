@@ -1620,9 +1620,9 @@ p a:not(.btn):not(.read-more),
 .ji-rung.r1 { background: var(--blush); min-height: 300px; }
 .ji-rung.r2 { background: var(--sand); min-height: 340px; }
 .ji-rung.r3 { background: var(--navy); color: #fff; min-height: 380px; }
-.ji-rung .step { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 800; color: var(--coral-text); }
-.ji-rung.r2 .step { color: var(--gold-text); }
-.ji-rung.r3 .step { color: var(--gold); }
+.ji-rung .rstep { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 800; color: var(--coral-text); }
+.ji-rung.r2 .rstep { color: var(--gold-text); }
+.ji-rung.r3 .rstep { color: var(--gold); }
 .ji-rung .k { font-family: var(--font-script); font-weight: 700; font-size: 1.5rem; color: var(--coral-text); margin-top: 4px; }
 .ji-rung.r2 .k { color: var(--gold-text); }
 .ji-rung.r3 .k { color: var(--gold); }
