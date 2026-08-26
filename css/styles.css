@@ -1169,11 +1169,8 @@ p a:not(.btn):not(.read-more),
 .home-hero .script-note { margin-top: 26px; font-family: var(--font-script); font-size: 1.38rem;
   color: var(--gold-text); transform: rotate(-.6deg); }
 .packshot { position: relative; display: flex; flex-direction: column; align-items: center; }
-.packshot .frame { position: relative; background: #fff; border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg); padding: 26px 26px 20px; transform: rotate(2deg); width: min(100%, 400px); }
+.packshot .frame { position: relative; padding: 10px 10px 20px; width: min(100%, 400px); }
 .packshot .frame .hero__carousel { width: 100%; }
-.packshot .tape { position: absolute; top: -12px; left: 50%; transform: translateX(-50%) rotate(-3deg);
-  background: rgba(219,185,120,.45); width: 120px; height: 28px; border-radius: 4px; }
 .packshot .caption { position: absolute; bottom: -14px; right: 4%; background: var(--navy); color: #fff;
   font-family: var(--font-script); font-size: 1.3rem; padding: 8px 18px; border-radius: 999px;
   transform: rotate(-2deg); white-space: nowrap; }
