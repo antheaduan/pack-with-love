@@ -722,3 +722,116 @@ p a:not(.btn):not(.read-more),
 .seats--full strong { color: var(--ink); }
 .section--navy .seats, .cta .seats { color: rgba(255,255,255,.9); }
 .section--navy .seats strong, .cta .seats strong { color: #fff; }
+
+/* ---- The Four Moves — detailed cards (Participate) ----------------
+   One card per move: kicker + title + first-person quote, then the
+   move's own furniture — inventory list, framed sub-panels with
+   term/definition rows, the ten questions, and practice chips.       */
+.moves { display: grid; gap: 26px; max-width: 920px; margin: 0 auto; }
+.move {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 34px 38px;
+}
+.move__kicker {
+  font-family: var(--font-body); font-weight: 600; font-size: .72rem;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--gold-text);
+}
+.move h3 { font-size: 1.45rem; margin: 6px 0 6px; }
+.move__quote { font-family: var(--font-display); font-style: italic; color: var(--muted); margin: 0 0 16px; }
+.move > p { color: var(--text); margin: 0 0 14px; }
+.move > p:last-child { margin-bottom: 0; }
+
+.move__list { list-style: none; margin: 18px 0; display: grid; gap: 10px; padding: 0; }
+.move__list li {
+  background: var(--cream); border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 13px 18px; color: var(--text);
+}
+
+.move__panel {
+  border: 1px solid var(--line-gold); border-left: 3px solid var(--gold);
+  border-radius: var(--radius-sm); padding: 20px 24px; margin: 20px 0;
+}
+.move__panel h4 {
+  font-family: var(--font-body); font-weight: 600; font-size: .74rem;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--gold-text); margin-bottom: 6px;
+}
+.move__panel > p { color: var(--text); margin: 8px 0 4px; }
+.deflist { margin: 0; }
+.deflist > div {
+  display: grid; grid-template-columns: 96px 1fr; gap: 6px 18px;
+  padding: 11px 0; border-top: 1px dashed var(--line);
+}
+.deflist > div:first-of-type { border-top: none; }
+.deflist .term { font-family: var(--font-display); font-style: italic; color: var(--gold-text); }
+.deflist .desc { color: var(--text); }
+
+.move__qhead {
+  font-family: var(--font-body); font-weight: 600; font-size: .72rem; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--muted); margin: 22px 0 10px; padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.qrow { display: flex; gap: 14px; margin: 0 0 8px; color: var(--text); }
+.qrow .qn { font-family: var(--font-body); font-weight: 600; font-size: .8rem; color: var(--gold-text); min-width: 26px; padding-top: 2px; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; align-items: center; }
+.chips .label {
+  font-family: var(--font-body); font-weight: 600; font-size: .72rem; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--muted); margin-right: 6px;
+}
+.chip {
+  font-family: var(--font-body); font-weight: 600; font-size: .82rem;
+  padding: 6px 14px; border-radius: 999px; border: 1px solid rgba(15,58,93,.25); color: var(--navy);
+}
+.chip--solid { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+/* The two closing asides under the moves */
+.moves-close { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; max-width: 920px; margin: 26px auto 0; }
+.moves-close .move { border-left: 3px solid var(--gold); }
+.moves-close .closing-line { font-family: var(--font-display); font-style: italic; color: var(--muted); margin-top: 12px; }
+
+@media (max-width: 760px){
+  .move { padding: 26px 22px; }
+  .deflist > div { grid-template-columns: 1fr; gap: 2px; }
+  .moves-close { grid-template-columns: 1fr; }
+}
+
+/* ---- "Why it matters in the AI era" cards (Participate) ---------- */
+.aicard {
+  background: #fff; border: 1px solid var(--line); border-top: 3px solid var(--gold);
+  border-radius: var(--radius-sm); box-shadow: var(--shadow); padding: 26px 26px 24px;
+}
+.aicard h3 { font-size: 1.22rem; margin-bottom: 16px; }
+.aicard .lbl {
+  font-family: var(--font-body); font-weight: 600; font-size: .7rem; letter-spacing: .16em;
+  text-transform: uppercase; display: block; margin: 14px 0 4px; padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.aicard .lbl--can { color: var(--muted); }
+.aicard .lbl--cannot { color: var(--coral-text); }
+.aicard p { color: var(--text); margin: 0; }
+
+/* Education-was / is-becoming chip flow */
+.eduflow { background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 26px 30px; max-width: 920px; margin: 26px auto 0; }
+.eduflow .row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 12px 0; }
+.eduflow .row + .row { border-top: 1px dashed var(--line); }
+.eduflow .row .label { flex: 0 0 auto; margin-right: 8px; }
+.eduflow .arrow { color: var(--gold-deep); font-weight: 600; }
+.eduflow > p { color: var(--text); margin: 14px 0 0; padding-top: 16px; border-top: 1px solid var(--line); }
+
+/* ---- Twelve capabilities (Participate) --------------------------- */
+.cap-group { display: flex; align-items: baseline; gap: 12px; margin: 44px 0 18px; }
+.cap-group::before { content: ""; width: 26px; height: 2px; border-radius: 2px; background: var(--gold); align-self: center; }
+.cap-group::after { content: ""; flex: 1; height: 1px; background: var(--line); align-self: center; }
+.cap-group .name {
+  font-family: var(--font-body); font-weight: 600; font-size: .8rem; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--ink);
+}
+.cap-group .tag { font-family: var(--font-display); font-style: italic; color: var(--muted); }
+.cap { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow); padding: 22px 24px; }
+.cap h3 { font-size: 1.05rem; margin-bottom: 8px; }
+.cap p { color: var(--muted); margin: 0; font-size: .95rem; }
+.cap--accent { background: var(--navy); border-color: var(--navy); }
+.cap--accent h3 { color: #fff; }
+.cap--accent p { color: #bcd0e2; }
