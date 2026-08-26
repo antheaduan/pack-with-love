@@ -1113,3 +1113,33 @@ p a:not(.btn):not(.read-more),
 .final .seats strong { color: #fff; }
 .final .contact { margin-top: 22px; font-size: .9rem; color: #bcd0e2; }
 .final .contact a { color: var(--cream); }
+
+/* ---- Teaching team (course page) ---------------------------------- */
+.team { padding: 96px 0; background: var(--cream); }
+.team h2 { font-size: clamp(2rem, 4.2vw, 2.85rem); margin-bottom: 10px; }
+.team .intro { color: var(--muted); font-size: 1.02rem; max-width: 680px; margin-bottom: 44px; }
+.lead-card { background: var(--navy); color: #fff; border-radius: var(--radius); padding: 38px 40px; margin-bottom: 22px; }
+.lead-card .role { font-family: var(--font-body); font-size: .72rem; letter-spacing: .2em;
+  text-transform: uppercase; font-weight: 600; color: var(--gold); margin-bottom: 8px; }
+.lead-card h3 { font-size: clamp(1.5rem, 3vw, 1.85rem); margin-bottom: 14px; color: #fff; }
+.lead-card p { font-size: .97rem; line-height: 1.7; color: #bcd0e2; max-width: 720px; }
+.lead-card p strong { color: #fff; }
+.lead-card .quote { font-family: var(--font-display); font-style: italic;
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem); color: #fff; border-left: 3px solid var(--coral);
+  padding-left: 18px; margin-top: 18px; line-height: 1.5; max-width: 720px; }
+.lead-card .skills { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; }
+.lead-card .skills span { font-family: var(--font-body); font-size: .75rem; font-weight: 600;
+  letter-spacing: .06em; color: var(--navy); background: var(--gold); border-radius: 999px; padding: 5px 13px; }
+.mentor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.mentor { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm);
+  padding: 26px 24px; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+.mentor .tag { align-self: flex-start; font-family: var(--font-body); font-size: .69rem;
+  letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--coral-deep);
+  background: var(--blush); border-radius: 999px; padding: 4px 12px; margin-bottom: 14px; }
+.mentor h3 { color: var(--ink); font-size: 1.3rem; margin-bottom: 8px; }
+.mentor .bio { font-size: .88rem; line-height: 1.65; color: var(--text); flex: 1; }
+.mentor .focus { margin-top: 14px; font-size: .82rem; line-height: 1.55; color: var(--text);
+  border-top: 1px solid var(--line); padding-top: 12px; }
+.mentor .focus strong { color: var(--ink); font-family: var(--font-body); font-size: .69rem;
+  letter-spacing: .12em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+@media (max-width: 860px){ .mentor-grid { grid-template-columns: 1fr; } }
