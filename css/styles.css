@@ -375,9 +375,12 @@ img { max-width: 100%; display: block; }
 .affirm { display: grid; grid-template-columns: repeat(4,1fr); gap: 22px; }
 .affirm span {
   font-family: var(--font-display); font-weight: 500; font-size: clamp(1.3rem,2.4vw,1.9rem);
-  color: #fff; font-style: italic; position: relative; padding-bottom: 4px;
+  color: #fff; font-style: italic; align-self: center;
 }
-.affirm span::after { content: ""; position: absolute; left: 50%; transform: translateX(-50%); bottom: -14px; width: 34px; height: 3px; border-radius: 3px; background: var(--gold); opacity: .8; }
+/* No per-word underline dashes: when one phrase wraps to two lines the grid
+   row grows and the absolutely-positioned dashes float loose of their words —
+   they read as stray marks, not decoration. The eyebrow's rule above the band
+   carries the accent. */
 
 /* ---- 9. Split feature rows (image + text) ---- */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 62px; align-items: center; }
