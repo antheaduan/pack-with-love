@@ -874,3 +874,30 @@ p a:not(.btn):not(.read-more),
 }
 .callout-navy strong { color: var(--gold); }
 .callout-navy p { margin: 0; color: #dbe7f1; font-size: 1.05rem; }
+
+/* ---- Curriculum chain (course page) -------------------------------
+   Six cards that read as one sequence: numbered kickers, a hand-off
+   line pinned to each card's foot, a flow strip above, and on mobile a
+   through-line down the left so the stack reads as a timeline.        */
+.flowstrip { display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+  gap: 8px; margin: 0 auto 38px; }
+.flowstrip .chip { font-size: .78rem; padding: 5px 12px; }
+.flowstrip .arrow { color: var(--gold-deep); font-weight: 600; }
+
+.card--chain { display: flex; flex-direction: column; }
+.chain-kicker {
+  font-family: var(--font-body); font-weight: 600; font-size: .72rem;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--gold-text);
+  display: block; margin-bottom: 10px;
+}
+.card--chain .hand {
+  margin-top: auto; padding-top: 16px; font-family: var(--font-display);
+  font-style: italic; color: var(--coral-text);
+}
+.chain-close { text-align: center; margin: 34px auto 0; font-family: var(--font-display);
+  font-style: italic; font-size: 1.18rem; color: var(--ink); max-width: 640px; }
+@media (max-width: 620px){
+  .chain-grid { position: relative; padding-left: 22px; }
+  .chain-grid::before { content: ""; position: absolute; left: 6px; top: 10px; bottom: 10px;
+    width: 2px; border-radius: 2px; background: var(--line-gold); }
+}

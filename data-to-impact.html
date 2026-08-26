@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=35" />
+  <link rel="stylesheet" href="css/styles.css?v=36" />
 </head>
 <body>
 
@@ -91,17 +91,56 @@
     <div class="container">
       <div class="center section-head" data-reveal>
         <span class="eyebrow center-tick">The curriculum</span>
-        <h2 class="section-title accent-underline">What your child will learn</h2>
-        <p class="section-intro" style="margin-top:26px">Over 24 sessions, students carry one real project from first question to final presentation &mdash; and learn the math that professionals actually use.</p>
+        <h2 class="section-title accent-underline">Six skills. One unbroken chain.</h2>
+        <p class="section-intro" style="margin-top:26px">These aren't six units your child studies side by side. They're six links: each skill exists because the previous one demands it, and every number a student produces becomes the input to what happens next. Nothing can be skipped &mdash; the project won't move without it.</p>
       </div>
-      <div class="grid grid-3">
-        <div class="card" data-reveal><div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M22 7.5 13.5 16l-5-5L2 17.5"/><path d="M16 7.5h6v6"/></svg></div><h3>Statistical thinking</h3><p>The six-step data process: pose a statistical question, measure, collect, summarize, analyze, interpret.</p></div>
-        <div class="card" data-reveal data-delay="1"><div class="card__icon card__icon--gold" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m20.8 20.8-4.4-4.4"/></svg></div><h3>Market research</h3><p>Design a real survey, gather 30–50 real responses, and let evidence &mdash; not guessing &mdash; drive decisions.</p></div>
-        <div class="card" data-reveal data-delay="2"><div class="card__icon card__icon--navy" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="2.5" width="16" height="19" rx="2.5"/><rect x="7.5" y="5.5" width="9" height="3.2" rx=".8"/><path d="M8 12.5h.01M12 12.5h.01M16 12.5h.01M8 15.8h.01M12 15.8h.01M16 15.8h.01M8 19h8"/></svg></div><h3>Unit economics</h3><p>Cost, price, margin, break-even: the arithmetic of every real business, done on their own product.</p></div>
-        <div class="card" data-reveal><div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="3.4" y="12" width="4.6" height="8.6" rx="1.3"/><rect x="9.7" y="4" width="4.6" height="16.6" rx="1.3"/><rect x="16" y="8.4" width="4.6" height="12.2" rx="1.3"/></svg></div><h3>Data analysis</h3><p>Turn their own sales records into charts, comparisons, and conclusions about what worked and why.</p></div>
-        <div class="card" data-reveal data-delay="1"><div class="card__icon card__icon--gold" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M16.4 7.6 13.9 13.9 7.6 16.4 10.1 10.1 16.4 7.6Z"/></svg></div><h3>Decisions under uncertainty</h3><p>Revise a plan mid-course based on what the data says, not what they hoped.</p></div>
-        <div class="card" data-reveal data-delay="2"><div class="card__icon card__icon--navy" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="9" y="2.2" width="6" height="11" rx="3"/><path d="M19 10.8a7 7 0 0 1-14 0"/><path d="M12 17.8v4"/><path d="M8.5 21.8h7"/></svg></div><h3>Public presentation</h3><p>Close the year by presenting a complete data story to a real audience.</p></div>
+      <div class="flowstrip" data-reveal aria-label="The chain at a glance">
+        <span class="chip">Question</span><span class="arrow" aria-hidden="true">&rarr;</span>
+        <span class="chip">Survey</span><span class="arrow" aria-hidden="true">&rarr;</span>
+        <span class="chip">Product</span><span class="arrow" aria-hidden="true">&rarr;</span>
+        <span class="chip">Price</span><span class="arrow" aria-hidden="true">&rarr;</span>
+        <span class="chip">Sales</span><span class="arrow" aria-hidden="true">&rarr;</span>
+        <span class="chip">Data</span><span class="arrow" aria-hidden="true">&rarr;</span>
+        <span class="chip chip--solid">Impact</span>
       </div>
+      <div class="grid grid-3 chain-grid">
+        <div class="card card--chain" data-reveal><div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M22 7.5 13.5 16l-5-5L2 17.5"/><path d="M16 7.5h6v6"/></svg></div>
+          <span class="chain-kicker">01 &middot; Ask</span>
+          <h3>Statistical thinking</h3>
+          <p>Everything starts with one precisely posed question: <em>what would people actually buy?</em> Pose it sloppily, and every step after inherits the error.</p>
+          <p class="hand">&rarr; The question shapes the survey.</p>
+        </div>
+        <div class="card card--chain" data-reveal data-delay="1"><div class="card__icon card__icon--gold" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m20.8 20.8-4.4-4.4"/></svg></div>
+          <span class="chain-kicker">02 &middot; Research</span>
+          <h3>Market research</h3>
+          <p>30&ndash;50 real people answer. Their answers &mdash; not the teacher's opinion, not the loudest student's &mdash; choose the product.</p>
+          <p class="hand">&rarr; The data chooses the product.</p>
+        </div>
+        <div class="card card--chain" data-reveal data-delay="2"><div class="card__icon card__icon--navy" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="2.5" width="16" height="19" rx="2.5"/><rect x="7.5" y="5.5" width="9" height="3.2" rx=".8"/><path d="M8 12.5h.01M12 12.5h.01M16 12.5h.01M8 15.8h.01M12 15.8h.01M16 15.8h.01M8 19h8"/></svg></div>
+          <span class="chain-kicker">03 &middot; Price</span>
+          <h3>Unit economics</h3>
+          <p>The product has a real cost; the survey suggests a price. Margin and break-even decide whether the plan can work at all.</p>
+          <p class="hand">&rarr; The math sets the sales plan.</p>
+        </div>
+        <div class="card card--chain" data-reveal><div class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="3.4" y="12" width="4.6" height="8.6" rx="1.3"/><rect x="9.7" y="4" width="4.6" height="16.6" rx="1.3"/><rect x="16" y="8.4" width="4.6" height="12.2" rx="1.3"/></svg></div>
+          <span class="chain-kicker">04 &middot; Sell</span>
+          <h3>Data analysis</h3>
+          <p>January: real sales tables, real customers. Every transaction becomes a data point in a dataset the class generated itself &mdash; then turned into charts, comparisons, conclusions.</p>
+          <p class="hand">&rarr; The results test the plan.</p>
+        </div>
+        <div class="card card--chain" data-reveal data-delay="1"><div class="card__icon card__icon--gold" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M16.4 7.6 13.9 13.9 7.6 16.4 10.1 10.1 16.4 7.6Z"/></svg></div>
+          <span class="chain-kicker">05 &middot; Face it</span>
+          <h3>Decisions under uncertainty</h3>
+          <p>The hardest lesson in the course: our own data says we got something wrong. The class revises the plan the evidence's way, not hope's way &mdash; the one experience no worksheet can offer.</p>
+          <p class="hand">&rarr; The revision feeds the story.</p>
+        </div>
+        <div class="card card--chain" data-reveal data-delay="2"><div class="card__icon card__icon--navy" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="9" y="2.2" width="6" height="11" rx="3"/><path d="M19 10.8a7 7 0 0 1-14 0"/><path d="M12 17.8v4"/><path d="M8.5 21.8h7"/></svg></div>
+          <span class="chain-kicker">06 &middot; Tell it</span>
+          <h3>Public presentation</h3>
+          <p>March 7: the whole chain, told as one data story to a real audience &mdash; ending in the only number that matters: <strong>backpacks funded</strong>.</p>
+        </div>
+      </div>
+      <p class="chain-close" data-reveal>That is the design: your child cannot learn one skill here without needing the next one.</p>
       <div class="callout-navy" data-reveal>
         <p><strong>Why this matters now:</strong> calculators and AI can compute. What they can't do is judge whether a sample is trustworthy, decide what a percentage means, or choose what to do next. That judgment is what this course builds &mdash; and it's built fastest when the numbers are real.</p>
       </div>
@@ -267,7 +306,7 @@
     <div class="container footer__legal" style="border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:20px"><p style="color:#8ea6bd;font-size:.86rem;margin:0">Donations are received by Africa Cries Out, a registered 501(c)(3) nonprofit (EIN: 81-3022255), and are tax-deductible to the extent allowed by law. Pack with Love does not itself hold or manage funds.</p></div>
     <div class="container footer__bottom"><p>© 2026 Pack with Love Youth Service Club · Founded by Joanna Zhang · Love First. Create with Joy. Serve with Purpose.</p></div>
   </footer>
-  <script src="js/main.js?v=35"></script>
+  <script src="js/main.js?v=36"></script>
   <!-- Structured data: who we are (for search engines) -->
   <script type="application/ld+json">
   {
