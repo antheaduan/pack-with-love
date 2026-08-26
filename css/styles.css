@@ -396,8 +396,9 @@ img { max-width: 100%; display: block; }
 .split__media picture { display: block; }
 .split__media img { width: 100%; display: block; filter: drop-shadow(0 26px 40px rgba(28,46,61,.24)); }
 /* A smaller float, for a product shot that would otherwise outweigh the
-   column of text beside it. */
-.split__media--sm { max-width: 380px; }
+   column of text beside it. Caps the image only — capping the whole block
+   squeezes the caption badge underneath it into extra lines. */
+.split__media--sm img { max-width: 300px; margin-inline: auto; }
 
 /* ---- 10. Steps / rhythm (Our Project) ---- */
 .steps { display: grid; gap: 22px; grid-template-columns: repeat(5,1fr); counter-reset: step; }
