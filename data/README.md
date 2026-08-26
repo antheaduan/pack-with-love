@@ -49,10 +49,13 @@ Cache-Control: public, s-maxage=300, stale-while-revalidate=600
 Then set `"source"` in this file to that URL. This page will show ACO's
 numbers, and the local values here become the fallback.
 
-**Status: ACO has built this endpoint; it is waiting on their production
-deploy.** `source` stays `null` until they confirm the deploy, so the page
-does not fire a request at a URL that isn't live yet. Flipping it on is a
-one-line change here — no code change.
+**Status: `source` is set and live.** ACO has built the endpoint and it is
+waiting on their production deploy. Pointing at it now is safe: until the
+deploy lands the request simply fails and the page falls back to the local
+numbers below, so the bar keeps rendering and starts showing ACO's figures
+the moment their deploy goes out — no change needed here.
+
+To take it back offline, set `source` to `null`.
 
 ### Where an undesignated gift goes
 
@@ -123,7 +126,9 @@ GET https://africacriesout.org/api/courses/data-to-impact/seats
 { "seats_total": 15, "seats_taken": 4, "open": true, "as_of": "2026-09-01" }
 ```
 
-Set `source` to that URL once ACO confirms their deploy.
+`source` is already set to it. Until ACO's deploy lands the request fails and
+the seat line stays hidden, which is the correct behavior — the page never
+claims a seat count it doesn't have.
 
 ## What the page does with it
 
