@@ -61,3 +61,10 @@
   to = "/participate#moves"
   status = 301
   force = true
+
+# News taken offline for launch.
+[[redirects]]
+  from = "/news"
+  to = "/"
+  status = 301
+  force = true
