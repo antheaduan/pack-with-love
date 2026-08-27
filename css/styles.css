@@ -935,7 +935,7 @@ p a:not(.btn):not(.read-more),
 .chain .link--b .num { right: calc(50% + 70px); }
 .chain .link .kicker {
   font-family: var(--font-body); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
-  font-weight: 600; color: var(--gold); margin-bottom: 10px; position: relative; z-index: 1;
+  font-weight: 800; color: var(--gold); margin-bottom: 10px; position: relative; z-index: 1;
 }
 .chain .link h3 {
   font-size: clamp(1.4rem, 3vw, 1.85rem); line-height: 1.12; margin-bottom: 12px;
@@ -963,7 +963,7 @@ p a:not(.btn):not(.read-more),
 }
 .chain .finale .kicker {
   font-family: var(--font-body); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
-  font-weight: 600; color: var(--gold); margin-bottom: 14px;
+  font-weight: 800; color: var(--gold); margin-bottom: 14px;
 }
 .chain .finale h3 { font-size: clamp(1.55rem, 3.4vw, 2.1rem); margin-bottom: 14px; color: var(--cream); }
 .chain .finale .big {
