@@ -54,3 +54,10 @@
   to = "/give"
   status = 301
   force = true
+
+# The participant handbook merged back into /participate (expandable Four Moves cards).
+[[redirects]]
+  from = "/participate/handbook"
+  to = "/participate#moves"
+  status = 301
+  force = true
