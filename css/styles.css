@@ -2017,3 +2017,8 @@ p a:not(.btn):not(.read-more),
 .pcard p b { color: var(--ink); }
 @media (max-width: 880px) { .steps4 { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 540px) { .steps4 { grid-template-columns: 1fr; } }
+
+/* Inside every backpack (home): head + green packshot side by side */
+.hinside-top { display: grid; grid-template-columns: 1.05fr .95fr; gap: 44px; align-items: center; margin-bottom: 48px; }
+.hinside-top .head { margin-bottom: 0; }
+@media (max-width: 880px) { .hinside-top { grid-template-columns: 1fr; gap: 28px; } }
