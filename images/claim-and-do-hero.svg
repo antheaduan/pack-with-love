@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 560 430" xmlns="http://www.w3.org/2000/svg" role="img"
+             aria-label="A child runs her own lemonade stand; the money she raises fills her claim of backpacks on the shared goal."
+             style="width:100%;height:auto;display:block;">
+          <!-- containment line -->
+          <g font-family="Instrument Sans,system-ui,sans-serif" font-weight="800" text-anchor="middle">
+            <text x="280" y="30" font-size="12.5" letter-spacing="2" fill="#7F6122">PART OF THE LOVE &amp; HOPE BACKPACK PROJECT</text>
+            <text x="280" y="52" font-size="11.5" letter-spacing="2.4" fill="#7F6122">PHASE <tspan fill="#C63F39">2</tspan> &#183; CLAIM &amp; DO</text>
+          </g>
+
+          <!-- ground shadows -->
+          <ellipse cx="140" cy="342" rx="105" ry="13" fill="#FCEDE8"/>
+          <ellipse cx="424" cy="344" rx="96" ry="13" fill="#F6ECDD"/>
+
+          <!-- KID behind the stand -->
+          <g stroke="#0F3A5D" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="140" cy="188" r="33" fill="#FFF8F1"/>
+            <path d="M107 186 A33 33 0 0 1 173 186 Z" fill="#0F3A5D" stroke="none"/>
+          </g>
+          <circle cx="129" cy="192" r="4.6" fill="#0F3A5D"/>
+          <circle cx="151" cy="192" r="4.6" fill="#0F3A5D"/>
+          <path d="M130 206 Q140 214 150 206" stroke="#0F3A5D" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+          <circle cx="118" cy="202" r="6.5" fill="#FF6868" opacity=".4"/>
+          <circle cx="162" cy="202" r="6.5" fill="#FF6868" opacity=".4"/>
+
+          <rect x="110" y="216" width="60" height="24" rx="12" fill="#FFF8F1" stroke="#0F3A5D" stroke-width="5.5"/>
+          <!-- STAND -->
+          <g stroke="#0F3A5D" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="52" y="232" width="180" height="16" rx="8" fill="#DBB978"/>
+            <rect x="64" y="248" width="156" height="86" rx="12" fill="#FCEDE8"/>
+            <!-- pitcher -->
+            <path d="M186 200 L212 200 L206 232 L192 232 Z" fill="#DBB978"/>
+            <path d="M212 204 Q222 208 212 216" fill="none"/>
+            <!-- cup -->
+            <path d="M78 210 L98 210 L94 232 L82 232 Z" fill="#FFFFFF"/>
+            <line x1="92" y1="212" x2="98" y2="196" stroke="#C63F39" stroke-width="4"/>
+          </g>
+          <g fill="#0F3A5D" stroke="none">
+            <circle cx="84" cy="227" r="2.6"/><circle cx="89" cy="228" r="2.6"/><circle cx="94" cy="227" r="2.6"/><circle cx="87" cy="222" r="2.6"/><circle cx="92" cy="222" r="2.6"/>
+          </g>
+          <text x="142" y="298" text-anchor="middle" font-family="Caveat,cursive" font-weight="700" font-size="22" fill="#C63F39">bubble tea sale!</text>
+
+          <!-- PROFIT ARC -->
+          <path d="M236 216 Q296 158 344 204" fill="none" stroke="#C63F39" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 14"/>
+          <path d="M332 188 L348 206 L324 212 Z" fill="#C63F39"/>
+          <g stroke="#0F3A5D" stroke-width="4.5">
+            <circle cx="266" cy="186" r="14" fill="#DBB978"/>
+            <circle cx="300" cy="174" r="14" fill="#DBB978"/>
+            <circle cx="330" cy="182" r="14" fill="#DBB978"/>
+          </g>
+          <g font-family="Instrument Sans,system-ui,sans-serif" font-weight="700" font-size="15" fill="#0F3A5D" text-anchor="middle">
+            <text x="266" y="191">$</text><text x="300" y="179">$</text><text x="330" y="187">$</text>
+          </g>
+
+          <!-- BACKPACK + claim bar -->
+          <g stroke="#0F3A5D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M400 128 Q424 102 448 128" fill="none" stroke="#DBB978" stroke-width="9"/>
+            <path d="M400 128 Q424 102 448 128" fill="none"/>
+            <path d="M366 184 Q352 230 364 278" fill="none" stroke="#DBB978" stroke-width="9"/>
+            <path d="M366 184 Q352 230 364 278" fill="none"/>
+            <rect x="362" y="126" width="122" height="184" rx="42" fill="#FFFFFF"/>
+            <rect x="382" y="206" width="82" height="80" rx="19" fill="#FFFFFF"/>
+          </g>
+          <g stroke="#0F3A5D" stroke-width="6.5" stroke-linecap="round">
+            <line x1="423" y1="152" x2="423" y2="186"/>
+            <line x1="409" y1="164" x2="437" y2="164"/>
+          </g>
+          <path d="M423 268 C412 255 398 246 407 233 C413 224 423 230 423 238 C423 230 433 224 439 233 C448 246 434 255 423 268 Z" fill="#FF6868"/>
+          <g stroke="#FF6868" stroke-width="5" stroke-linecap="round">
+            <line x1="350" y1="106" x2="340" y2="92"/><line x1="368" y1="96" x2="362" y2="80"/><line x1="334" y1="126" x2="318" y2="118"/>
+          </g>
+          <!-- claim progress bar -->
+          <text x="424" y="332" text-anchor="middle" font-family="Instrument Sans,system-ui,sans-serif" font-weight="800" font-size="11" letter-spacing="1.6" fill="#7F6122">MY CLAIM &#183; 10 BACKPACKS</text>
+          <rect x="356" y="340" width="136" height="12" rx="6" fill="#F6ECDD" stroke="#0F3A5D" stroke-width="3.5"/>
+          <rect x="356" y="340" width="102" height="12" rx="6" fill="#FF6868"/>
+
+          <!-- captions + bottom line -->
+          <text x="140" y="378" text-anchor="middle" font-family="Caveat,cursive" font-weight="700" font-size="22" fill="#7F6122">her own stand, her own claim</text>
+          <text x="424" y="378" text-anchor="middle" font-family="Caveat,cursive" font-weight="700" font-size="22" fill="#7F6122">counted on the shared goal</text>
+          <text x="280" y="416" text-anchor="middle" font-family="Caveat,cursive" font-weight="700" font-size="27" fill="#C63F39">claim it &#183; plan it &#183; do it &#183; report it</text>
+        </svg>

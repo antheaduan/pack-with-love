@@ -2073,3 +2073,10 @@ p a:not(.btn):not(.read-more),
 
 /* Dark-section gold text: brand gold */
 .on-dark .eyebrow, .dti-final .eyebrow { color: var(--gold); }
+
+/* Claim & Do hero: text left, diagram right */
+.ji-hero .hgrid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 44px; align-items: center; text-align: left; }
+.ji-hero .hgrid p { margin: 16px 0 0; max-width: 560px; }
+.ji-hero .shot { background: var(--paper); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
+  padding: 24px 20px 16px; transform: rotate(2deg); }
+@media (max-width: 900px) { .ji-hero .hgrid { grid-template-columns: 1fr; } .ji-hero .shot { transform: none; } }
