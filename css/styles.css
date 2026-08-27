@@ -2036,3 +2036,7 @@ p a:not(.btn):not(.read-more),
 #what-we-do .s4:nth-child(2) { border-top-color: var(--gold); }
 #what-we-do .s4:nth-child(3) { border-top-color: var(--navy); }
 #what-we-do .s4:nth-child(4) { border-top-color: #3F5C40; }
+
+/* Purpose card closing script line (about) */
+.pcard .tagline { margin-top: 14px; font-family: var(--font-script); font-weight: 700;
+  font-size: 20px; line-height: normal; color: var(--gold-text); }
