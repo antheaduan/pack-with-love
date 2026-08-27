@@ -1480,7 +1480,7 @@ p a:not(.btn):not(.read-more),
 .ji-start { padding: 88px 0; background: var(--sand); }
 .ji-start .head { text-align: center; max-width: 640px; margin: 0 auto 44px; }
 .ji-start h2 { font-size: clamp(28px, 3.8vw, 42px); margin: 14px 0 10px; }
-.ji-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.ji-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .ji-st { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-sm);
   padding: 20px 18px; box-shadow: var(--shadow); }
 .ji-st .n { font-family: var(--font-script); font-weight: 700; font-size: 28px; line-height: normal; color: var(--coral-text); }

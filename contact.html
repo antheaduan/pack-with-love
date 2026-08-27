@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=91" />
+  <link rel="stylesheet" href="css/styles.css?v=92" />
 </head>
 <body>
 
@@ -62,9 +62,13 @@
       <div class="split__text" data-reveal>
         <span class="eyebrow">Send a message</span>
         <h2 class="section-title" style="margin-bottom:26px">Say hello</h2>
-        <!-- TODO: To make this form send email, replace action="#" with a free
-             form service endpoint (e.g. Formspree: action="https://formspree.io/f/yourID" method="POST"). -->
-        <form class="form-card" action="#" method="POST">
+        <!-- Sends via /api/contact (Cloudflare Pages Function + Resend). -->
+        <form class="form-card" id="contact-form" action="/api/contact" method="POST">
+          <!-- honeypot — hidden from people, tempting to bots -->
+          <div style="position:absolute;left:-9999px" aria-hidden="true">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" />
+          </div>
           <div class="field">
             <label for="name">Your name</label>
             <input type="text" id="name" name="name" placeholder="First and last name" required />
@@ -87,7 +91,46 @@
             <textarea id="message" name="message" rows="5" placeholder="Tell us a little about how you'd like to be involved…"></textarea>
           </div>
           <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+          <p id="contact-status" role="status" aria-live="polite" style="margin-top:14px;font-weight:600;display:none"></p>
         </form>
+        <script>
+          (function () {
+            var form = document.getElementById('contact-form');
+            var status = document.getElementById('contact-status');
+            if (!form) return;
+            form.addEventListener('submit', function (e) {
+              e.preventDefault();
+              var btn = form.querySelector('button[type="submit"]');
+              var fd = new FormData(form);
+              var payload = {};
+              fd.forEach(function (v, k) { payload[k] = v; });
+              btn.disabled = true; btn.textContent = 'Sending…';
+              status.style.display = 'none';
+              fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+              }).then(function (r) { return r.json().catch(function () { return { ok: false }; }); })
+                .then(function (res) {
+                  status.style.display = 'block';
+                  if (res.ok) {
+                    status.style.color = 'var(--sage, #3F5C40)';
+                    status.textContent = 'Thank you! Your message is on its way — we\'ll reply soon.';
+                    form.reset();
+                  } else {
+                    status.style.color = 'var(--coral-text, #C63F39)';
+                    status.textContent = res.error || 'Something went wrong — please email hello@packwithlove.org.';
+                  }
+                })
+                .catch(function () {
+                  status.style.display = 'block';
+                  status.style.color = 'var(--coral-text, #C63F39)';
+                  status.textContent = 'Network error — please email hello@packwithlove.org.';
+                })
+                .finally(function () { btn.disabled = false; btn.textContent = 'Send Message'; });
+            });
+          })();
+        </script>
       </div>
 
       <!-- Contact info -->
@@ -160,7 +203,7 @@
     <div class="container footer__bottom"><p>© 2026 Pack with Love Youth Service Club · Founded by Joanna Zhang · Love First. Create with Joy. Serve with Purpose.</p></div>
   </footer>
   <a class="give-fab" href="https://africacriesout.org/give-fund.html?fund=pack_with_love">&hearts; Give</a>
-  <script src="js/main.js?v=91"></script>
+  <script src="js/main.js?v=92"></script>
   <!-- Structured data: who we are (for search engines) -->
   <script type="application/ld+json">
   {
