@@ -2022,3 +2022,15 @@ p a:not(.btn):not(.read-more),
 .hinside-top { display: grid; grid-template-columns: 1.05fr .95fr; gap: 44px; align-items: center; margin-bottom: 48px; }
 .hinside-top .head { margin-bottom: 0; }
 @media (max-width: 880px) { .hinside-top { grid-template-columns: 1fr; gap: 28px; } }
+
+/* Story birth tale: big heart pin, big script line, thread ends at the heart */
+.tale--birth .pin { width: 40px; height: 40px; left: 8px; top: 8px; font-size: 20px;
+  background: var(--coral-btn); color: #fff; border-color: var(--coral-btn); }
+.tale--birth .where { font-size: clamp(24px, 3.4vw, 34px); line-height: 1.2; }
+.tale--birth::before { content: ""; position: absolute; left: 24px; top: 34px; bottom: -10px;
+  width: 8px; background: var(--paper); }
+/* What we do cards: same treatment as the phase cards */
+#what-we-do .s4 { border: 0; border-top: 4px solid var(--coral); }
+#what-we-do .s4:nth-child(2) { border-top-color: var(--gold); }
+#what-we-do .s4:nth-child(3) { border-top-color: var(--navy); }
+#what-we-do .s4:nth-child(4) { border-top-color: #3F5C40; }
