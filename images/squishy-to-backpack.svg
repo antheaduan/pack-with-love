@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg" role="img"
+             aria-label="The class designs and sells squishies; the profit sponsors backpacks for children in Senegal."
+             style="width:100%;height:auto;display:block;">
+          <!-- ground shadows -->
+          <ellipse cx="128" cy="330" rx="92" ry="14" fill="#FCEDE8"/>
+          <ellipse cx="430" cy="336" rx="98" ry="14" fill="#F6ECDD"/>
+
+          <!-- SQUISHY (designed & sold by the class) -->
+          <g stroke="#0F3A5D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+            <!-- ears -->
+            <path d="M78 212 Q70 168 102 178 Z" fill="#FCEDE8"/>
+            <path d="M178 212 Q186 168 154 178 Z" fill="#FCEDE8"/>
+            <!-- body -->
+            <ellipse cx="128" cy="258" rx="76" ry="66" fill="#FCEDE8"/>
+          </g>
+          <!-- face -->
+          <circle cx="104" cy="248" r="5.5" fill="#0F3A5D"/>
+          <circle cx="152" cy="248" r="5.5" fill="#0F3A5D"/>
+          <path d="M116 272 Q128 282 140 272" stroke="#0F3A5D" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <circle cx="92" cy="266" r="8" fill="#FF6868" opacity=".45"/>
+          <circle cx="164" cy="266" r="8" fill="#FF6868" opacity=".45"/>
+          <!-- price tag -->
+          <g transform="rotate(-12 196 196)">
+            <rect x="178" y="178" width="44" height="30" rx="7" fill="#DBB978" stroke="#0F3A5D" stroke-width="4.5"/>
+            <text x="200" y="200" text-anchor="middle" font-family="Instrument Sans,system-ui,sans-serif" font-weight="700" font-size="19" fill="#0F3A5D">$5</text>
+          </g>
+          <text x="128" y="366" text-anchor="middle" font-family="Caveat,cursive" font-weight="700" font-size="23" fill="#7F6122">the class designs &amp; sells</text>
+
+          <!-- PROFIT ARROW with coins -->
+          <path d="M212 236 Q280 176 342 224" fill="none" stroke="#C63F39" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 14"/>
+          <path d="M330 208 L346 226 L322 232 Z" fill="#C63F39"/>
+          <g stroke="#0F3A5D" stroke-width="4.5">
+            <circle cx="244" cy="206" r="15" fill="#DBB978"/>
+            <circle cx="282" cy="192" r="15" fill="#DBB978"/>
+            <circle cx="318" cy="200" r="15" fill="#DBB978"/>
+          </g>
+          <g font-family="Instrument Sans,system-ui,sans-serif" font-weight="700" font-size="16" fill="#0F3A5D" text-anchor="middle">
+            <text x="244" y="212">$</text><text x="282" y="198">$</text><text x="318" y="206">$</text>
+          </g>
+          <text x="281" y="158" text-anchor="middle" font-family="Caveat,cursive" font-weight="700" font-size="25" fill="#C63F39" transform="rotate(-4 281 158)">profit</text>
+
+          <!-- BACKPACK (sponsored) -->
+          <g stroke="#0F3A5D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+            <!-- handle -->
+            <path d="M404 132 Q430 104 456 132" fill="none" stroke="#DBB978" stroke-width="10"/>
+            <path d="M404 132 Q430 104 456 132" fill="none"/>
+            <!-- left strap -->
+            <path d="M368 190 Q352 240 366 292" fill="none" stroke="#DBB978" stroke-width="10"/>
+            <path d="M368 190 Q352 240 366 292" fill="none"/>
+            <!-- body -->
+            <rect x="366" y="130" width="128" height="196" rx="44" fill="#FFFFFF"/>
+            <!-- front pocket -->
+            <rect x="386" y="216" width="88" height="86" rx="20" fill="#FFFFFF"/>
+          </g>
+          <!-- cross -->
+          <g stroke="#0F3A5D" stroke-width="7" stroke-linecap="round">
+            <line x1="430" y1="158" x2="430" y2="196"/>
+            <line x1="415" y1="171" x2="445" y2="171"/>
+          </g>
+          <!-- heart -->
+          <path d="M430 282 C418 268 402 258 412 244 C419 234 430 240 430 249 C430 240 441 234 448 244 C458 258 442 268 430 282 Z" fill="#FF6868"/>
+          <!-- sparkle rays -->
+          <g stroke="#FF6868" stroke-width="5" stroke-linecap="round">
+            <line x1="352" y1="110" x2="342" y2="96"/>
+            <line x1="372" y1="100" x2="366" y2="84"/>
+            <line x1="336" y1="130" x2="320" y2="122"/>
+          </g>
+          <text x="424" y="372" text-anchor="middle" font-family="Caveat,cursive" font-weight="700" font-size="23" fill="#7F6122">profit sponsors backpacks</text>
+
+          <!-- bottom equation -->
+          <text x="280" y="408" text-anchor="middle" font-family="Caveat,cursive" font-weight="700" font-size="27" fill="#C63F39">every squishy sold &#8594; a backpack funded</text>
+        </svg>
