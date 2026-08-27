@@ -2,6 +2,12 @@
 <svg viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg" role="img"
              aria-label="The class designs and sells squishies; the profit sponsors backpacks for children in Senegal."
              style="width:100%;height:auto;display:block;">
+          <!-- containment line, painted in -->
+          <g font-family="Instrument Sans,system-ui,sans-serif" font-weight="800" text-anchor="middle">
+            <text x="280" y="33" font-size="12.5" letter-spacing="2" fill="#7F6122">PART OF THE LOVE &amp; HOPE BACKPACK PROJECT</text>
+            <text x="280" y="56" font-size="11.5" letter-spacing="2.4" fill="#7F6122">PHASE <tspan fill="#C63F39">2</tspan> &#183; ONE OF <tspan fill="#C63F39">THREE WAYS IN</tspan></text>
+          </g>
+
           <!-- ground shadows -->
           <ellipse cx="128" cy="330" rx="92" ry="14" fill="#FCEDE8"/>
           <ellipse cx="430" cy="336" rx="98" ry="14" fill="#F6ECDD"/>
