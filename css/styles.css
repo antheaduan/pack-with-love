@@ -174,7 +174,7 @@ img { max-width: 100%; display: block; }
 .nav__logo:hover img { transform: rotate(-2deg) scale(1.03); }
 .nav__links { display: flex; align-items: center; gap: 4px; list-style: none; }
 .nav__links a {
-  font-family: var(--font-body); font-weight: 600; color: var(--ink);
+  font-family: var(--font-body); font-weight: 700; color: var(--ink);
   padding: 9px 11px; border-radius: 999px; font-size: 15px; text-decoration: none;
   position: relative; transition: color .2s; white-space: nowrap;
 }
@@ -456,7 +456,7 @@ img { max-width: 100%; display: block; }
 /* In-page anchor bar (desktop only) */
 .anchorbar { position: sticky; top: 76px; z-index: 40; background: rgba(255,254,251,.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
 .anchorbar .container { display: flex; gap: 8px; padding-top: 10px; padding-bottom: 10px; overflow-x: auto; }
-.anchorbar a { font-family: var(--font-body); font-weight: 700; font-size: 12.5px; line-height: normal; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding: 7px 14px; border-radius: 999px; white-space: nowrap; transition: color .2s, background .2s; }
+.anchorbar a { font-family: var(--font-body); font-weight: 700; -webkit-text-stroke: .35px currentColor; font-size: 12.5px; line-height: normal; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding: 7px 14px; border-radius: 999px; white-space: nowrap; transition: color .2s, background .2s; }
 .anchorbar a:hover { color: var(--ink); background: rgba(28,46,61,.06); }
 .anchorbar a:focus-visible { outline: 2px solid var(--coral); outline-offset: 2px; color: var(--ink); }
 /* anchored sections shouldn't hide under the two sticky bars */
@@ -935,7 +935,7 @@ p a:not(.btn):not(.read-more),
 .chain .link--b .num { right: calc(50% + 70px); }
 .chain .link .kicker {
   font-family: var(--font-body); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
-  font-weight: 800; color: var(--gold); margin-bottom: 10px; position: relative; z-index: 1;
+  font-weight: 800; -webkit-text-stroke: .4px currentColor; color: var(--gold); margin-bottom: 10px; position: relative; z-index: 1;
 }
 .chain .link h3 {
   font-size: clamp(1.4rem, 3vw, 1.85rem); line-height: 1.12; margin-bottom: 12px;
@@ -963,7 +963,7 @@ p a:not(.btn):not(.read-more),
 }
 .chain .finale .kicker {
   font-family: var(--font-body); font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
-  font-weight: 800; color: var(--gold); margin-bottom: 14px;
+  font-weight: 800; -webkit-text-stroke: .4px currentColor; color: var(--gold); margin-bottom: 14px;
 }
 .chain .finale h3 { font-size: clamp(1.55rem, 3.4vw, 2.1rem); margin-bottom: 14px; color: var(--cream); }
 .chain .finale .big {
