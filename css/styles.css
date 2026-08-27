@@ -2070,3 +2070,10 @@ p a:not(.btn):not(.read-more),
   color: var(--coral) !important; font-size: 18px; -webkit-text-stroke: .3px currentColor; }
 .chitem.finale { border-color: rgba(255,104,104,.5); background: rgba(255,104,104,.08); }
 @media (max-width: 640px) { .chitem summary { flex-direction: column; gap: 4px; } .chitem summary::after { position: absolute; right: 18px; } .chitem { position: relative; } }
+
+/* Brighter gold for small gold TEXT on dark navy (~10:1 vs 7:1) — shapes and rules keep --gold */
+:root { --gold-bright: #EAD3A2; }
+.on-dark .eyebrow, .dti-final .eyebrow { color: var(--gold-bright); }
+.chitem .ccap { color: var(--gold-bright); }
+.facts .f small { color: var(--gold-bright); }
+.on-dark .bridgeline .say { color: var(--gold-bright); }
