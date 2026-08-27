@@ -1617,9 +1617,9 @@ p a:not(.btn):not(.read-more),
 .ji-ladder .head p { font-size: 1rem; line-height: 1.65; }
 .ji-rungs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: end; margin-top: 44px; }
 .ji-rung { border-radius: var(--radius); padding: 28px 26px; display: flex; flex-direction: column; box-shadow: var(--shadow); }
-.ji-rung.r1 { background: var(--blush); min-height: 300px; }
-.ji-rung.r2 { background: var(--sand); min-height: 340px; }
-.ji-rung.r3 { background: var(--navy); color: #fff; min-height: 380px; }
+.ji-rung.r1 { background: var(--blush); min-height: 320px; }
+.ji-rung.r2 { background: var(--sand); min-height: 400px; }
+.ji-rung.r3 { background: var(--navy); color: #fff; min-height: 520px; }
 .ji-rung .rstep { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; font-weight: 800; color: var(--coral-text); }
 .ji-rung.r2 .rstep { color: var(--gold-text); }
 .ji-rung.r3 .rstep { color: var(--gold); }
