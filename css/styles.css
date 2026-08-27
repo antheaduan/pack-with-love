@@ -2058,8 +2058,8 @@ p a:not(.btn):not(.read-more),
 .chitem summary::after { content: "+"; font-family: var(--font-display); font-size: 20px; line-height: 1;
   color: var(--coral); margin-left: auto; transition: transform .2s; align-self: center; }
 .chitem[open] summary::after { transform: rotate(45deg); }
-.chitem .ccap { font-size: 11px; line-height: normal; letter-spacing: .18em; text-transform: uppercase;
-  font-weight: 800; -webkit-text-stroke: .4px currentColor; color: var(--gold); flex: 0 0 auto; }
+.chitem .ccap { font-family: var(--font-display); font-weight: 600; font-size: 18px;
+  line-height: normal; color: var(--gold); flex: 0 0 auto; }
 .chitem .ct { font-family: var(--font-display); font-weight: 600; font-size: 18px; line-height: normal; color: #fff; }
 .chitem .chbody { padding: 0 20px 16px; }
 .chitem .chbody p { font-size: 14.5px; line-height: 1.65; color: #BCD0E2; margin: 0 0 8px; }
@@ -2071,9 +2071,5 @@ p a:not(.btn):not(.read-more),
 .chitem.finale { border-color: rgba(255,104,104,.5); background: rgba(255,104,104,.08); }
 @media (max-width: 640px) { .chitem summary { flex-direction: column; gap: 4px; } .chitem summary::after { position: absolute; right: 18px; } .chitem { position: relative; } }
 
-/* Brighter gold for small gold TEXT on dark navy (~10:1 vs 7:1) — shapes and rules keep --gold */
-:root { --gold-bright: #EAD3A2; }
-.on-dark .eyebrow, .dti-final .eyebrow { color: var(--gold-bright); }
-.chitem .ccap { color: var(--gold-bright); }
-.facts .f small { color: var(--gold-bright); }
-.on-dark .bridgeline .say { color: var(--gold-bright); }
+/* Dark-section gold text: brand gold */
+.on-dark .eyebrow, .dti-final .eyebrow { color: var(--gold); }
