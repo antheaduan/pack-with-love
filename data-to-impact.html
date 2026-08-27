@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=68" />
+  <link rel="stylesheet" href="css/styles.css?v=69" />
 </head>
 <body>
 
@@ -49,10 +49,12 @@
 
   <nav class="anchorbar" aria-label="Sections on this page">
     <div class="container">
-      <a href="#curriculum">Curriculum</a>
+      <a href="#overview">The Moment</a>
+      <a href="#chain">Curriculum</a>
       <a href="#ai">The AI Question</a>
       <a href="#phases">The Season</a>
       <a href="#team">Teaching Team</a>
+      <a href="#mission">Mission</a>
       <a href="#faq">FAQ</a>
       <a href="#enroll" class="accent">Enroll</a>
     </div>
@@ -60,371 +62,413 @@
 
   <main id="content" tabindex="-1">
 
-  <!-- Hero + facts band -->
-  <section class="course-hero">
-    <div class="container hero-cols">
-      <div>
-        <h1>From Data<br>to <em>Impact</em></h1>
-        <p class="sub">A 24-session math course where students run a real product business &mdash; real customers,
-          real prices, real consequences &mdash; and every dollar they earn sends backpacks to children in Senegal.</p>
-        <div class="ctas">
-          <a class="btn btn-primary btn-lg" href="https://africacriesout.org/aco-data-to-impact.html" data-enroll>Enroll now</a>
-          <a class="btn btn-secondary btn-lg" href="#curriculum">See how it works &darr;</a>
-        </div>
-        <p class="seats" data-seats hidden aria-live="polite"></p>
-      </div>
-      <div class="split__media split__media--sm" data-reveal>
-        <img src="images/backpack-green.png" alt="The real product behind the course: a green children's backpack with a color-it-yourself front panel reading 'Yàlla bëgg na la' — God loves you." />
-      </div>
-    </div>
-    <div class="factband-wrap">
-      <ul class="factband container" style="list-style:none;margin:0 auto">
-        <li class="f"><small>Who</small><div class="v">Grades 6&ndash;7<span>elementary with a parent</span></div></li>
-        <li class="f"><small>When</small><div class="v">Sundays 5:00 PM PT<span>8:00 PM Eastern</span></div></li>
-        <li class="f"><small>Season</small><div class="v">Sept 13 &ndash; Feb 28<span>Showcase Mar 7, 2027</span></div></li>
-        <li class="f"><small>Format</small><div class="v">24 sessions<span>21 classes + 3 fieldwork</span></div></li>
-        <li class="f"><small>Class size</small><div class="v">15 students<span>small-group</span></div></li>
-        <li class="f"><small>Tuition</small><div class="v">$720<span>$30 per session</span></div></li>
-      </ul>
-    </div>
-  </section>
+  <!-- fixed progress rail -->
+  <div class="crail" aria-hidden="true">
+    <div class="fill" id="railfill"></div>
+    <span class="stop" data-t="overview" data-l="01 · The Moment" style="top:6%"></span>
+    <span class="stop" data-t="chain" data-l="02 · The Chain" style="top:19%"></span>
+    <span class="stop" data-t="ai" data-l="03 · The AI Question" style="top:33%"></span>
+    <span class="stop" data-t="phases" data-l="04 · The Season" style="top:47%"></span>
+    <span class="stop" data-t="team" data-l="05 · The Team" style="top:61%"></span>
+    <span class="stop" data-t="mission" data-l="06 · The Mission" style="top:75%"></span>
+    <span class="stop" data-t="faq" data-l="07 · FAQ" style="top:88%"></span>
+    <span class="stop" data-t="enroll" data-l="08 · Enroll" style="top:99%"></span>
+  </div>
 
-  <!-- The scene -->
-  <section class="scene">
+  <!-- ===== 00 · HERO ===== -->
+  <header class="dti-hero">
     <div class="container">
-      <p class="lead" data-reveal>This January, a twelve-year-old will stand behind a sales table,
-        watch a stranger pick up a product she helped design, and
-        <span class="hold">hold her breath over a number she calculated herself.</span></p>
-      <p class="whisper" data-reveal>Did we price it right? The survey said people would pay this.
-        Was the survey right?</p>
-      <p class="after" data-reveal>That moment is the course. <strong>From Data to Impact</strong> hands
-        students one real product business to run, from first survey to final sale. They question real
-        customers, set real prices, count real revenue &mdash; and answer for real results.
-        <em>&ldquo;When will I ever use this?&rdquo;</em> &mdash; the one question no student in this
-        course will ever need to ask.</p>
-    </div>
-  </section>
-
-  <!-- The Chain — what your child will learn -->
-  <section class="chain" id="curriculum">
-    <div class="chain-head" data-reveal>
-      <span class="eyebrow center-tick">The Curriculum</span>
-      <h2>Six skills.<br><em>One unbroken chain.</em></h2>
-      <p>These aren't six units studied side by side. Each skill exists because the one before it
-        <strong>demands</strong> it &mdash; and every number a student produces becomes the input to what
-        happens next. Nothing can be skipped. The project won't move without it.</p>
-    </div>
-
-    <div class="links">
-
-    <div class="link link--a" data-reveal>
-      <span class="num" aria-hidden="true">1</span>
-      <div class="body">
-        <p class="kicker">01 &middot; Ask &mdash; Statistical thinking</p>
-        <h3>One precisely posed question</h3>
-        <p><em>What would people actually buy?</em> Pose it sloppily, and every step after inherits the error.</p>
-      </div>
-      <div class="node" aria-hidden="true"></div>
-    </div>
-
-    <div class="handoff" data-reveal><span>the question shapes the survey</span></div>
-
-    <div class="link link--b" data-reveal>
-      <span class="num" aria-hidden="true">2</span>
-      <div class="body">
-        <p class="kicker">02 &middot; Research &mdash; Market research</p>
-        <h3>30&ndash;50 real people answer</h3>
-        <p>Their answers &mdash; not the teacher's opinion, not the loudest student's &mdash; choose the product.</p>
-      </div>
-      <div class="node" aria-hidden="true"></div>
-    </div>
-
-    <div class="handoff" data-reveal><span>the data chooses the product</span></div>
-
-    <div class="link link--a" data-reveal>
-      <span class="num" aria-hidden="true">3</span>
-      <div class="body">
-        <p class="kicker">03 &middot; Price &mdash; Unit economics</p>
-        <h3>Margin decides if the plan can live</h3>
-        <p>The product has a real cost; the survey suggests a price. Break-even math says whether the whole plan works at all.</p>
-      </div>
-      <div class="node" aria-hidden="true"></div>
-    </div>
-
-    <div class="handoff" data-reveal><span>the math sets the sales plan</span></div>
-
-    <div class="link link--b" data-reveal>
-      <span class="num" aria-hidden="true">4</span>
-      <div class="body">
-        <p class="kicker">04 &middot; Sell &mdash; Data analysis</p>
-        <h3>January: the plan meets customers</h3>
-        <p>Real sales tables. Every transaction becomes a data point in a dataset the class generated itself &mdash; then charts, comparisons, conclusions.</p>
-      </div>
-      <div class="node" aria-hidden="true"></div>
-    </div>
-
-    <div class="handoff" data-reveal><span>the results test the plan</span></div>
-
-    <div class="link link--a" data-reveal>
-      <span class="num" aria-hidden="true">5</span>
-      <div class="body">
-        <p class="kicker">05 &middot; Face it &mdash; Decisions under uncertainty</p>
-        <h3>The hardest lesson in the course</h3>
-        <p><em>Our own data says we got something wrong.</em> The class revises the plan the evidence's way, not hope's way &mdash; the one experience no worksheet can offer.</p>
-      </div>
-      <div class="node" aria-hidden="true"></div>
-    </div>
-
-    <div class="handoff" data-reveal><span>the revision feeds the story</span></div>
-
-    </div>
-
-    <div class="finale" data-reveal>
-      <p class="kicker">06 &middot; Tell it &mdash; Public presentation &middot; March 7, 2027</p>
-      <h3>The whole chain, told as one data story</h3>
-      <div class="big">1,000
-        <small>backpacks funded &mdash; the only number that matters</small>
-      </div>
-      <p>From the first survey question to the final dollar delivered &mdash; presented to a real
-        audience, and measured in backpacks reaching children across <strong>ten villages in
-        Senegal</strong>.</p>
-    </div>
-
-    <p class="chain-close" data-reveal>Your child cannot learn one skill here without needing the next.</p>
-
-  </section>
-
-  <!-- Your child has AI. Now what? -->
-  <section class="ai-sec" id="ai">
-    <div class="container">
-      <div class="cols">
+      <div class="hgrid">
         <div data-reveal>
-          <span class="eyebrow" style="color:var(--coral-text)">Why this course, now</span>
-          <h2 style="margin-top:14px">Your child has AI.<br><em>Now what?</em></h2>
-          <p class="opener">Your child can already ask AI for any answer. So what, exactly, is left to learn?</p>
-        </div>
-        <div class="cases" data-reveal>
-          <div class="case">
-            <p class="can">AI will &mdash; in one second</p>
-            <p class="cant">average your survey results. <strong>It doesn't know that all 40 responses came
-              from your friends</strong>, who were never going to tell you the truth.</p>
-          </div>
-          <div class="case">
-            <p class="can">AI will &mdash; instantly</p>
-            <p class="cant">chart your January sales. <strong>It can't decide whether the fix is a lower
-              price, a better sign, or a different table.</strong></p>
+          <span class="kicker">project-based math &middot; fall 2026</span>
+          <h1>From Data<br>to <em>Impact</em></h1>
+          <p class="sub">A 24-session math course where students run a real product business &mdash;
+          real customers, real prices, real consequences &mdash; and every dollar of profit sends
+          backpacks to children in Senegal. <b style="color:var(--ink)">Your child finishes
+          with a portfolio of 24 real business artifacts</b> &mdash; from first market survey to
+          final profit statement &mdash; and there is no exam.</p>
+          <div class="ctas">
+            <a class="btn btn-primary" href="https://africacriesout.org/aco-data-to-impact.html" data-enroll>Enroll now</a>
+            <a class="btn btn-secondary" href="#overview">See how it works &darr;</a>
           </div>
         </div>
-        <p class="punch" data-reveal>It computes flawlessly &mdash; <strong>and takes responsibility for
-          nothing.</strong> The scarce skill of your child's generation isn't getting answers. It's knowing
-          which numbers to trust, what they mean, and what to do next.</p>
-        <p class="closing" data-reveal>That skill has never been teachable from a worksheet, because
-          worksheets have answer keys. It's built the way it's always been built: by making a real call,
-          being really wrong, and getting to try again. This course is 24 sessions of exactly that &mdash;
-          with stakes a child can feel and a mission worth being careful for.</p>
-        <div class="midcta" data-reveal><a class="btn btn-primary" href="https://africacriesout.org/aco-data-to-impact.html" data-enroll>Claim one of 15 seats</a></div>
+        <div class="shot" data-reveal data-delay="1">
+          <img src="images/backpack-green.png" alt="The real product behind the course: a green children's backpack with a color-it-yourself front panel reading 'Yàlla bëgg na la' — God loves you." />
+        </div>
       </div>
     </div>
-  </section>
-
-  <!-- The season -->
-  <section class="season" id="phases">
-    <div class="container">
-      <span class="eyebrow" data-reveal style="color:var(--coral-text)">The Season</span>
-      <h2 data-reveal style="margin-top:14px">How the 24 sessions unfold</h2>
-      <p class="intro" data-reveal>Sundays at 5:00 PM Pacific (8:00 PM Eastern), September 13 to February 28 &mdash; then the
-        Showcase. Dates are approximate; the real project comes first.</p>
-
-      <div class="ph-row" data-reveal><p class="ph">Phase 1</p><div class="what"><strong>Understanding the Business</strong><span>How a real product project works &mdash; including Session 1's core lens: <strong style="color:var(--ink)">domestic vs. international sourcing</strong>, the choice every later decision flows through.</span></div><p class="n">3 sessions</p></div>
-      <div class="ph-row" data-reveal><p class="ph">Phase 2</p><div class="what"><strong>Market Research &amp; Statistics</strong><span>Design a survey, collect 30&ndash;50 real responses. <i>Survey complete &asymp; Oct 11 &middot; product spec &asymp; Oct 18.</i></span></div><p class="n">4 sessions <i>+ fieldwork</i></p></div>
-      <div class="ph-row" data-reveal><p class="ph">Phase 3</p><div class="what"><strong>Product, Production &amp; Business Math</strong><span>Unit costs, margins, break-even &mdash; then Session 1 applied for real: <strong style="color:var(--ink)">two live supplier quotes, China (landed cost: product + freight + tariffs + clearance) vs. a US wholesaler</strong>, compared on cost, lead time, and risk before the real sourcing decision &asymp; Oct 25.</span></div><p class="n">6 sessions</p></div>
-      <div class="ph-row" data-reveal><p class="ph">Phase 4</p><div class="what"><strong>Marketing &amp; Sales</strong><span>Sales Events I &amp; II (January). Every transaction becomes a data point.</span></div><p class="n">7 sessions <i>+ 2 events</i></p></div>
-      <div class="ph-row" data-reveal><p class="ph">Phase 5</p><div class="what"><strong>Analyze, Reflect &amp; Impact</strong><span>What does our data say worked? Business review and impact math.</span></div><p class="n">4 sessions</p></div>
-      <div class="ph-row" data-reveal><p class="ph">Phase 6</p><div class="what"><strong>Final Impact Showcase</strong><span>The full data story, presented publicly.</span></div><p class="n">March 7, 2027</p></div>
-
-      <p class="note" data-reveal>Want the session-by-session detail? <a href="contact">Ask us for the full 24-session syllabus &rarr;</a> &mdash; every session's driving question, math content, and class task.</p>
+    <div class="facts">
+      <div class="frow">
+        <div class="f"><small>Who</small><b>Grades 6&ndash;7</b><span>elementary with a parent</span></div>
+        <div class="f"><small>When</small><b>Sundays 5:00 PM PT</b><span>8:00 PM Eastern</span></div>
+        <div class="f"><small>Season</small><b>Sept 13 &ndash; Feb 28</b><span>Showcase Mar 7, 2027</span></div>
+        <div class="f"><small>Format</small><b>24 sessions</b><span>21 classes + 3 fieldwork</span></div>
+        <div class="f"><small>Class size</small><b>15 students</b><span>small-group</span></div>
+        <div class="f"><small>Tuition</small><b>$720</b><span>$30 per session</span></div>
+      </div>
     </div>
+  </header>
+
+  <!-- ===== 01 · THE MOMENT ===== -->
+  <section class="scene" id="overview">
+    <div class="container">
+      <div class="inner">
+        <div class="station" data-reveal><span class="num">01</span><span class="lbl">The moment</span></div>
+        <p class="lead" data-reveal>This January, a twelve-year-old will stand behind a sales table,
+        watch a stranger pick up a product she helped design, and <span class="hold">hold her
+        breath over a number she calculated herself.</span></p>
+        <div class="whisper" data-reveal>Did we price it right? The survey said people would pay this.
+        Was the survey right?</div>
+        <p class="after" data-reveal>That moment is the course. <b>From Data to Impact</b> hands
+        students one real product business to run, from first survey to final sale. They question
+        real customers, set real prices, count real revenue &mdash; and answer for real results.
+        <i>&ldquo;When will I ever use this?&rdquo;</i> &mdash; the one question no student in this course will
+        ever need to ask.</p>
+      </div>
+    </div>
+    <div class="bridgeline" data-reveal><span class="say">that one held breath is built from six links &darr;</span><span class="seg"></span></div>
   </section>
 
-  <!-- Teaching team -->
+  <!-- ===== 02 · THE CHAIN ===== -->
+  <section class="chain on-dark" id="chain">
+    <div class="container">
+      <div class="head" data-reveal>
+        <div class="station" style="justify-content:center;display:flex;"><span class="num">02</span><span class="lbl">The curriculum</span></div>
+        <h2>Six skills. <em>One unbroken chain.</em></h2>
+        <p>These aren't six units studied side by side. Each skill exists because the one before
+        it <b>demands</b> it &mdash; and every number a student produces becomes the input to what
+        happens next. Nothing can be skipped. The project won't move without it.</p>
+      </div>
+      <div class="links">
+        <div class="lk L" data-reveal>
+          <div class="txt">
+            <span class="ccap">01 &middot; Ask &mdash; Statistical thinking</span>
+            <h3>One precisely posed question</h3>
+            <p><i>What would people actually buy?</i> Pose it sloppily, and every step after inherits the error.</p>
+          </div>
+          <span class="cdot"></span>
+          <span class="ghost" aria-hidden="true">1</span>
+        </div>
+        <div class="handoff" data-reveal><span>the question shapes the survey</span></div>
+
+        <div class="lk R" data-reveal>
+          <div class="txt">
+            <span class="ccap">02 &middot; Research &mdash; Market research</span>
+            <h3>30&ndash;50 real people answer</h3>
+            <p>Their answers &mdash; not the teacher's opinion, not the loudest student's &mdash; choose the product.</p>
+          </div>
+          <span class="cdot"></span>
+          <span class="ghost" aria-hidden="true">2</span>
+        </div>
+        <div class="handoff" data-reveal><span>the data chooses the product</span></div>
+
+        <div class="lk L" data-reveal>
+          <div class="txt">
+            <span class="ccap">03 &middot; Price &mdash; Unit economics</span>
+            <h3>Margin decides if the plan can live</h3>
+            <p>The product has a real cost; the survey suggests a price. Break-even math says whether the whole plan works at all.</p>
+          </div>
+          <span class="cdot"></span>
+          <span class="ghost" aria-hidden="true">3</span>
+        </div>
+        <div class="handoff" data-reveal><span>the math sets the sales plan</span></div>
+
+        <div class="lk R" data-reveal>
+          <div class="txt">
+            <span class="ccap">04 &middot; Sell &mdash; Data analysis</span>
+            <h3>January: the plan meets customers</h3>
+            <p>Real sales tables. Every transaction becomes a data point in a dataset the class generated itself &mdash; then charts, comparisons, conclusions.</p>
+          </div>
+          <span class="cdot"></span>
+          <span class="ghost" aria-hidden="true">4</span>
+        </div>
+        <div class="handoff" data-reveal><span>the results test the plan</span></div>
+
+        <div class="lk L" data-reveal>
+          <div class="txt">
+            <span class="ccap">05 &middot; Face it &mdash; Decisions under uncertainty</span>
+            <h3>The hardest lesson in the course</h3>
+            <p><i>Our own data says we got something wrong.</i> The class revises the plan the
+            evidence's way, not hope's way &mdash; and later learns to tell <b>a good decision with a
+            poor outcome from a poor decision that got lucky</b>. The one experience no worksheet
+            can offer.</p>
+          </div>
+          <span class="cdot"></span>
+          <span class="ghost" aria-hidden="true">5</span>
+        </div>
+        <div class="handoff" data-reveal><span>the revision feeds the story</span></div>
+
+        <div class="lk finale" data-reveal>
+          <span class="cdot"></span>
+          <div class="txt">
+            <span class="ccap">06 &middot; Tell it &mdash; Public presentation &middot; March 7, 2027</span>
+            <h3>The whole chain, told as one data story</h3>
+            <div class="big">1,000 backpacks funded &mdash; the only number that matters</div>
+            <p>From the first survey question to the final dollar delivered &mdash; presented to a real audience, and measured in backpacks reaching children across <b>ten villages in Senegal</b>.</p>
+          </div>
+        </div>
+      </div>
+      <p class="close" data-reveal>Your child cannot learn one skill here without needing the next.</p>
+    </div>
+    <div class="bridgeline" data-reveal><span class="say">six skills, one chain &mdash; but couldn't AI just do all of it?</span><span class="seg"></span></div>
+  </section>
+
+  <!-- ===== 03 · THE AI QUESTION ===== -->
+  <section class="dti-ai" id="ai">
+    <div class="container">
+      <div class="head" data-reveal>
+        <div class="station" style="justify-content:center;display:flex;"><span class="num">03</span><span class="lbl">Why this course, now</span></div>
+        <h2>Your child has AI. <em>Now what?</em></h2>
+        <p>Your child can already ask AI for any answer. So what, exactly, is left to learn?</p>
+      </div>
+      <div class="aicases">
+        <div class="aicase" data-reveal>
+          <span class="can">AI will &mdash; in one second</span>
+          <p class="txt">average your survey results. <b>It doesn't know that all 40 responses
+          came from your friends</b>, who were never going to tell you the truth.</p>
+        </div>
+        <div class="aicase" data-reveal data-delay="1">
+          <span class="can">AI will &mdash; instantly</span>
+          <p class="txt">chart your January sales. <b>It can't decide whether the fix is a lower
+          price, a better sign, or a different table.</b></p>
+        </div>
+      </div>
+      <div class="punch" data-reveal>
+        <p>It computes flawlessly &mdash; <b>and takes responsibility for nothing.</b> The scarce
+        skill of your child's generation isn't getting answers. It's knowing which numbers to
+        trust, what they mean, and what to do next.</p>
+        <p style="margin-top:12px">That skill has never been teachable from a worksheet, because
+        worksheets have answer keys. It's built the way it's always been built: by making a real
+        call, being really wrong, and getting to try again. This course is 24 sessions of exactly
+        that &mdash; with stakes a child can feel and a mission worth being careful for.</p>
+        <div class="pcta"><a class="btn btn-primary" href="https://africacriesout.org/aco-data-to-impact.html" data-enroll>Claim one of 15 seats</a></div>
+      </div>
+    </div>
+    <div class="bridgeline" data-reveal><span class="say">so we built a season where the child makes the calls &darr;</span><span class="seg"></span></div>
+  </section>
+
+  <!-- ===== 04 · THE SEASON ===== -->
+  <section class="phases" id="phases">
+    <div class="container">
+      <div class="panel" data-reveal>
+        <div class="station"><span class="num">04</span><span class="lbl">The season</span></div>
+        <h2>How the 24 sessions unfold</h2>
+        <p class="lede">Sundays at 5:00 PM Pacific (8:00 PM Eastern), September 13 to February 28 &mdash;
+        then the Showcase. Dates are approximate; the real project comes first.</p>
+        <p style="font-family:var(--font-display);font-style:italic;font-size:15.5px;line-height:1.8;color:var(--gold-text);margin:-14px 0 26px">
+        Actual driving questions from the syllabus: &ldquo;If 21 people prefer &lsquo;animal,&rsquo;
+        is that actually a lot?&rdquo; &middot; &ldquo;Is the cheapest supplier always the best
+        supplier?&rdquo; &middot; &ldquo;$5, $7, or $10 &mdash; which price is actually
+        better?&rdquo;</p>
+        <div class="ph-row"><div class="ph">Phase 1</div><div class="what"><b>Understanding the Business</b><span>How a real product project works &mdash; including Session 1's core lens: <b>domestic vs. international sourcing</b>, the choice every later decision flows through.</span></div><div class="n">3 sessions</div></div>
+        <div class="ph-row"><div class="ph">Phase 2</div><div class="what"><b>Market Research &amp; Statistics</b><span>Random and stratified sampling, then the real thing: each student surveys at <b>their own school</b> under an approved School Support Request &mdash; 15 students, up to 15 school communities in one dataset. <i>Survey week &asymp; Oct 4&ndash;11 &middot; product spec &asymp; Oct 18.</i></span></div><div class="n">5 sessions <i>incl. survey week</i></div></div>
+        <div class="ph-row"><div class="ph">Phase 3</div><div class="what"><b>Product, Production &amp; Business Math</b><span>Unit costs, margins, break-even &mdash; then Session 1 applied for real: <b>two live supplier quotes, China (landed cost: product + freight + tariffs + clearance) vs. a US wholesaler</b>, compared on cost, lead time, and risk before the real sourcing decision &asymp; Oct 25.</span></div><div class="n">6 sessions</div></div>
+        <div class="ph-row"><div class="ph">Phase 4</div><div class="what"><b>Marketing &amp; Sales</b><span>The class chooses its own venues &mdash; school event, church, farmers market &mdash; on a weighted matrix, drafts the outreach, and builds an Event Day Kit. Then <b>a real controlled experiment</b>: Sales Event I &rarr; one data-based adjustment &rarr; Sales Event II.</span></div><div class="n">6 sessions <i>incl. 2 events</i></div></div>
+        <div class="ph-row"><div class="ph">Phase 5</div><div class="what"><b>Analyze, Reflect &amp; Impact</b><span>What does our data say worked? Business review and impact math.</span></div><div class="n">4 sessions</div></div>
+        <div class="ph-row"><div class="ph">Phase 6</div><div class="what"><b>Final Impact Showcase</b><span>The full data story, presented publicly.</span></div><div class="n">March 7, 2027</div></div>
+        <div style="margin-top:26px;border-top:1px solid var(--line);padding-top:22px">
+          <p style="font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--gold-text);margin-bottom:10px">What your child walks away with</p>
+          <p style="font-size:14.5px;line-height:1.7">Every session produces a real artifact, and the 24 together become a
+          <b style="color:var(--ink)">Student Portfolio</b> &mdash; Supply Chain Map &middot; Survey &amp; Sampling Plan &middot;
+          Unit Cost Model &middot; Supplier Comparison Matrix &middot; Pricing Recommendation &middot; Production
+          Approval Packet &middot; Sales Data Sets &middot; Mid-Campaign Decision Memo &middot; Financial &amp; Impact
+          Summary &middot; Business Review &middot; Final Presentation. <b style="color:var(--ink)">No exam &mdash;
+          the portfolio and the Showcase are the assessment.</b></p>
+        </div>
+        <p class="syl" style="margin-top:18px">Read every session for yourself:
+        <a href="/documents/From_Data_to_Impact_24_Lessons.pdf">Download the full 24-session
+        syllabus (PDF) &rarr;</a> &mdash; each session's driving question, math content, class task,
+        and deliverable. Questions? <a href="/contact">Get in touch</a>.</p>
+      </div>
+    </div>
+    <div class="bridgeline" data-reveal><span class="say">guided, every step, by people who've done it for real &darr;</span><span class="seg"></span></div>
+  </section>
+
+  <!-- ===== 05 · THE TEAM ===== -->
   <section class="team" id="team">
     <div class="container">
-      <span class="eyebrow" data-reveal style="color:var(--coral-text)">Who's teaching</span>
-      <h2 data-reveal style="margin-top:14px">One teacher. Three industry mentors.<br>One real project.</h2>
-      <p class="intro" data-reveal>Mathematics instruction, business theory, and real industry experience
-        &mdash; four perspectives connected inside one authentic project.</p>
-
-      <div class="lead-card" data-reveal>
-        <p class="role">Lead Math Teacher &amp; Project-Based Learning Designer</p>
-        <h3>Xiaohong Duan</h3>
-        <p>Before education, Xiaohong worked in IT product management &mdash; translating complex business
-          problems into clear, executable technical solutions. That's exactly the transformation she now
-          teaches children: <strong>turn real-world problems into questions mathematics can analyze and
-          solve.</strong> Her teaching spans Arithmetic through Calculus, plus Statistics, Probability, and
-          Number Theory &mdash; a breadth that lets her match the right mathematical tool to each student's
-          age and the project's need, and find the underlying gap holding a student back rather than just
-          the technique for the problem in front of them. Her classroom principle: <strong>Why before
-          How.</strong></p>
-        <p class="quote">&ldquo;AI should reduce unnecessary work &mdash; not necessary thinking.&rdquo;</p>
-        <div class="skills">
-          <span>Number Sense</span><span>Statistical Thinking</span><span>Logical Reasoning</span><span>Problem Solving</span><span>Decision Making</span>
-        </div>
+      <div class="head" data-reveal>
+        <div class="station" style="justify-content:center;display:flex;"><span class="num">05</span><span class="lbl">Who's teaching</span></div>
+        <h2>One teacher. Three industry mentors.<br>One real project.</h2>
+        <p>Mathematics instruction, business theory, and real industry experience &mdash; four
+        perspectives connected inside one authentic project.</p>
       </div>
-
+      <div class="lead-card" data-reveal>
+        <div class="role">Lead Math Teacher &amp; Project-Based Learning Designer</div>
+        <h3>Xiaohong Duan</h3>
+        <p>Before education, Xiaohong worked in IT product management &mdash; translating complex
+        business problems into clear, executable technical solutions. That's exactly the
+        transformation she now teaches children: <b>turn real-world problems into questions
+        mathematics can analyze and solve.</b> Her teaching spans Arithmetic through Calculus,
+        plus Statistics, Probability, and Number Theory &mdash; a breadth that lets her match the right
+        mathematical tool to each student's age and the project's need, and find the underlying
+        gap holding a student back rather than just the technique for the problem in front of
+        them. Her classroom principle: <b>Why before How.</b></p>
+        <p class="quote">&ldquo;AI should reduce unnecessary work &mdash; not necessary thinking.&rdquo;</p>
+        <div class="skills"><span>Number Sense</span><span>Statistical Thinking</span><span>Logical Reasoning</span><span>Problem Solving</span><span>Decision Making</span></div>
+      </div>
       <div class="mentor-grid">
         <div class="mentor" data-reveal>
           <span class="tag">Guest Mentor &middot; Session 1</span>
           <h3>Prof. Kevin Jialin Sun</h3>
-          <p class="bio">Associate Professor of Accounting at St. John's University; former VP &amp; Senior
-            Quantitative Analyst at AllianceBernstein; ex-Deloitte auditor; Ph.D. (University of Colorado
-            Boulder), CFA charterholder.</p>
-          <p class="focus"><strong>Session focus</strong>Cost structure, use of funds, risk, and the
-            business framework for US domestic vs. overseas production.</p>
+          <div class="bio">Associate Professor of Accounting at St. John's University; former VP
+          &amp; Senior Quantitative Analyst at AllianceBernstein; ex-Deloitte auditor; Ph.D.
+          (University of Colorado Boulder), CFA charterholder.</div>
+          <div class="focus"><b>Session focus</b>Cost structure, use of funds, risk, and the
+          business framework for US domestic vs. overseas production.</div>
         </div>
         <div class="mentor" data-reveal data-delay="1">
           <span class="tag">Guest Mentor &middot; Session 2</span>
           <h3>Tony Yao</h3>
-          <p class="bio">Nearly 30 years in business operations &mdash; international trade, apparel
-            production, procurement, and supply-chain management; founder of a US logistics company;
-            EMBA &amp; CEIBS coursework.</p>
-          <p class="focus"><strong>Session focus</strong>Product development, supplier selection, cost
-            control, and real supply-chain decisions &mdash; with real order and supply-chain cases.</p>
+          <div class="bio">Nearly 30 years in business operations &mdash; international trade, apparel
+          production, procurement, and supply-chain management; founder of a US logistics
+          company; EMBA &amp; CEIBS coursework.</div>
+          <div class="focus"><b>Session focus</b>Product development, supplier selection, cost
+          control, and real supply-chain decisions &mdash; with real order and supply-chain cases.</div>
         </div>
         <div class="mentor" data-reveal data-delay="2">
           <span class="tag">Guest Mentor &middot; Session 3</span>
           <h3>Joyce Xie</h3>
-          <p class="bio">Entrepreneur based in Oceania with 20+ years in food manufacturing and wholesale;
-            owns biscuit and snack factories in Papua New Guinea, covering the full chain from production
-            through trade and distribution.</p>
-          <p class="focus"><strong>Session focus</strong>Landed cost in the real world &mdash; how
-            procurement, production, quality, delivery, and local markets interact in overseas
-            operations.</p>
+          <div class="bio">Entrepreneur based in Oceania with 20+ years in food manufacturing and
+          wholesale; owns biscuit and snack factories in Papua New Guinea, covering the full
+          chain from production through trade and distribution.</div>
+          <div class="focus"><b>Session focus</b>Landed cost in the real world &mdash; how procurement,
+          production, quality, delivery, and local markets interact in overseas operations.</div>
         </div>
       </div>
     </div>
+    <div class="bridgeline" data-reveal><span class="say">and all of it points at one mission &darr;</span><span class="seg"></span></div>
   </section>
 
-  <!-- Enrollment = membership -->
-  <section class="mission">
+  <!-- ===== 06 · THE MISSION ===== -->
+  <section class="mission on-dark" id="mission">
     <div class="container">
-      <div class="cols">
-        <div data-reveal>
-          <span class="eyebrow">Enrollment = membership</span>
-          <h2 style="margin-top:14px">One enrollment.<br>One team. One mission.</h2>
-          <p>Enrolling makes your child a member of the <strong>Pack with Love Club</strong> &mdash; the team
-            carrying this project together. No prior connection to Pack with Love or Africa Cries Out is
-            needed; the course starts from zero.</p>
-          <p>The profit from everything the class makes and sells funds <a href="project"><strong>the Love
-            &amp; Hope Backpack Project</strong></a> &mdash; color-it-yourself backpack sets for children across ten
-            villages in Senegal, traveling with the March 2027 mission. Every backpack is a gift,
-            unconditional.</p>
-        </div>
-        <div data-reveal>
-          <div class="rule">
-            <p class="t">What tuition pays for</p>
-            <p>Teaching: 24 coached sessions, materials, and guest mentors. Tuition is not a donation and
-              buys no fundraising credit.</p>
-          </div>
-          <div class="rule">
-            <p class="t">Where the sales money goes</p>
-            <p>Every dollar of profit &mdash; what's left after real product costs &mdash; goes to the
-              project's shared goal as the class's team contribution. Proceeds are never returned to
-              families; the return is the education itself.</p>
-          </div>
-          <div class="rule">
-            <p class="t">Full disclosure</p>
-            <p>Our partner Africa Cries Out is a Christ-centered medical mission nonprofit; each backpack set
-              includes a wordless picture book sharing the Christian message of love. Families of all
-              backgrounds are welcome &mdash; we share this so you enroll fully informed.</p>
-          </div>
+      <div class="inner">
+        <div class="station" data-reveal><span class="num">06</span><span class="lbl">Enrollment = membership</span></div>
+        <h2 data-reveal>One enrollment. One team. One mission.</h2>
+        <p class="lede" data-reveal>Enrolling makes your child a member of the <b>Pack with Love
+        Club</b> &mdash; the team carrying this project together. No prior connection to Pack with Love
+        or Africa Cries Out is needed; the course starts from zero. The profit from everything the
+        class makes and sells funds <a href="/project"><b>the Love &amp; Hope Backpack
+        Project</b></a> &mdash; color-it-yourself backpack sets for children across ten villages in
+        Senegal, traveling with the March 2027 mission. Every backpack is a gift, unconditional.</p>
+        <div class="rules">
+          <div class="rule" data-reveal><b>What tuition pays for</b><p>Teaching: 24 coached sessions,
+          materials, and guest mentors. Tuition is not a donation and buys no fundraising
+          credit.</p></div>
+          <div class="rule" data-reveal data-delay="1"><b>Where the sales money goes</b><p>Every dollar of profit &mdash;
+          what's left after real product costs &mdash; goes to the project's shared goal as the class's
+          team contribution. Proceeds are never returned to families; the return is the education
+          itself.</p></div>
+          <div class="rule" data-reveal data-delay="2"><b>Full disclosure</b><p>Our partner Africa Cries Out is a
+          Christ-centered medical mission nonprofit; each backpack set includes a wordless picture
+          book sharing the Christian message of love. Families of all backgrounds are welcome &mdash; we
+          share this so you enroll fully informed.</p></div>
         </div>
       </div>
     </div>
+    <div class="bridgeline" data-reveal><span class="say">the practical questions, answered straight &darr;</span><span class="seg"></span></div>
   </section>
 
-  <!-- FAQ -->
-  <section class="section section--cream" id="faq" style="background:var(--cream)">
-    <div class="container narrow">
-      <span class="eyebrow" data-reveal style="color:var(--coral-text)">Questions parents ask</span>
-      <h2 data-reveal style="margin-top:14px;margin-bottom:32px">Before you enroll</h2>
-      <div class="faq" data-reveal>
-        <details>
-          <summary>Does my child need any math background?</summary>
-          <div class="faq__body"><p>No prerequisite coursework. The same real task adjusts to mathematical
-            maturity: foundational learners work with number sense, percentages, and graphs; advanced
-            learners add weighted decision models, profit margin, and forecast error. Grades 6&ndash;7 get
-            the best fit; what's required is commitment, not prior coursework.</p></div>
-        </details>
-        <details>
-          <summary>My child is in elementary school &mdash; can they join?</summary>
-          <div class="faq__body"><p>Yes, with an accompanying parent. The parent's role is support, not
-            substitution: the student asks the questions, records the data, and explains the decisions; the
-            parent helps with logistics and safety at fieldwork events. An accompanied student holds one of
-            the 15 seats like everyone else.</p></div>
-        </details>
-        <details>
-          <summary>Is my child required to sell or fundraise individually?</summary>
-          <div class="faq__body"><p>The class works as a team, with roles matched to each student &mdash;
-            research, production, sales, recording, presenting. Every student participates in the full data
+  <!-- ===== 07 · FAQ ===== -->
+  <section class="dti-faq-sec" id="faq">
+    <div class="container">
+      <div class="inner">
+        <div class="station" data-reveal><span class="num">07</span><span class="lbl">Questions parents ask</span></div>
+        <h2 data-reveal>Before you enroll</h2>
+
+        <div class="faq dti-faq" data-reveal>
+          <details>
+            <summary>Does my child need any math background?</summary>
+            <div class="faq__body"><p>No prerequisite coursework. The same real task adjusts to mathematical
+            maturity: foundational learners work with number sense, percentages, and graphs;
+            advanced learners add weighted decision models, profit margin, and forecast error.
+            Grades 6&ndash;7 get the best fit; what's required is commitment, not prior coursework.</p></div>
+          </details>
+          <details>
+            <summary>My child is in elementary school &mdash; can they join?</summary>
+            <div class="faq__body"><p>Yes, with an accompanying parent. The parent's role is support, not
+            substitution: the student asks the questions, records the data, and explains the
+            decisions; the parent helps with logistics and safety at fieldwork events. An
+            accompanied student holds one of the 15 seats like everyone else.</p></div>
+          </details>
+          <details>
+            <summary>Is my child required to sell or fundraise individually?</summary>
+            <div class="faq__body"><p>The class works as a team, with roles matched to each student &mdash; research,
+            production, sales, recording, presenting. Every student participates in the full data
             cycle; no student is graded on dollars raised.</p></div>
-        </details>
-        <details>
-          <summary>What if my child has to miss a class?</summary>
-          <div class="faq__body"><p>Let us know ahead when you can. Missed classes aren't refunded or
-            credited individually, but every absent student receives a catch-up packet &mdash; the session
-            summary, the class's current data files, and the week's task &mdash; so they stay
-            <strong>inside the project, not behind it</strong>. If a student misses three or more sessions,
+          </details>
+          <details>
+            <summary>What if my child has to miss a class?</summary>
+            <div class="faq__body"><p>Let us know ahead when you can. Missed classes aren't refunded or
+            credited individually, but every absent student receives a catch-up packet &mdash; the
+            session summary, the class's current data files, and the week's task &mdash; so they stay
+            <b>inside the project, not behind it</b>. If a student misses three or more sessions,
             the coach will talk with the family to right-size the student's role &mdash; an adjustment,
             never a penalty.</p></div>
-        </details>
-        <details>
-          <summary>What if we can't attend a fieldwork event?</summary>
-          <div class="faq__body"><p>Fieldwork dates are announced at least three weeks in advance &mdash;
-            please protect them if you can; they are the heart of the course. A student who truly can't
-            attend is given an alternative real role &mdash; pre-event preparation or post-event data
-            analysis &mdash; so their contribution stays real, not simulated.</p></div>
-        </details>
-        <details>
-          <summary>Is tuition refundable?</summary>
-          <div class="faq__body"><p>Before the first session (Sept 13): <strong>full refund</strong>.
-            Through the end of Phase 1 (the first three sessions, &asymp; Sept 27): refund of $720 minus $30
-            per session attended &mdash; Phase 1 is your natural trial window. After Phase 1: no refund,
-            because the class sizes its team claim, survey, and roles on the final roster, and a seat in
-            the 15-student cohort can no longer be refilled mid-project.</p>
+          </details>
+          <details>
+            <summary>What if we can't attend a fieldwork event?</summary>
+            <div class="faq__body"><p>Fieldwork dates are announced at least three weeks in advance &mdash; please
+            protect them if you can; they are the heart of the course. Survey week happens at each
+            student's own school under an approved School Support Request (drafted by students,
+            submitted by an Adult Advisor); sales events are held at venues the class selects and
+            plans &mdash; a school event, a church gathering, a farmers market &mdash; with adults handling all
+            bookings and all money. A student who truly can't attend is given an alternative real
+            role &mdash; pre-event preparation or post-event data analysis &mdash; so their contribution stays
+            real, not simulated.</p></div>
+          </details>
+          <details>
+            <summary>How is my child assessed? Are there exams?</summary>
+            <div class="faq__body"><p>No exams. Every session produces a real deliverable, and the 24 together
+            become a <b>Student Portfolio</b> &mdash; from the first Supply Chain Map to the Financial
+            &amp; Impact Summary. The portfolio and the Final Impact Showcase presentation are the
+            assessment: your child ends the season able to <b>show</b> what they can do, not just a
+            score.</p></div>
+          </details>
+          <details>
+            <summary>Is tuition refundable?</summary>
+            <div class="faq__body"><p>Before the first session (Sept 13): <b>full refund</b>. Through the end
+            of Phase 1 (the first three sessions, &asymp; Sept 27): refund of $720 minus $30 per session
+            attended &mdash; Phase 1 is your natural trial window. After Phase 1: no refund, because the
+            class sizes its team claim, survey, and roles on the final roster, and a seat in the
+            15-student cohort can no longer be refilled mid-project.</p>
             <p>Documented medical or relocation circumstances receive prorated credit toward a future
-            program. If we cancel a session, we add a makeup or extend the season; if we ever cancel the
-            course itself, all remaining sessions are refunded in full.</p></div>
-        </details>
-        <details>
-          <summary>What if delays push things past the March 2027 mission?</summary>
-          <div class="faq__body"><p>Some things are outside anyone's control: customs clearance, tariff
-            policy changes, supplier delays. If any of them keep funds or backpacks from making the March
-            2027 mission, nothing is lost &mdash; <strong>every dollar raised supports the 2028 Children's
-            Hope &amp; Care mission instead.</strong> The same applies to funds raised beyond the $5,300
-            goal and to gifts that arrive after the campaign closes. The mission returns every year; love
-            that misses one flight catches the next.</p></div>
-        </details>
-        <details>
-          <summary>Is any part tax-deductible?</summary>
-          <div class="faq__body"><p>No. Tuition purchases instruction &mdash; it is not a charitable
-            donation and is not tax-deductible. (The class's sales proceeds go to the project's shared
-            goal, but those are raised from customers, not from tuition.)</p></div>
-        </details>
+            program. If we cancel a session, we add a makeup or extend the season; if we ever cancel
+            the course itself, all remaining sessions are refunded in full.</p></div>
+          </details>
+          <details>
+            <summary>What if delays push things past the March 2027 mission?</summary>
+            <div class="faq__body"><p>Some things are outside anyone's control: customs clearance, tariff
+            policy changes, supplier delays. If any of them keep funds or backpacks from making the
+            March 2027 mission, nothing is lost &mdash; <b>every dollar raised supports the 2028
+            Children's Hope &amp; Care mission instead.</b> The same applies to funds raised beyond
+            the $5,300 goal and to gifts that arrive after the campaign closes. The mission returns
+            every year; love that misses one flight catches the next.</p></div>
+          </details>
+          <details>
+            <summary>Is any part tax-deductible?</summary>
+            <div class="faq__body"><p>No. Tuition purchases instruction &mdash; it is not a charitable donation and
+            is not tax-deductible. (The class's sales proceeds go to the project's shared goal, but
+            those are raised from customers, not from tuition.)</p></div>
+          </details>
+        </div>
       </div>
     </div>
+    <div class="bridgeline" data-reveal><span class="say">fifteen seats. one season. &darr;</span><span class="seg"></span></div>
   </section>
 
-  <!-- Final CTA -->
-  <section class="final" id="enroll">
-    <h2 data-reveal>Fifteen seats. One real project.<br>
-      <em>A season of math your child will never ask &ldquo;when will I use this?&rdquo; about.</em></h2>
-    <p data-reveal>Sundays 5:00 PM Pacific / 8:00 PM Eastern &middot; September 13, 2026 &ndash; March 7, 2027 &middot; $720</p>
-    <div data-reveal>
-      <a class="btn btn-primary btn-lg" href="https://africacriesout.org/aco-data-to-impact.html" data-enroll>Enroll now</a>
-      <p class="seats" data-seats hidden aria-live="polite"></p>
-    </div>
-    <p class="contact" data-reveal>Questions? <a href="contact">Get in touch</a> &middot;
-      <a href="project" style="color:var(--gold)">Learn about the mission &rarr;</a></p>
+  <!-- ===== 08 · ENROLL ===== -->
+  <section class="dti-final on-dark" id="enroll">
+    <div class="station" data-reveal><span class="num">08</span><span class="lbl">Enroll</span></div>
+    <h2 data-reveal>Fifteen seats. One real project.<br><em>A season of math your child will
+    never ask &ldquo;when will I use this?&rdquo; about.</em></h2>
+    <p class="facts-line" data-reveal>Sundays 5:00 PM Pacific / 8:00 PM Eastern &middot; September 13, 2026 &ndash;
+    March 7, 2027 &middot; $720</p>
+    <div data-reveal><a class="btn btn-primary" href="https://africacriesout.org/aco-data-to-impact.html" data-enroll>Enroll now</a></div>
+    <p class="seats" data-seats hidden></p>
+    <p class="contact" data-reveal>Questions? <a href="/contact">Get in touch</a> &middot;
+    <a href="/project">Learn about the mission &rarr;</a></p>
   </section>
 
   </main>
@@ -444,7 +488,33 @@
     <div class="container footer__bottom"><p>© 2026 Pack with Love Youth Service Club · Founded by Joanna Zhang · Love First. Create with Joy. Serve with Purpose.</p></div>
   </footer>
   <a class="give-fab" href="/give">&hearts; Give</a>
-  <script src="js/main.js?v=68"></script>
+  <script>
+    // progress rail: fill with scroll, light stops per section
+    (function () {
+      var fill = document.getElementById('railfill');
+      if (!fill) return;
+      var stops = [].slice.call(document.querySelectorAll('.crail .stop'));
+      var targets = stops.map(function (s) { return document.getElementById(s.dataset.t); });
+      function rail() {
+        var h = document.documentElement;
+        var p = h.scrollTop / (h.scrollHeight - h.clientHeight);
+        fill.style.height = (p * 100).toFixed(1) + '%';
+        var mid = h.scrollTop + h.clientHeight * 0.45;
+        var active = 0;
+        targets.forEach(function (t, i) { if (t && t.offsetTop <= mid) active = i; });
+        stops.forEach(function (s, i) { s.classList.toggle('on', i <= active); });
+      }
+      document.addEventListener('scroll', rail, { passive: true });
+      rail();
+      stops.forEach(function (s) {
+        s.addEventListener('click', function () {
+          var t = document.getElementById(s.dataset.t);
+          if (t) t.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    })();
+  </script>
+  <script src="js/main.js?v=69"></script>
   <!-- Structured data: who we are (for search engines) -->
   <script type="application/ld+json">
   {
