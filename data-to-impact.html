@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=82" />
+  <link rel="stylesheet" href="css/styles.css?v=83" />
 </head>
 <body>
 
@@ -62,18 +62,6 @@
 
   <main id="content" tabindex="-1">
 
-  <!-- fixed progress rail -->
-  <div class="crail" aria-hidden="true">
-    <div class="fill" id="railfill"></div>
-    <span class="stop" data-t="overview" data-l="01 · The Moment" style="top:6%"></span>
-    <span class="stop" data-t="chain" data-l="02 · The Chain" style="top:19%"></span>
-    <span class="stop" data-t="ai" data-l="03 · The AI Question" style="top:33%"></span>
-    <span class="stop" data-t="phases" data-l="04 · The Season" style="top:47%"></span>
-    <span class="stop" data-t="team" data-l="05 · The Team" style="top:61%"></span>
-    <span class="stop" data-t="mission" data-l="06 · The Mission" style="top:75%"></span>
-    <span class="stop" data-t="faq" data-l="07 · FAQ" style="top:88%"></span>
-    <span class="stop" data-t="enroll" data-l="08 · Enroll" style="top:99%"></span>
-  </div>
 
   <!-- ===== 00 · HERO ===== -->
   <header class="dti-hero">
@@ -113,7 +101,7 @@
   <section class="scene" id="overview">
     <div class="container">
       <div class="inner">
-        <div class="station" data-reveal><span class="num">01</span><span class="lbl">The moment</span></div>
+        <span class="eyebrow eyebrow--dash" data-reveal style="display:inline-flex">The moment</span>
         <p class="lead" data-reveal>This January, a twelve-year-old will stand behind a sales table,
         watch a stranger pick up a product she helped design, and <span class="hold">hold her
         breath over a number she calculated herself.</span></p>
@@ -126,98 +114,76 @@
         ever need to ask.</p>
       </div>
     </div>
-    <div class="bridgeline" data-reveal><span class="say">that one held breath is built from six links &darr;</span><span class="seg"></span></div>
+    <div class="bridgeline" data-reveal><span class="say">that one held breath is built from six links &darr;</span></div>
   </section>
 
   <!-- ===== 02 · THE CHAIN ===== -->
   <section class="chain on-dark" id="chain">
     <div class="container">
       <div class="head" data-reveal>
-        <div class="station" style="justify-content:center;display:flex;"><span class="num">02</span><span class="lbl">The curriculum</span></div>
+        <span class="eyebrow center-tick">The curriculum</span>
         <h2>Six skills. <em>One unbroken chain.</em></h2>
         <p>These aren't six units studied side by side. Each skill exists because the one before
         it <b>demands</b> it &mdash; and every number a student produces becomes the input to what
         happens next. Nothing can be skipped. The project won't move without it.</p>
       </div>
-      <div class="links">
-        <div class="lk L" data-reveal>
-          <div class="txt">
-            <span class="ccap">01 &middot; Ask &mdash; Statistical thinking</span>
-            <h3>One precisely posed question</h3>
+      <div class="chaccord" data-reveal>
+        <details class="chitem" open>
+          <summary><span class="ccap">01 &middot; Ask &mdash; Statistical thinking</span><span class="ct">One precisely posed question</span></summary>
+          <div class="chbody">
             <p><i>What would people actually buy?</i> Pose it sloppily, and every step after inherits the error.</p>
+            <p class="chnext">&rarr; the question shapes the survey</p>
           </div>
-          <span class="cdot"></span>
-          <span class="ghost" aria-hidden="true">1</span>
-        </div>
-        <div class="handoff" data-reveal><span>the question shapes the survey</span></div>
-
-        <div class="lk R" data-reveal>
-          <div class="txt">
-            <span class="ccap">02 &middot; Research &mdash; Market research</span>
-            <h3>30&ndash;50 real people answer</h3>
+        </details>
+        <details class="chitem">
+          <summary><span class="ccap">02 &middot; Research &mdash; Market research</span><span class="ct">30&ndash;50 real people answer</span></summary>
+          <div class="chbody">
             <p>Their answers &mdash; not the teacher's opinion, not the loudest student's &mdash; choose the product.</p>
+            <p class="chnext">&rarr; the data chooses the product</p>
           </div>
-          <span class="cdot"></span>
-          <span class="ghost" aria-hidden="true">2</span>
-        </div>
-        <div class="handoff" data-reveal><span>the data chooses the product</span></div>
-
-        <div class="lk L" data-reveal>
-          <div class="txt">
-            <span class="ccap">03 &middot; Price &mdash; Unit economics</span>
-            <h3>Margin decides if the plan can live</h3>
+        </details>
+        <details class="chitem">
+          <summary><span class="ccap">03 &middot; Price &mdash; Unit economics</span><span class="ct">Margin decides if the plan can live</span></summary>
+          <div class="chbody">
             <p>The product has a real cost; the survey suggests a price. Break-even math says whether the whole plan works at all.</p>
+            <p class="chnext">&rarr; the math sets the sales plan</p>
           </div>
-          <span class="cdot"></span>
-          <span class="ghost" aria-hidden="true">3</span>
-        </div>
-        <div class="handoff" data-reveal><span>the math sets the sales plan</span></div>
-
-        <div class="lk R" data-reveal>
-          <div class="txt">
-            <span class="ccap">04 &middot; Sell &mdash; Data analysis</span>
-            <h3>January: the plan meets customers</h3>
+        </details>
+        <details class="chitem">
+          <summary><span class="ccap">04 &middot; Sell &mdash; Data analysis</span><span class="ct">January: the plan meets customers</span></summary>
+          <div class="chbody">
             <p>Real sales tables. Every transaction becomes a data point in a dataset the class generated itself &mdash; then charts, comparisons, conclusions.</p>
+            <p class="chnext">&rarr; the results test the plan</p>
           </div>
-          <span class="cdot"></span>
-          <span class="ghost" aria-hidden="true">4</span>
-        </div>
-        <div class="handoff" data-reveal><span>the results test the plan</span></div>
-
-        <div class="lk L" data-reveal>
-          <div class="txt">
-            <span class="ccap">05 &middot; Face it &mdash; Decisions under uncertainty</span>
-            <h3>The hardest lesson in the course</h3>
+        </details>
+        <details class="chitem">
+          <summary><span class="ccap">05 &middot; Face it &mdash; Decisions under uncertainty</span><span class="ct">The hardest lesson in the course</span></summary>
+          <div class="chbody">
             <p><i>Our own data says we got something wrong.</i> The class revises the plan the
             evidence's way, not hope's way &mdash; and later learns to tell <b>a good decision with a
             poor outcome from a poor decision that got lucky</b>. The one experience no worksheet
             can offer.</p>
+            <p class="chnext">&rarr; the revision feeds the story</p>
           </div>
-          <span class="cdot"></span>
-          <span class="ghost" aria-hidden="true">5</span>
-        </div>
-        <div class="handoff" data-reveal><span>the revision feeds the story</span></div>
-
-        <div class="lk finale" data-reveal>
-          <span class="cdot"></span>
-          <div class="txt">
-            <span class="ccap">06 &middot; Tell it &mdash; Public presentation &middot; March 7, 2027</span>
-            <h3>The whole chain, told as one data story</h3>
+        </details>
+        <details class="chitem finale">
+          <summary><span class="ccap">06 &middot; Tell it &mdash; Public presentation &middot; March 7, 2027</span><span class="ct">The whole chain, told as one data story</span></summary>
+          <div class="chbody">
             <div class="big">1,000 backpacks funded &mdash; the only number that matters</div>
             <p>From the first survey question to the final dollar delivered &mdash; presented to a real audience, and measured in backpacks reaching children across <b>ten villages in Senegal</b>.</p>
           </div>
-        </div>
+        </details>
       </div>
       <p class="close" data-reveal>Your child cannot learn one skill here without needing the next.</p>
     </div>
-    <div class="bridgeline" data-reveal><span class="say">six skills, one chain &mdash; but couldn't AI just do all of it?</span><span class="seg"></span></div>
+    <div class="bridgeline" data-reveal><span class="say">six skills, one chain &mdash; but couldn't AI just do all of it?</span></div>
   </section>
 
   <!-- ===== 03 · THE AI QUESTION ===== -->
   <section class="dti-ai" id="ai">
     <div class="container">
       <div class="head" data-reveal>
-        <div class="station" style="justify-content:center;display:flex;"><span class="num">03</span><span class="lbl">Why this course, now</span></div>
+        <span class="eyebrow center-tick">Why this course, now</span>
         <h2>Your child has AI. <em>Now what?</em></h2>
         <p>Your child can already ask AI for any answer. So what, exactly, is left to learn?</p>
       </div>
@@ -244,14 +210,14 @@
         <div class="pcta"><a class="btn btn-primary" href="https://africacriesout.org/aco-data-to-impact.html" data-enroll>Claim one of 15 seats</a></div>
       </div>
     </div>
-    <div class="bridgeline" data-reveal><span class="say">so we built a season where the child makes the calls &darr;</span><span class="seg"></span></div>
+    <div class="bridgeline" data-reveal><span class="say">so we built a season where the child makes the calls &darr;</span></div>
   </section>
 
   <!-- ===== 04 · THE SEASON ===== -->
   <section class="phases" id="phases">
     <div class="container">
       <div class="panel" data-reveal>
-        <div class="station"><span class="num">04</span><span class="lbl">The season</span></div>
+        <span class="eyebrow eyebrow--dash" style="display:inline-flex">The season</span>
         <h2>How the 24 sessions unfold</h2>
         <p class="lede">Sundays at 5:00 PM Pacific (8:00 PM Eastern), September 13 to February 28 &mdash;
         then the Showcase. Dates are approximate; the real project comes first.</p>
@@ -281,14 +247,14 @@
         and deliverable. Questions? <a href="/contact">Get in touch</a>.</p>
       </div>
     </div>
-    <div class="bridgeline" data-reveal><span class="say">guided, every step, by people who've done it for real &darr;</span><span class="seg"></span></div>
+    <div class="bridgeline" data-reveal><span class="say">guided, every step, by people who've done it for real &darr;</span></div>
   </section>
 
   <!-- ===== 05 · THE TEAM ===== -->
   <section class="team" id="team">
     <div class="container">
       <div class="head" data-reveal>
-        <div class="station" style="justify-content:center;display:flex;"><span class="num">05</span><span class="lbl">Who's teaching</span></div>
+        <span class="eyebrow center-tick">Who's teaching</span>
         <h2>One teacher. Three industry mentors.<br>One real project.</h2>
         <p>Mathematics instruction, business theory, and real industry experience &mdash; four
         perspectives connected inside one authentic project.</p>
@@ -337,14 +303,14 @@
         </div>
       </div>
     </div>
-    <div class="bridgeline" data-reveal><span class="say">and all of it points at one mission &darr;</span><span class="seg"></span></div>
+    <div class="bridgeline" data-reveal><span class="say">and all of it points at one mission &darr;</span></div>
   </section>
 
   <!-- ===== 06 · THE MISSION ===== -->
   <section class="mission on-dark" id="mission">
     <div class="container">
       <div class="inner">
-        <div class="station" data-reveal><span class="num">06</span><span class="lbl">Enrollment = membership</span></div>
+        <span class="eyebrow eyebrow--dash" data-reveal style="display:inline-flex">Enrollment = membership</span>
         <h2 data-reveal>One enrollment. One team. One mission.</h2>
         <p class="lede" data-reveal>Enrolling makes your child a member of the <b>Pack with Love
         Club</b> &mdash; the team carrying this project together. No prior connection to Pack with Love
@@ -367,14 +333,14 @@
         </div>
       </div>
     </div>
-    <div class="bridgeline" data-reveal><span class="say">the practical questions, answered straight &darr;</span><span class="seg"></span></div>
+    <div class="bridgeline" data-reveal><span class="say">the practical questions, answered straight &darr;</span></div>
   </section>
 
   <!-- ===== 07 · FAQ ===== -->
   <section class="dti-faq-sec" id="faq">
     <div class="container">
       <div class="inner">
-        <div class="station" data-reveal><span class="num">07</span><span class="lbl">Questions parents ask</span></div>
+        <span class="eyebrow eyebrow--dash" data-reveal style="display:inline-flex">Questions parents ask</span>
         <h2 data-reveal>Before you enroll</h2>
 
         <div class="faq dti-faq" data-reveal>
@@ -455,12 +421,12 @@
         </div>
       </div>
     </div>
-    <div class="bridgeline" data-reveal><span class="say">fifteen seats. one season. &darr;</span><span class="seg"></span></div>
+    <div class="bridgeline" data-reveal><span class="say">fifteen seats. one season. &darr;</span></div>
   </section>
 
   <!-- ===== 08 · ENROLL ===== -->
   <section class="dti-final on-dark" id="enroll">
-    <div class="station" data-reveal><span class="num">08</span><span class="lbl">Enroll</span></div>
+    <span class="eyebrow center-tick" data-reveal>Enroll</span>
     <h2 data-reveal>Fifteen seats. One real project.<br><em>A season of math your child will
     never ask &ldquo;when will I use this?&rdquo; about.</em></h2>
     <p class="facts-line" data-reveal>Sundays 5:00 PM Pacific / 8:00 PM Eastern &middot; September 13, 2026 &ndash;
@@ -488,33 +454,7 @@
     <div class="container footer__bottom"><p>© 2026 Pack with Love Youth Service Club · Founded by Joanna Zhang · Love First. Create with Joy. Serve with Purpose.</p></div>
   </footer>
   <a class="give-fab" href="/give">&hearts; Give</a>
-  <script>
-    // progress rail: fill with scroll, light stops per section
-    (function () {
-      var fill = document.getElementById('railfill');
-      if (!fill) return;
-      var stops = [].slice.call(document.querySelectorAll('.crail .stop'));
-      var targets = stops.map(function (s) { return document.getElementById(s.dataset.t); });
-      function rail() {
-        var h = document.documentElement;
-        var p = h.scrollTop / (h.scrollHeight - h.clientHeight);
-        fill.style.height = (p * 100).toFixed(1) + '%';
-        var mid = h.scrollTop + h.clientHeight * 0.45;
-        var active = 0;
-        targets.forEach(function (t, i) { if (t && t.offsetTop <= mid) active = i; });
-        stops.forEach(function (s, i) { s.classList.toggle('on', i <= active); });
-      }
-      document.addEventListener('scroll', rail, { passive: true });
-      rail();
-      stops.forEach(function (s) {
-        s.addEventListener('click', function () {
-          var t = document.getElementById(s.dataset.t);
-          if (t) t.scrollIntoView({ behavior: 'smooth' });
-        });
-      });
-    })();
-  </script>
-  <script src="js/main.js?v=82"></script>
+  <script src="js/main.js?v=83"></script>
   <!-- Structured data: who we are (for search engines) -->
   <script type="application/ld+json">
   {
