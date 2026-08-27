@@ -2066,6 +2066,7 @@ p a:not(.btn):not(.read-more),
 .chitem .chbody p b, .chitem .chbody p i { color: #fff; }
 .chitem .chbody .big { font-family: var(--font-display); font-weight: 700; font-size: clamp(18px, 2.4vw, 24px);
   line-height: 1.3; color: #fff; margin-bottom: 8px; }
-.chitem .chnext { font-family: var(--font-display); font-style: italic; color: var(--coral) !important; font-size: 14.5px; }
+.chitem .chnext { font-family: var(--font-display); font-style: italic; font-weight: 600;
+  color: var(--coral) !important; font-size: 18px; -webkit-text-stroke: .3px currentColor; }
 .chitem.finale { border-color: rgba(255,104,104,.5); background: rgba(255,104,104,.08); }
 @media (max-width: 640px) { .chitem summary { flex-direction: column; gap: 4px; } .chitem summary::after { position: absolute; right: 18px; } .chitem { position: relative; } }
