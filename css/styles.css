@@ -2005,3 +2005,15 @@ p a:not(.btn):not(.read-more),
 .ways-dark .head p { line-height: normal; }
 #deliver h2 { font-size: clamp(28px, 3.8vw, 42px); }
 #deliver .head p { line-height: 1.65; }
+
+/* What we do — four steps (about) */
+.steps4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.s4 { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 24px 22px; box-shadow: var(--shadow); }
+.s4 .n { font-family: var(--font-script); font-weight: 700; font-size: 28px; line-height: normal; color: var(--coral-text); }
+.s4 h3 { font-family: var(--font-display); font-weight: 600; color: var(--ink); font-size: 18.5px; line-height: normal; margin: 4px 0 8px; }
+.s4 p { font-size: 13.5px; line-height: 1.62; margin: 0; }
+.s4 i { font-family: var(--font-script); font-style: normal; font-size: 16px; color: var(--gold-text); }
+.pcard p b { color: var(--ink); }
+@media (max-width: 880px) { .steps4 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .steps4 { grid-template-columns: 1fr; } }
