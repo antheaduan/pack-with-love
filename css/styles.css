@@ -1635,7 +1635,7 @@ p a:not(.btn):not(.read-more),
   padding: 20px; transform: rotate(2deg); }
 .dti-hero .shot img { border-radius: var(--radius); }
 .facts { margin-top: 52px; background: var(--navy); color: #fff; }
-.facts .frow { max-width: 1040px; margin: 0 auto; padding: 22px 24px; display: grid;
+.facts .frow { max-width: var(--maxw); margin: 0 auto; padding: 22px 26px; display: grid;
   grid-template-columns: repeat(6, 1fr); gap: 18px; }
 .facts .f small { display: block; font-size: 10.5px; line-height: normal; letter-spacing: .16em; text-transform: uppercase;
   font-weight: 800; color: var(--gold); margin-bottom: 4px; }
