@@ -2028,7 +2028,7 @@ p a:not(.btn):not(.read-more),
 /* Story birth tale: big heart pin, big script line, thread ends at the heart */
 .tale--birth .pin { width: 40px; height: 40px; left: 8px; top: 8px; font-size: 20px;
   background: var(--coral-btn); color: #fff; border-color: var(--coral-btn); }
-.tale--birth .where { font-size: clamp(24px, 3.4vw, 34px); line-height: 1.2; }
+.tale--birth .where { font-size: clamp(28px, 4vw, 40px); line-height: 1.15; }
 .tale--birth::before { content: ""; position: absolute; left: 24px; top: 34px; bottom: -10px;
   width: 8px; background: var(--paper); }
 /* What we do cards: same treatment as the phase cards */
