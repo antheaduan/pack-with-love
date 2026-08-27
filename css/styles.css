@@ -1620,10 +1620,10 @@ p a:not(.btn):not(.read-more),
 .ji-rung.r1 { background: var(--blush); min-height: 300px; }
 .ji-rung.r2 { background: var(--sand); min-height: 340px; }
 .ji-rung.r3 { background: var(--navy); color: #fff; min-height: 380px; }
-.ji-rung .rstep { font-size: 11.5px; line-height: normal; letter-spacing: .18em; text-transform: uppercase; font-weight: 800; color: var(--coral-text); }
+.ji-rung .rstep { font-size: 11.5px; line-height: normal; letter-spacing: .18em; text-transform: uppercase; font-weight: 800; -webkit-text-stroke: .4px currentColor; color: var(--coral-text); }
 .ji-rung.r2 .rstep { color: var(--gold-text); }
 .ji-rung.r3 .rstep { color: var(--gold); }
-.ji-rung .k { font-family: var(--font-script); font-weight: 700; font-size: 24px; line-height: normal; color: var(--coral-text); margin-top: 4px; }
+.ji-rung .k { font-family: var(--font-script); font-weight: 700; font-size: 24px; line-height: normal; -webkit-text-stroke: .6px currentColor; color: var(--coral-text); margin-top: 4px; }
 .ji-rung.r2 .k { color: var(--gold-text); }
 .ji-rung.r3 .k { color: var(--gold); }
 .ji-rung h3 { font-family: var(--font-display); font-weight: 600; font-size: 22px; color: var(--ink); margin: 6px 0 10px; }
