@@ -2018,10 +2018,12 @@ p a:not(.btn):not(.read-more),
 @media (max-width: 880px) { .steps4 { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 540px) { .steps4 { grid-template-columns: 1fr; } }
 
-/* Inside every backpack (home): head + green packshot side by side */
-.hinside-top { display: grid; grid-template-columns: 1.05fr .95fr; gap: 44px; align-items: center; margin-bottom: 48px; }
-.hinside-top .head { margin-bottom: 0; }
-@media (max-width: 880px) { .hinside-top { grid-template-columns: 1fr; gap: 28px; } }
+/* Inside every backpack (home): green packshot beside a 2x2 item grid */
+.hinside-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 48px; align-items: center; }
+.hinside-grid .p-packshot img { max-width: 280px; }
+.hitems--grid2 { grid-template-columns: 1fr 1fr; }
+@media (max-width: 880px) { .hinside-grid { grid-template-columns: 1fr; gap: 34px; } }
+@media (max-width: 520px) { .hitems--grid2 { grid-template-columns: 1fr; } }
 
 /* Story birth tale: big heart pin, big script line, thread ends at the heart */
 .tale--birth .pin { width: 40px; height: 40px; left: 8px; top: 8px; font-size: 20px;
