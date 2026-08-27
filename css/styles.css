@@ -1130,7 +1130,8 @@ p a:not(.btn):not(.read-more),
 .adults .head { max-width: 700px; margin: 0 auto 44px; text-align: center; }
 .adults h2 { font-size: clamp(28px, 4vw, 44px); margin: 14px 0 10px; }
 .adults .head p { font-size: 1rem; line-height: 1.65; }
-.agrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.agrid { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; }
+.agrid .adv { flex: 0 1 calc((100% - 36px) / 3); }
 .adv { background: var(--cream); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px; }
 .adv .r { font-size: .69rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 800;
   color: var(--gold-text); margin-bottom: 8px; }
@@ -1138,7 +1139,7 @@ p a:not(.btn):not(.read-more),
   font-size: 1.25rem; margin-bottom: 8px; }
 .adv p { font-size: .86rem; line-height: 1.6; }
 .adv .also { margin-top: 10px; font-style: italic; color: var(--gold-text); font-size: .81rem; }
-@media (max-width: 900px) { .agrid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .agrid .adv { flex-basis: 100%; } }
 
 /* Charter card */
 .charter { padding: 80px 0; background: var(--sand); }
@@ -1866,8 +1867,8 @@ p a:not(.btn):not(.read-more),
 .way.trip { background: #E7EFE7; }
 .way.trip .k { color: #3F5C40; }
 .way.trip > a { color: #3F5C40; }
-@media (min-width: 1021px) { .ways-home .wgrid { grid-template-columns: repeat(4, 1fr); } }
-@media (max-width: 1020px) and (min-width: 641px) { .ways-home .wgrid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1021px) { .ways-home:not(.ways-dark) .wgrid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 1020px) and (min-width: 641px) { .ways-home:not(.ways-dark) .wgrid { grid-template-columns: 1fr 1fr; } }
 
 /* Roadmap timeline (about) */
 .roadmap { padding: 80px 0; background: var(--paper); }
@@ -1918,7 +1919,7 @@ p a:not(.btn):not(.read-more),
 .map-glance h2 { font-size: clamp(26px, 3.4vw, 36px); margin: 12px 0 8px; }
 .map-glance .head p { font-size: 15px; line-height: normal; color: var(--muted); }
 .p1 { padding: 80px 0; background: var(--cream); }
-.p1 .panel { max-width: 960px; margin: 0 auto; background: var(--sand); border-radius: var(--radius-lg); padding: 44px 44px 38px; }
+.p1 .panel { margin: 0 auto; background: var(--sand); border-radius: var(--radius-lg); padding: 44px 44px 38px; }
 .p1 h2 { font-size: clamp(26px, 3.4vw, 38px); margin: 12px 0 8px; }
 .p1 .lede { font-size: 15px; line-height: normal; color: var(--muted); margin-bottom: 26px; }
 .p1-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
@@ -2041,4 +2042,4 @@ p a:not(.btn):not(.read-more),
 
 /* Purpose card closing script line (about) */
 .pcard .tagline { margin-top: 14px; font-family: var(--font-script); font-weight: 700;
-  font-size: 20px; line-height: normal; color: var(--gold-text); }
+  font-size: 1.5rem; line-height: normal; color: var(--gold-text); -webkit-text-stroke: .6px currentColor; }
