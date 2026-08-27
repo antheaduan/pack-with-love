@@ -82,9 +82,9 @@ h1, h2, h3, h4 {
   font-optical-sizing: auto;
 }
 h1 { font-size: clamp(40px, 5.4vw, 62px); line-height: 1.06; letter-spacing: -.015em; }
-h2 { font-size: clamp(28px, 3.8vw, 42px); line-height: 1.12; letter-spacing: -.01em; }
-h3 { font-size: 22px; line-height: 1.25; }
-h4 { font-size: 1.12rem; line-height: 1.25; }
+h2 { font-size: clamp(28px, 3.8vw, 42px); line-height: normal; letter-spacing: -.01em; }
+h3 { font-size: 22px; line-height: normal; }
+h4 { font-size: 1.12rem; line-height: normal; }
 p  { margin-bottom: 1rem; }
 strong { color: var(--ink); font-weight: 600; }
 em { font-style: italic; }
@@ -1158,7 +1158,7 @@ p a:not(.btn):not(.read-more),
   font-size: clamp(40px, 5.6vw, 66px); line-height: 1.1; letter-spacing: -.015em; margin: 0; }
 .fourlines .l2 { color: var(--coral-display); }
 /* --gold-deep fails 3:1 on cream at display size; this ochre passes (3.3:1) */
-.fourlines .l3 { color: #AD8038; }
+.fourlines .l3 { color: var(--gold-deep); }
 .fourlines .matter { position: relative; white-space: nowrap; }
 .fourlines .matter svg { position: absolute; left: 0; bottom: -10px; width: 100%; height: 16px; }
 .home-hero .sub { margin: 24px 0 30px; font-size: 17.5px; line-height: 1.65; color: var(--muted); max-width: 520px; }
@@ -1200,7 +1200,7 @@ p a:not(.btn):not(.read-more),
 .make .head { max-width: 700px; margin-bottom: 52px; }
 .make h2 { font-size: clamp(32px, 4.4vw, 48px); margin: 14px 0 14px; }
 .make h2 em { font-style: italic; color: var(--coral-display); }
-.make .head p { font-size: 1.06rem; line-height: 1.7; }
+.make .head p { font-size: 17px; line-height: 1.7; }
 .steps3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .s3 { background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
   padding: 28px 26px; box-shadow: var(--shadow); }
@@ -1595,7 +1595,7 @@ p a:not(.btn):not(.read-more),
 .proj-final .eq { font-family: var(--font-script); font-weight: 700; font-size: clamp(24px, 3vw, 32px);
   color: var(--gold); display: inline-block; transform: rotate(-1deg); margin-bottom: 10px; }
 .proj-final h2 { color: #fff; font-size: clamp(28px, 4.2vw, 44px); max-width: 760px; margin: 0 auto 14px; }
-.proj-final > p { color: #BCD0E2; font-size: 1rem; max-width: 560px; margin: 0 auto 30px; line-height: 1.65; }
+.proj-final p { color: #BCD0E2; font-size: 16px; max-width: 560px; margin: 0 auto 30px; line-height: 1.65; }
 .proj-final .fine { margin-top: 16px; font-size: .81rem; color: #8EA6BD; }
 
 /* ---- 25. Join In landing (founder redesign) ---- */
@@ -1604,7 +1604,7 @@ p a:not(.btn):not(.read-more),
   radial-gradient(720px 340px at 88% 0%, rgba(219,185,120,.20), transparent 60%), var(--cream); }
 .ji-hero .kicker { font-family: var(--font-script); font-weight: 700; font-size: 25px; line-height: normal;
   color: var(--coral-text); transform: rotate(-1deg); display: inline-block; margin-bottom: 10px; }
-.ji-hero h1 { font-size: clamp(40px, 5.4vw, 62px); line-height: 1.06; margin: 0; }
+.ji-hero h1 { font-size: clamp(40px, 5.4vw, 62px); line-height: 1.06; letter-spacing: normal; margin: 0; }
 .ji-hero h1 em { font-style: italic; color: var(--coral-display); }
 .ji-hero p { margin: 16px auto 0; max-width: 640px; font-size: 17.5px; line-height: 1.65; color: var(--muted); }
 
@@ -1618,7 +1618,7 @@ p a:not(.btn):not(.read-more),
 .ji-rung.r1 { background: var(--blush); min-height: 320px; }
 .ji-rung.r2 { background: var(--sand); min-height: 400px; }
 .ji-rung.r3 { background: var(--navy); color: #fff; min-height: 520px; }
-.ji-rung .rstep { font-size: 11.5px; line-height: normal; letter-spacing: .18em; text-transform: uppercase; font-weight: 800; color: #A83430; }
+.ji-rung .rstep { font-size: 11.5px; line-height: normal; letter-spacing: .18em; text-transform: uppercase; font-weight: 800; color: var(--coral-text); }
 .ji-rung.r2 .rstep { color: var(--gold-text); }
 .ji-rung.r3 .rstep { color: var(--gold); }
 .ji-rung .k { font-family: var(--font-script); font-weight: 700; font-size: 24px; line-height: normal; color: var(--coral-text); margin-top: 4px; }
@@ -1648,7 +1648,7 @@ p a:not(.btn):not(.read-more),
 .ji-why h2 em { font-style: italic; color: var(--gold); }
 .ji-why .lede { font-size: 17px; line-height: 1.75; color: rgba(255,255,255,.92); margin-top: 14px; }
 .ji-why blockquote { margin: 26px 0; padding-left: 20px; border-left: 3px solid var(--gold);
-  font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: clamp(20px, 2.6vw, 26px);
+  font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: clamp(20px, 2.6vw, 26px);
   line-height: 1.45; color: #fff; }
 .ji-why .close { font-size: 1rem; line-height: 1.7; color: rgba(255,255,255,.92); }
 
@@ -1755,3 +1755,100 @@ p a:not(.btn):not(.read-more),
 .ji-start .cta-row { text-align: center; margin-top: 36px; }
 .ji-start .fine { margin-top: 12px; line-height: normal; font-size: 13px; color: var(--muted); text-align: center; }
 @media (max-width: 880px) { .ji-steps { grid-template-columns: 1fr; } }
+
+
+/* ---- 26. Mockup-exact type overrides (computed-style diff, all four pages) ---- */
+/* home */
+.home-hero .kicker { font-size: 26px; line-height: normal; }
+.home-hero .sub { font-size: 18px; }
+.home-hero .script-note { font-size: 22px; line-height: normal; }
+.meter .raised { line-height: normal; }
+.meter .goal { font-size: 15px; line-height: normal; }
+.meter .subline { font-size: 13.5px; line-height: normal; }
+.s3 .n { font-size: 34px; }
+.s3 h3 { font-size: 21px; }
+.s3 p { font-size: 14.5px; }
+.s3 p i { font-size: 19px; }
+.act .k { font-size: 11.5px; line-height: normal; }
+.act h3 { font-size: 22px; }
+.acts-home .act p { font-size: 14.5px; }
+.acts-home .more a { line-height: normal; }
+.way .k { font-size: 24px; line-height: normal; }
+.way h3 { font-size: 24px; }
+.way p { font-size: 14.5px; }
+.way .go, .way .fine { line-height: normal; }
+.led .led-grid p { font-size: 16.5px; }
+.led .led-grid p.founder { font-family: var(--font-script); font-size: 23px; }
+.led .rail .motto { font-family: var(--font-display); font-style: italic; font-size: 17px;
+  line-height: 1.5; color: var(--navy); }
+.rail .t { font-size: 11.5px; line-height: normal; }
+.rail li { font-size: 14.5px; }
+.spirit span { line-height: normal; }
+.home-final .script { line-height: normal; }
+.home-final > .container > p { font-size: 16.5px; }
+/* about */
+.about-hero .kicker { font-size: 26px; line-height: normal; }
+.about-hero p { font-size: 18px; }
+.story .lede { font-size: 16.5px; }
+.tale .pin { line-height: normal; }
+.tale .where { font-size: 23px; line-height: normal; }
+.tale h3 { font-size: 22px; }
+.tale p { font-size: 15.5px; }
+.question .pin { font-size: 22px; line-height: normal; }
+.pcard .t { line-height: normal; }
+.pcard p { font-size: 15px; }
+.foundation p { font-size: 16.5px; }
+.foundation .unconditional { font-size: 15px; line-height: normal; }
+.promise h3 { font-size: 18px; }
+.promise p { font-size: 13.8px; }
+.kid .avatar { line-height: normal; }
+.kid .role { font-size: 13.5px; line-height: normal; }
+.kid p { font-size: 13.8px; }
+.adv .r { font-size: 11px; line-height: normal; }
+.adv p { font-size: 13.8px; }
+.charter .card-inner > div > p { font-size: 15.5px; }
+.charter .doc b { font-size: 17px; line-height: normal; }
+.charter .doc span { font-size: 12.5px; line-height: normal; }
+.about-final h2 { font-size: clamp(30px, 4.4vw, 46px); }
+/* participate leftovers */
+.ji-col .cap-head { line-height: normal; }
+/* project */
+.proj-hero .kicker { font-size: 25px; line-height: normal; }
+.proj-hero .sub { font-size: 17px; }
+.meter--light .raised { font-size: clamp(32px, 4vw, 44px); }
+.countdown .label { font-size: 12px; line-height: normal; }
+.countdown .days { font-size: 26px; line-height: normal; }
+.purpose-p .stat b { line-height: normal; }
+.purpose-p .stat span { font-size: 12.5px; line-height: normal; }
+.purpose-p .uncond { font-size: 15px; line-height: normal; }
+.item .n { font-size: 30px; line-height: normal; }
+.item h3 { font-size: 18px; }
+.item p { font-size: 13.5px; }
+.inside .extras { font-size: 13.5px; line-height: normal; }
+.bcard .t { font-size: 23px; line-height: normal; }
+.bcard h3 { font-size: 21px; }
+.bcard p { font-size: 14.5px; }
+.colors li { font-size: 14px; line-height: normal; }
+.strip figcaption { font-size: 18px; line-height: normal; }
+.equation .big, .equation .op { line-height: normal; }
+.equation .unit { font-size: 15px; }
+.bk small { font-size: 11px; line-height: normal; }
+.bk .amt { line-height: normal; }
+.bk p { font-size: 13px; }
+.goalband .deadline { font-size: 15px; line-height: normal; }
+#acts h2, #ways-in h2 { font-size: clamp(28px, 3.8vw, 42px); }
+#acts .act p { font-size: 14px; line-height: 1.62; }
+#ways-in .way .k { font-size: 23px; }
+#ways-in .way h3 { font-size: 23px; }
+#ways-in .way p { font-size: 14px; line-height: 1.62; }
+.cnode .when { font-size: 11.5px; line-height: normal; }
+.cnode h3 { font-size: 17.5px; }
+.acct .rules li { font-size: 14.5px; }
+.acct .legal { font-size: 13px; }
+.training .badge { font-size: 11px; line-height: normal; }
+.training p { font-size: 14px; }
+.proj-faq summary { font-family: var(--font-body); font-size: 16px; font-weight: 700;
+  color: var(--navy); line-height: normal; }
+.proj-faq .faq__body p { font-size: 15px; line-height: 1.7; }
+.proj-final .eq { line-height: normal; }
+.proj-final .fine { font-size: 13px; line-height: 1.65; }
