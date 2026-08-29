@@ -10,9 +10,9 @@
     --coral-text:#C63F39;--coral-btn:#C23F39;--gold-text:#7F6122;
     --cream:#FFF8F1;--sand:#F6ECDD;--blush:#FCEDE8;--ink:#1C2E3D;--text:#4A4038;--line:#EBDFCF;--sage:#3F5C40;}
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{width:1080px;height:1440px;margin:0 auto;background:var(--cream);
+  body{width:1080px;min-height:1440px;margin:0 auto;background:var(--cream);
     font-family:'Noto Sans SC','Instrument Sans',system-ui,sans-serif;color:var(--text);
-    display:flex;flex-direction:column;overflow:hidden;position:relative;}
+    display:flex;flex-direction:column;position:relative;}
   body::before{content:"";position:absolute;inset:0;background:
     radial-gradient(700px 320px at 92% 0%,rgba(219,185,120,.22),transparent 60%),
     radial-gradient(520px 300px at 2% 30%,rgba(255,104,104,.09),transparent 55%);pointer-events:none;}
