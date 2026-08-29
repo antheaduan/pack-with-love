@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>From Data to Impact · Enrollment Poster</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Instrument+Sans:wght@400;600;700;800&family=Caveat:wght@700&family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0F3A5D;--navy-deep:#0A2A44;--coral:#FF6868;--gold:#DBB978;
+    --coral-text:#C63F39;--coral-btn:#C23F39;--gold-text:#7F6122;
+    --cream:#FFF8F1;--sand:#F6ECDD;--blush:#FCEDE8;--ink:#1C2E3D;--text:#4A4038;--line:#EBDFCF;--sage:#3F5C40;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{width:1080px;height:1440px;margin:0 auto;background:var(--cream);
+    font-family:'Noto Sans SC','Instrument Sans',system-ui,sans-serif;color:var(--text);
+    display:flex;flex-direction:column;overflow:hidden;position:relative;}
+  body::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(700px 320px at 92% 0%,rgba(219,185,120,.22),transparent 60%),
+    radial-gradient(520px 300px at 2% 30%,rgba(255,104,104,.09),transparent 55%);pointer-events:none;}
+  .top{padding:22px 64px 0;text-align:center;position:relative;}
+  .brand{font-family:'Fraunces',serif;font-weight:700;font-size:26px;color:var(--navy);}
+  .brand .love{font-family:'Caveat',cursive;color:var(--coral-text);font-size:29px;}
+  .kicker{margin-top:6px;font-size:13.5px;letter-spacing:.26em;text-transform:uppercase;font-weight:800;color:var(--gold-text);}
+  h1{font-family:'Fraunces',serif;font-weight:600;color:var(--ink);font-size:48px;line-height:1.04;margin-top:10px;}
+  h1 em{font-style:italic;color:#EC554F;}
+  h1 .cn{font-family:'Noto Serif SC',serif;font-size:30px;color:var(--gold-text);font-style:normal;display:block;margin-top:6px;font-weight:600;}
+
+  .oneliner{margin:14px 64px 0;background:var(--navy);border-radius:20px;padding:16px 32px;text-align:center;}
+  .oneliner .cn{font-family:'Noto Serif SC',serif;font-weight:700;font-size:26px;line-height:1.5;color:#fff;}
+  .oneliner .cn b{color:var(--gold);}
+  .oneliner .en{margin-top:6px;font-size:15.5px;color:#BCD0E2;}
+
+  .whystat{margin:12px 64px 0;background:var(--blush);border:1.5px solid rgba(198,63,57,.35);border-radius:16px;padding:11px 24px;}
+  .whystat p{font-size:15px;line-height:1.6;text-align:center;}
+  .whystat b{color:var(--coral-text);}
+  .cols{margin:14px 64px 0;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .col{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:16px 22px;}
+  .col h2{font-family:'Fraunces',serif;font-weight:600;font-size:21px;color:var(--navy);margin-bottom:9px;}
+  .col h2 small{font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.18em;color:var(--gold-text);display:block;margin-bottom:3px;font-weight:800;}
+  .col ul{list-style:none;}
+  .col li{position:relative;padding:4px 0 4px 22px;font-size:14px;line-height:1.45;}
+  .col li::before{content:"";position:absolute;left:4px;top:12px;width:9px;height:9px;border-radius:50%;background:var(--coral);}
+  .col.b li::before{background:var(--gold);}
+  .col li b{color:var(--ink);}
+
+  .story{margin:12px 64px 0;background:var(--sand);border-radius:18px;padding:15px 24px;display:grid;grid-template-columns:1fr 280px;gap:20px;align-items:center;}
+  .story h2{font-family:'Fraunces',serif;font-weight:600;font-size:21px;color:var(--coral-text);margin-bottom:8px;}
+  .story p{font-size:14px;line-height:1.6;}
+  .story b{color:var(--ink);}
+  .story .win{margin-top:8px;font-family:'Noto Serif SC',serif;font-weight:700;font-size:16.5px;color:var(--sage);}
+  .story svg{width:100%;height:auto;}
+
+  .facts{margin:12px 64px 0;display:flex;gap:0;background:var(--navy-deep);border-radius:16px;padding:14px 10px;justify-content:space-around;text-align:center;color:#fff;}
+  .facts .f{padding:0 12px;}
+  .facts small{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--gold);margin-bottom:3px;}
+  .facts b{font-size:17px;font-weight:700;display:block;line-height:1.3;}
+  .facts span{font-size:11.5px;color:#8EA6BD;}
+
+  .cta{margin:12px 64px 0;background:var(--coral-btn);border-radius:18px;padding:16px 30px;text-align:center;color:#fff;}
+  .cta .zh{font-weight:700;font-size:21px;}
+  .cta .url{margin-top:4px;font-weight:800;font-size:21px;font-family:'Instrument Sans',sans-serif;}
+  .cta .mail{margin-top:3px;font-size:14px;color:#FFD9D0;}
+
+  .foot{margin-top:auto;background:var(--navy-deep);color:#8EA6BD;text-align:center;padding:12px 40px 15px;font-size:12.5px;}
+  .foot .motto{font-family:'Caveat',cursive;font-size:21px;color:var(--gold);}
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="brand">Pack <span class="love">with Love</span></div>
+    <div class="kicker">Project-Based Math · Fall 2026</div>
+    <h1>From Data to <em>Impact</em><span class="cn">A project-based math course — a real business your child runs</span></h1>
+  </div>
+
+  <div class="oneliner">
+    <p class="cn" style="font-family:'Fraunces',serif;">Your child uses <b>statistical thinking</b> to design, produce,<br>and sell a <b>squishy</b> — and the profit helps buy <b>backpacks</b>.</p>
+    <p class="en">用统计思维做一门真生意：设计 → 生产 → 销售 squishy，利润化作书包。</p>
+  </div>
+
+  <div class="whystat">
+    <p><b>Why statistics?</b> AI can compute every answer in an instant — but it cannot judge whether <b>the data can be trusted</b>. Asking good questions, sampling, spotting bias, deciding on evidence — statistical thinking is <b>the most durable math of the AI era</b>, and <b>the most compressed chapter</b> in the middle-school curriculum. This course teaches it as your child's own business.</p>
+  </div>
+
+  <div class="cols">
+    <div class="col">
+      <h2><small>THE ACTUAL MATH</small>What math do they learn?</h2>
+      <ul>
+        <li><b>Fractions · percentages · ratios</b> — turning the class's real survey data into frequency tables and conclusions</li>
+        <li><b>Sampling &amp; bias</b> — random vs. stratified; why asking only your friends gives you wrong data</li>
+        <li><b>Weighted averages &amp; scoring models</b> — choosing a supplier from two real quotes, with math</li>
+        <li><b>Cost equations &amp; break-even</b> — solving <i>"how many must we sell?"</i>; real tariffs in the landed cost</li>
+        <li><b>Charts &amp; distributions</b> — bar charts, side-by-side comparisons; reading a market in ten seconds</li>
+        <li><b>Prediction &amp; error</b> — forecast sales, then compute percent error against real results</li>
+      </ul>
+    </div>
+    <div class="col b">
+      <h2><small>WHAT THEY WALK AWAY WITH</small>What does your child get?</h2>
+      <ul>
+        <li><b>A portfolio of 24 real business artifacts</b> — no exams; the work is the assessment</li>
+        <li><b>A professor + entrepreneurs teaching</b> — an accounting professor (CFA) and two industry veterans with 20–30 years in trade &amp; manufacturing</li>
+        <li><b>Real sales events</b> — real customers, real pricing, real results</li>
+        <li><b>The three things AI can't take</b> — statistics teaches <b>judgment</b>, business teaches <b>responsibility</b>, service gives <b>meaning</b></li>
+        <li><b>Automatic club membership</b> — Pack with Love, free forever</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="story">
+    <div>
+      <h2>Why does the profit become backpacks?</h2>
+      <p><b>Pack with Love</b> is a youth service club founded by Bay Area students, with adult
+      advisors holding the guardrails. This course is part of the club's first project, the
+      <b>Love &amp; Hope Backpack Project</b>: the class's squishy profits join a <b>shared
+      $5,300 goal</b> — alongside community gifts and kids' own fundraising — sending
+      <b>1,000 color-it-yourself backpack sets</b> to children across <b>ten villages in
+      Senegal</b>, traveling with the March 2027 medical mission and delivered in person.</p>
+      <p style="font-size:13px;line-height:1.55;margin-top:6px;color:var(--text);"><b>Every teacher volunteers.</b> Tuition covers materials &amp; operations — <b>the surplus also goes to the project.</b> Sign-up is free and reserves your seat — tuition due only once the course is confirmed (6+).</p>
+      <p class="win">Your child learns real skills; a child far away gets a backpack — win-win.</p>
+    </div>
+    <svg viewBox="30 60 510 300" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="128" cy="330" rx="88" ry="13" fill="#FCEDE8"/>
+      <ellipse cx="430" cy="336" rx="94" ry="13" fill="#EFE4D2"/>
+      <g stroke="#0F3A5D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M78 212 Q70 168 102 178 Z" fill="#FCEDE8"/><path d="M178 212 Q186 168 154 178 Z" fill="#FCEDE8"/>
+        <ellipse cx="128" cy="258" rx="76" ry="66" fill="#FCEDE8"/>
+      </g>
+      <circle cx="104" cy="248" r="5.5" fill="#0F3A5D"/><circle cx="152" cy="248" r="5.5" fill="#0F3A5D"/>
+      <path d="M116 272 Q128 282 140 272" stroke="#0F3A5D" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <circle cx="92" cy="266" r="8" fill="#FF6868" opacity=".45"/><circle cx="164" cy="266" r="8" fill="#FF6868" opacity=".45"/>
+      <path d="M212 236 Q280 176 342 224" fill="none" stroke="#C63F39" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 14"/>
+      <path d="M330 208 L346 226 L322 232 Z" fill="#C63F39"/>
+      <g stroke="#0F3A5D" stroke-width="4.5">
+        <circle cx="244" cy="206" r="15" fill="#DBB978"/><circle cx="282" cy="192" r="15" fill="#DBB978"/><circle cx="318" cy="200" r="15" fill="#DBB978"/>
+      </g>
+      <g font-family="Instrument Sans,DejaVu Sans,sans-serif" font-weight="700" font-size="16" fill="#0F3A5D" text-anchor="middle">
+        <text x="244" y="212">$</text><text x="282" y="198">$</text><text x="318" y="206">$</text>
+      </g>
+      <g stroke="#0F3A5D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M404 132 Q430 104 456 132" fill="none" stroke="#DBB978" stroke-width="10"/><path d="M404 132 Q430 104 456 132" fill="none"/>
+        <path d="M368 190 Q352 240 366 292" fill="none" stroke="#DBB978" stroke-width="10"/><path d="M368 190 Q352 240 366 292" fill="none"/>
+        <rect x="366" y="130" width="128" height="196" rx="44" fill="#FFFFFF"/>
+        <rect x="386" y="216" width="88" height="86" rx="20" fill="#FFFFFF"/>
+      </g>
+      <g stroke="#0F3A5D" stroke-width="7" stroke-linecap="round"><line x1="430" y1="158" x2="430" y2="196"/><line x1="415" y1="171" x2="445" y2="171"/></g>
+      <path d="M430 282 C418 268 402 258 412 244 C419 234 430 240 430 249 C430 240 441 234 448 244 C458 258 442 268 430 282 Z" fill="#FF6868"/>
+      <g stroke="#FF6868" stroke-width="5" stroke-linecap="round"><line x1="352" y1="110" x2="342" y2="96"/><line x1="372" y1="100" x2="366" y2="84"/><line x1="336" y1="130" x2="320" y2="122"/></g>
+    </svg>
+  </div>
+
+  <div class="facts">
+    <div class="f"><small>Who</small><b>Grades 6–7</b><span>younger kids with a parent</span></div>
+    <div class="f"><small>When</small><b>Sun 5PM PT</b><span>8PM Eastern</span></div>
+    <div class="f"><small>Season</small><b>9/13 – 3/7</b><span>24 sessions · 3 field events</span></div>
+    <div class="f"><small>Seats</small><b>15 only</b><span>small class</span></div>
+    <div class="f"><small>Tuition</small><b>$30/session · $720</b><span>teachers volunteer · surplus to project</span></div>
+  </div>
+
+  <div class="cta">
+    <p class="zh">Enroll now</p>
+    <p class="url">africacriesout.org/aco-data-to-impact.html</p>
+    <p class="mail">Questions: hello@packwithlove.org · Full 24-session syllabus at packwithlove.org</p>
+  </div>
+
+  <div class="foot">
+    <span class="motto">Live it out loud!</span> &nbsp; Pack with Love Youth Service Club · Love First. Create with Joy. Serve with Purpose.
+  </div>
+</body>
+</html>

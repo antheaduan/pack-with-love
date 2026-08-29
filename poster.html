@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>From Data to Impact · 招生海报</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Instrument+Sans:wght@400;600;700;800&family=Caveat:wght@700&family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0F3A5D;--navy-deep:#0A2A44;--coral:#FF6868;--gold:#DBB978;
+    --coral-text:#C63F39;--coral-btn:#C23F39;--gold-text:#7F6122;
+    --cream:#FFF8F1;--sand:#F6ECDD;--blush:#FCEDE8;--ink:#1C2E3D;--text:#4A4038;--line:#EBDFCF;--sage:#3F5C40;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{width:1080px;height:1440px;margin:0 auto;background:var(--cream);
+    font-family:'Noto Sans SC','Instrument Sans',system-ui,sans-serif;color:var(--text);
+    display:flex;flex-direction:column;overflow:hidden;position:relative;}
+  body::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(700px 320px at 92% 0%,rgba(219,185,120,.22),transparent 60%),
+    radial-gradient(520px 300px at 2% 30%,rgba(255,104,104,.09),transparent 55%);pointer-events:none;}
+  .top{padding:26px 64px 0;text-align:center;position:relative;}
+  .brand{font-family:'Fraunces',serif;font-weight:700;font-size:26px;color:var(--navy);}
+  .brand .love{font-family:'Caveat',cursive;color:var(--coral-text);font-size:29px;}
+  .kicker{margin-top:6px;font-size:13.5px;letter-spacing:.26em;text-transform:uppercase;font-weight:800;color:var(--gold-text);}
+  h1{font-family:'Fraunces',serif;font-weight:600;color:var(--ink);font-size:52px;line-height:1.04;margin-top:10px;}
+  h1 em{font-style:italic;color:#EC554F;}
+  h1 .cn{font-family:'Noto Serif SC',serif;font-size:30px;color:var(--gold-text);font-style:normal;display:block;margin-top:6px;font-weight:600;}
+
+  .oneliner{margin:14px 64px 0;background:var(--navy);border-radius:20px;padding:16px 32px;text-align:center;}
+  .oneliner .cn{font-family:'Noto Serif SC',serif;font-weight:700;font-size:28px;line-height:1.5;color:#fff;}
+  .oneliner .cn b{color:var(--gold);}
+  .oneliner .en{margin-top:6px;font-size:15.5px;color:#BCD0E2;}
+
+  .whystat{margin:14px 64px 0;background:var(--blush);border:1.5px solid rgba(198,63,57,.35);border-radius:16px;padding:14px 24px;}
+  .whystat p{font-size:16px;line-height:1.7;text-align:center;}
+  .whystat b{color:var(--coral-text);}
+  .cols{margin:14px 64px 0;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .col{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:20px 24px;}
+  .col h2{font-family:'Noto Serif SC',serif;font-weight:700;font-size:22px;color:var(--navy);margin-bottom:12px;}
+  .col h2 small{font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.18em;color:var(--gold-text);display:block;margin-bottom:3px;font-weight:800;}
+  .col ul{list-style:none;}
+  .col li{position:relative;padding:5px 0 5px 24px;font-size:15.5px;line-height:1.5;}
+  .col li::before{content:"";position:absolute;left:4px;top:12px;width:9px;height:9px;border-radius:50%;background:var(--coral);}
+  .col.b li::before{background:var(--gold);}
+  .col li b{color:var(--ink);}
+
+  .story{margin:14px 64px 0;background:var(--sand);border-radius:18px;padding:18px 26px;display:grid;grid-template-columns:1fr 280px;gap:20px;align-items:center;}
+  .story h2{font-family:'Noto Serif SC',serif;font-weight:700;font-size:22px;color:var(--coral-text);margin-bottom:8px;}
+  .story p{font-size:15px;line-height:1.72;}
+  .story b{color:var(--ink);}
+  .story .win{margin-top:8px;font-family:'Noto Serif SC',serif;font-weight:700;font-size:16.5px;color:var(--sage);}
+  .story svg{width:100%;height:auto;}
+
+  .facts{margin:12px 64px 0;display:flex;gap:0;background:var(--navy-deep);border-radius:16px;padding:14px 10px;justify-content:space-around;text-align:center;color:#fff;}
+  .facts .f{padding:0 12px;}
+  .facts small{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--gold);margin-bottom:3px;}
+  .facts b{font-size:17px;font-weight:700;display:block;line-height:1.3;}
+  .facts span{font-size:11.5px;color:#8EA6BD;}
+
+  .cta{margin:12px 64px 0;background:var(--coral-btn);border-radius:18px;padding:16px 30px;text-align:center;color:#fff;}
+  .cta .zh{font-weight:700;font-size:21px;}
+  .cta .url{margin-top:4px;font-weight:800;font-size:21px;font-family:'Instrument Sans',sans-serif;}
+  .cta .mail{margin-top:3px;font-size:14px;color:#FFD9D0;}
+
+  .foot{margin-top:auto;background:var(--navy-deep);color:#8EA6BD;text-align:center;padding:12px 40px 15px;font-size:12.5px;}
+  .foot .motto{font-family:'Caveat',cursive;font-size:21px;color:var(--gold);}
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="brand">Pack <span class="love">with Love</span></div>
+    <div class="kicker">Project-Based Math · Fall 2026</div>
+    <h1>From Data to <em>Impact</em><span class="cn">项目制数学课 · 一门孩子亲手经营的真生意</span></h1>
+  </div>
+
+  <div class="oneliner">
+    <p class="cn">用<b>统计思维</b>做一门真生意：设计 → 生产 → 销售 <b>squishy</b>，利润化作<b>书包</b>。</p>
+    <p class="en">Your child uses statistical thinking to design, produce, and sell a squishy — and the profit helps buy backpacks.</p>
+  </div>
+
+  <div class="whystat">
+    <p><b>为什么是统计？</b>AI 能瞬间算出所有答案，却不能替孩子判断<b>数据可不可信</b>。提问、抽样、辨偏差、用证据下判断——统计思维是 <b>AI 时代最保值的数学</b>，却是中学课表里<b>最被压缩的一章</b>。这门课，把它教成孩子自己的生意。</p>
+  </div>
+
+  <div class="cols">
+    <div class="col">
+      <h2><small>THE ACTUAL MATH</small>数学上学什么？</h2>
+      <ul>
+        <li><b>分数 · 百分比 · 比例</b>——把全班收集的真实问卷变成频数表和结论</li>
+        <li><b>抽样与偏差</b>——random / stratified 抽样；为什么只问朋友，数据就是错的</li>
+        <li><b>加权平均与评分模型</b>——用数学从两份真实报价里选供应商</li>
+        <li><b>成本方程与盈亏平衡</b>——解出"卖多少个才不亏"；真实关税算进到岸成本</li>
+        <li><b>图表与分布</b>——柱状图、双柱对比、饼图，10 秒讲清市场</li>
+        <li><b>预测与误差</b>——先预测销量，再用真实结果计算 percent error 并复盘</li>
+      </ul>
+    </div>
+    <div class="col b">
+      <h2><small>WHAT THEY WALK AWAY WITH</small>孩子得到什么？</h2>
+      <ul>
+        <li><b>24 件真实商业作品集</b>——无考试，作品即评估</li>
+        <li><b>教授 + 企业家亲授</b>——会计学教授（CFA）与两位有二三十年经验的实业企业家各授一课</li>
+        <li><b>真实义卖实战</b>——真顾客、真定价、真结果</li>
+        <li><b>AI 拿不走的三样</b>——统计教<b>判断</b>，生意教<b>担当</b>，公益给<b>意义</b></li>
+        <li><b>自动成为社团成员</b>——Pack with Love 会员，永远免费</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="story">
+    <div>
+      <h2>为什么利润会变成书包？</h2>
+      <p><b>Pack with Love</b> 是一群湾区学生创立的青少年公益社团（成人顾问护航）。这门课属于社团首个公益项目
+      <b>Love &amp; Hope Backpack Project</b>：班级销售 squishy 的利润，汇入 <b>$5,300 共享公益目标</b>，与社区捐款、孩子们的自主募款一起，为<b>塞内加尔十个村庄</b>的孩子送去
+      <b>1,000 套可涂色书包</b>——随 2027 年 3 月医疗宣教队出发，亲手送到孩子手中。</p>
+      <p style="font-size:13.5px;line-height:1.6;margin-top:6px;color:var(--text);">这门课的<b>老师全员志愿服务</b>；学费覆盖材料与运营后，<b>盈余同样全部注入项目</b>。先报名占座（免费），满 6 人确认开课后再缴费。</p>
+      <p class="win">你的孩子学到真本事，远方的孩子背上书包——win-win。</p>
+    </div>
+    <svg viewBox="30 60 510 300" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="128" cy="330" rx="88" ry="13" fill="#FCEDE8"/>
+      <ellipse cx="430" cy="336" rx="94" ry="13" fill="#EFE4D2"/>
+      <g stroke="#0F3A5D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M78 212 Q70 168 102 178 Z" fill="#FCEDE8"/><path d="M178 212 Q186 168 154 178 Z" fill="#FCEDE8"/>
+        <ellipse cx="128" cy="258" rx="76" ry="66" fill="#FCEDE8"/>
+      </g>
+      <circle cx="104" cy="248" r="5.5" fill="#0F3A5D"/><circle cx="152" cy="248" r="5.5" fill="#0F3A5D"/>
+      <path d="M116 272 Q128 282 140 272" stroke="#0F3A5D" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <circle cx="92" cy="266" r="8" fill="#FF6868" opacity=".45"/><circle cx="164" cy="266" r="8" fill="#FF6868" opacity=".45"/>
+      <path d="M212 236 Q280 176 342 224" fill="none" stroke="#C63F39" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 14"/>
+      <path d="M330 208 L346 226 L322 232 Z" fill="#C63F39"/>
+      <g stroke="#0F3A5D" stroke-width="4.5">
+        <circle cx="244" cy="206" r="15" fill="#DBB978"/><circle cx="282" cy="192" r="15" fill="#DBB978"/><circle cx="318" cy="200" r="15" fill="#DBB978"/>
+      </g>
+      <g font-family="Instrument Sans,DejaVu Sans,sans-serif" font-weight="700" font-size="16" fill="#0F3A5D" text-anchor="middle">
+        <text x="244" y="212">$</text><text x="282" y="198">$</text><text x="318" y="206">$</text>
+      </g>
+      <g stroke="#0F3A5D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M404 132 Q430 104 456 132" fill="none" stroke="#DBB978" stroke-width="10"/><path d="M404 132 Q430 104 456 132" fill="none"/>
+        <path d="M368 190 Q352 240 366 292" fill="none" stroke="#DBB978" stroke-width="10"/><path d="M368 190 Q352 240 366 292" fill="none"/>
+        <rect x="366" y="130" width="128" height="196" rx="44" fill="#FFFFFF"/>
+        <rect x="386" y="216" width="88" height="86" rx="20" fill="#FFFFFF"/>
+      </g>
+      <g stroke="#0F3A5D" stroke-width="7" stroke-linecap="round"><line x1="430" y1="158" x2="430" y2="196"/><line x1="415" y1="171" x2="445" y2="171"/></g>
+      <path d="M430 282 C418 268 402 258 412 244 C419 234 430 240 430 249 C430 240 441 234 448 244 C458 258 442 268 430 282 Z" fill="#FF6868"/>
+      <g stroke="#FF6868" stroke-width="5" stroke-linecap="round"><line x1="352" y1="110" x2="342" y2="96"/><line x1="372" y1="100" x2="366" y2="84"/><line x1="336" y1="130" x2="320" y2="122"/></g>
+    </svg>
+  </div>
+
+  <div class="facts">
+    <div class="f"><small>对象</small><b>6–7 年级</b><span>小学生家长陪同</span></div>
+    <div class="f"><small>时间</small><b>周日 5PM PT</b><span>东部 8PM</span></div>
+    <div class="f"><small>学季</small><b>9/13 – 3/7</b><span>24 节 · 3 次实战</span></div>
+    <div class="f"><small>名额</small><b>限 15 人</b><span>小班制</span></div>
+    <div class="f"><small>学费</small><b>$30/节 · $720</b><span>老师志愿 · 盈余入项目</span></div>
+  </div>
+
+  <div class="cta">
+    <p class="zh">报名 · Enroll</p>
+    <p class="url">africacriesout.org/aco-data-to-impact.html</p>
+    <p class="mail">咨询：hello@packwithlove.org · 完整 24 节课表可在 packwithlove.org 下载</p>
+  </div>
+
+  <div class="foot">
+    <span class="motto">Live it out loud!</span> &nbsp; Pack with Love Youth Service Club · Love First. Create with Joy. Serve with Purpose.
+  </div>
+</body>
+</html>
