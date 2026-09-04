@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=105" />
+  <link rel="stylesheet" href="css/styles.css?v=106" />
 </head>
 <body>
 
@@ -41,7 +41,7 @@
         <li><a href="/project">The Project</a></li>
         <li><a href="/participate" class="active">Claim &amp; Do</a></li>
         <li><a href="/data-to-impact">The Course</a></li>
-        <li><a href="/participate#claims-live" class="nav-live">Live Claims</a></li>
+        <li><a href="/live-claims" class="nav-live">Live Claims</a></li>
         <li><a href="https://africacriesout.org/give-fund.html?fund=pack_with_love" class="btn btn-primary">&hearts; Give</a></li>
       </ul>
     </nav>
@@ -49,7 +49,6 @@
 
   <nav class="anchorbar" aria-label="Sections on this page">
     <div class="container">
-      <a href="#claims-live">Live</a>
       <a href="#why">Why</a>
       <a href="#moves">Four Moves</a>
       <a href="#calendar">The Clock</a>
@@ -61,48 +60,21 @@
 
   <main id="content" tabindex="-1">
 
-  <!-- ============ CLAIMS LIVE ============
-       Fed client-side from ACO's youth platform:
-         https://africacriesout.org/youth/pack-with-love.json
-       Hidden until the feed exists and returns at least one claim
-       (requires a CORS header on ACO's side — ACO has the spec).
-       Privacy: first names + grade level only, per project rules. -->
-  <section class="claims-live" id="claims-live">
-    <div class="container">
-      <div class="clsummary" data-reveal>
-        <div class="cls-main">
-          <p class="cls-eyebrow">Live from the shared goal &middot; Pack with Love</p>
-          <h1 class="cls-title">Kids raise it <em>themselves</em></h1>
-          <p class="cls-intro">Any child, free, parent-guided: claim a portion of the shared goal in
-          real backpacks and carry it with one four-move method &mdash; <b>Claim &rarr; Plan &rarr;
-          Do &rarr; Report.</b> A bake sale, a recital, a car wash. You give &mdash; and your child grows.</p>
-          <div data-cls-live hidden>
-          <p class="cls-big" data-cls-big></p>
-          <p class="cls-sub" data-cls-sub></p>
-          <div class="clsbar"><div class="clsfill" data-cls-fill></div></div>
-          <p class="cls-meta" data-cls-meta></p>
-          </div>
-        </div>
-        <div class="cls-side">
-          <a class="cls-btn cls-btn-white" href="https://africacriesout.org/youth/pack-with-love.html">Start a fundraiser &rarr;</a>
-          <a class="cls-btn cls-btn-gold" href="/project">About the Love &amp; Hope backpack &rarr;</a>
-          <p class="cls-note">Every gift is credited to a youth or team and funds backpack sets &mdash;
-          shown here from ACO's live figures.</p>
-        </div>
-        <div class="cls-set">
-          <p class="cls-set-t">One complete set &asymp; $4.50</p>
-          <div class="cls-chips">
-            <span>Coloring backpack &middot; <b>$2.50</b></span>
-            <span>Coloring book &middot; <b>$0.50</b></span>
-            <span>Wordless Book &middot; <b>$0.50</b></span>
-            <span>Coloring set &middot; <b>$1.00</b></span>
-          </div>
-        </div>
+  <!-- ============ HERO ============ -->
+  <header class="ji-hero">
+    <div class="container hgrid">
+      <div data-reveal>
+        <h1>Kids raise it<br><em>themselves</em></h1>
+        <p>Any child, free, parent-guided: claim a portion of the shared goal in real backpacks
+        and carry it with one four-move method &mdash; <b style="color:var(--ink)">Claim &rarr; Plan &rarr; Do &rarr;
+        Report.</b> A bake sale, a recital, a car wash. You give &mdash; and your child grows.</p>
+        <p style="margin-top:18px"><a class="live-link" href="/live-claims">Kids are fundraising right now &mdash; see the live claims &rarr;</a></p>
       </div>
-      <div class="clgrid" data-claims-grid style="margin-top:22px"></div>
-      <p class="center" style="margin-top:28px"><a class="btn btn-secondary" href="https://africacriesout.org/youth/pack-with-love.html">Join them &mdash; make a claim &rarr;</a></p>
+      <div class="shot" data-reveal data-delay="1">
+        <img src="images/claim-and-do-hero.svg" alt="Diagram: a child runs her own lemonade stand, and the money she raises fills her claim of backpacks on the shared goal." />
+      </div>
     </div>
-  </section>
+  </header>
 
   <!-- ============ WHY ============ -->
   <section class="ji-why" id="why">
@@ -422,120 +394,6 @@
   </footer>
   <a class="give-fab" href="https://africacriesout.org/give-fund.html?fund=pack_with_love">&hearts; Give</a>
   <script src="js/main.js?v=103"></script>
-  <script>
-  // Live claims — reads ACO's youth feed; the section stays hidden until the
-  // feed exists, parses, and holds at least one claim. All feed text is
-  // rendered via textContent (external data, never markup).
-  (function () {
-    var sec = document.querySelector('.claims-live');
-    if (!sec || !window.fetch) return;
-    fetch('https://africacriesout.org/youth/pack-with-love.json')
-      .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
-      .then(function (d) {
-        var list = Array.isArray(d) ? d : (d && (d.claims || d.fundraisers)) || [];
-        var aco = function (u) { return (typeof u === 'string' && u.indexOf('https://africacriesout.org') === 0) ? u : null; };
-        var rows = [];
-        list.forEach(function (c) {
-          if (!c || typeof c !== 'object') return;
-          var name = String(c.name || c.first_name || '').trim().slice(0, 60);
-          var tag = String(c.type || c.grade || c.grade_level || '').trim().slice(0, 24);
-          var teaser = String(c.teaser || '').trim().slice(0, 140);
-          var claimed = Number(c.sets_goal != null ? c.sets_goal : c.claimed != null ? c.claimed : c.claim != null ? c.claim : c.goal_backpacks != null ? c.goal_backpacks : c.goal);
-          var funded = Number(c.sets_packed != null ? c.sets_packed : c.funded != null ? c.funded : c.backpacks_funded);
-          if (!isFinite(funded)) {
-            var raised = Number(c.raised != null ? c.raised : c.raised_usd);
-            funded = isFinite(raised) ? Math.floor(raised / 4.5) : 0;
-          }
-          // The participant's own page on ACO's youth platform: prefer an explicit
-          // field, else rebuild it from the ?f= slug in the support link.
-          var view = aco(c.view_url || c.page_url || c.page);
-          if (!view && aco(c.url) && c.url.indexOf('f=') > -1) {
-            var slug = c.url.split('f=')[1].split('&')[0];
-            if (/^[A-Za-z0-9_-]{1,80}$/.test(slug)) view = 'https://africacriesout.org/youth/pack-with-love.html?f=' + slug;
-          }
-          if (name && isFinite(claimed) && claimed > 0) {
-            rows.push({ name: name, tag: tag, teaser: teaser, claimed: Math.round(claimed),
-                        funded: Math.max(0, Math.min(funded || 0, Math.round(claimed))),
-                        url: aco(c.url), view: view, photo: aco(c.photo) });
-          }
-        });
-        if (!rows.length) return;
-        // Campaign-wide bar — ACO's own totals, mirrored from the feed.
-        var camp = (d && !Array.isArray(d) && d.campaign && typeof d.campaign === 'object') ? d.campaign : null;
-        if (camp) {
-          var packed = Number(camp.sets_packed);
-          var craised = Number(camp.raised);
-          var claimedTotal = rows.reduce(function (s, r) { return s + r.claimed; }, 0);
-          if (isFinite(packed) && packed >= 0 && claimedTotal > 0) {
-            var box = sec;
-            box.querySelector('[data-cls-big]').textContent = packed + ' set' + (packed === 1 ? '' : 's') + ' packed together';
-            box.querySelector('[data-cls-sub]').textContent = isFinite(craised)
-              ? '$' + craised.toLocaleString() + ' raised by our young people through their own effort'
-              : 'raised by our young people through their own effort';
-            box.querySelector('[data-cls-fill]').style.width = Math.min(100, Math.round(packed / claimedTotal * 100)) + '%';
-            box.querySelector('[data-cls-meta]').textContent = packed + ' of ' + claimedTotal + ' claimed sets packed';
-          }
-        }
-        var grid = sec.querySelector('[data-claims-grid]');
-        rows.forEach(function (c) {
-          var card = document.createElement('article'); card.className = 'clcard';
-          if (c.photo) {
-            var img = document.createElement('img'); img.className = 'clphoto';
-            img.src = c.photo; img.alt = ''; img.loading = 'lazy';
-            img.onerror = function () { img.remove(); };
-            card.appendChild(img);
-          }
-          var head = document.createElement('p');
-          var n = document.createElement('b'); n.className = 'cln'; n.textContent = c.name; head.appendChild(n);
-          if (c.tag) { var g = document.createElement('span'); g.className = 'clg'; g.textContent = c.tag; head.appendChild(g); }
-          card.appendChild(head);
-          if (c.teaser) { var t = document.createElement('p'); t.className = 'clteaser'; t.textContent = c.teaser; card.appendChild(t); }
-          var bar = document.createElement('div'); bar.className = 'clbar';
-          var fill = document.createElement('div'); fill.className = 'clfill';
-          fill.style.width = Math.min(100, Math.round(c.funded / c.claimed * 100)) + '%';
-          bar.appendChild(fill); card.appendChild(bar);
-          var meta = document.createElement('p'); meta.className = 'clmeta';
-          meta.textContent = c.funded + ' of ' + c.claimed + ' backpacks';
-          card.appendChild(meta);
-          if (c.url || c.view) {
-            var row = document.createElement('p'); row.className = 'clacts';
-            if (c.url) {
-              var a = document.createElement('a'); a.href = c.url; a.rel = 'noopener';
-              a.className = 'cla-support'; a.textContent = '♥ Support →'; row.appendChild(a);
-            }
-            if (c.view) {
-              var v = document.createElement('a'); v.href = c.view; v.rel = 'noopener';
-              v.className = 'cla-view'; v.textContent = 'View their page →'; row.appendChild(v);
-            }
-            card.appendChild(row);
-          }
-          grid.appendChild(card);
-        });
-        var asof = (d && !Array.isArray(d) && (d.updated || d.as_of)) ? String(d.updated || d.as_of).slice(0, 20) : '';
-        var meta = sec.querySelector('[data-cls-meta]');
-        if (asof && meta.textContent) meta.textContent += ' · updated ' + asof;
-        var live = sec.querySelector('[data-cls-live]');
-        if (live) live.hidden = false;
-      })
-      .catch(function () { /* feed not live yet — section stays hidden */ });
-  })();
-  </script>
-  <script>
-  // Nav highlight follows the hash: #claims-live lights up "Live Claims",
-  // anything else keeps "Claim & Do" underlined.
-  (function () {
-    var claim = document.querySelector('.nav__links a[href="/participate"]');
-    var live = document.querySelector('.nav__links a.nav-live');
-    if (!claim || !live) return;
-    function sync() {
-      var onLive = location.hash === '#claims-live';
-      claim.classList.toggle('active', !onLive);
-      live.classList.toggle('active', onLive);
-    }
-    sync();
-    window.addEventListener('hashchange', sync);
-  })();
-  </script>
   <!-- Structured data: who we are (for search engines) -->
   <script type="application/ld+json">
   {
