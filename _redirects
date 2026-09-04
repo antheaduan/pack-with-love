@@ -3,6 +3,8 @@
 /:page.html   /:page   301
 
 /support  /give  301
+/poster  /promo/data-to-impact-poster.html  301
+/poster-en  /promo/data-to-impact-poster-en.html  301
 /news  /  301
 /participate/handbook  /participate#moves  301
 /participate/handbook.html  /participate#moves  301

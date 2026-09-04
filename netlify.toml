@@ -50,6 +50,16 @@
 
 # /support retired — its chooser duplicated the Three Ways In ladder.
 [[redirects]]
+  from = "/poster"
+  to = "/promo/data-to-impact-poster.html"
+  status = 301
+
+[[redirects]]
+  from = "/poster-en"
+  to = "/promo/data-to-impact-poster-en.html"
+  status = 301
+
+[[redirects]]
   from = "/support"
   to = "/give"
   status = 301
