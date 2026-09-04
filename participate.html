@@ -520,6 +520,22 @@
       .catch(function () { /* feed not live yet — section stays hidden */ });
   })();
   </script>
+  <script>
+  // Nav highlight follows the hash: #claims-live lights up "Live Claims",
+  // anything else keeps "Claim & Do" underlined.
+  (function () {
+    var claim = document.querySelector('.nav__links a[href="/participate"]');
+    var live = document.querySelector('.nav__links a.nav-live');
+    if (!claim || !live) return;
+    function sync() {
+      var onLive = location.hash === '#claims-live';
+      claim.classList.toggle('active', !onLive);
+      live.classList.toggle('active', onLive);
+    }
+    sync();
+    window.addEventListener('hashchange', sync);
+  })();
+  </script>
   <!-- Structured data: who we are (for search engines) -->
   <script type="application/ld+json">
   {
