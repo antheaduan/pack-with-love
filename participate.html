@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=95" />
+  <link rel="stylesheet" href="css/styles.css?v=96" />
 </head>
 <body>
 
@@ -41,6 +41,7 @@
         <li><a href="/project">The Project</a></li>
         <li><a href="/participate" class="active">Claim &amp; Do</a></li>
         <li><a href="/data-to-impact">The Course</a></li>
+        <li><a href="/participate#claims-live" class="nav-live">Live</a></li>
         <li><a href="https://africacriesout.org/give-fund.html?fund=pack_with_love" class="btn btn-primary">&hearts; Give</a></li>
       </ul>
     </nav>
@@ -48,11 +49,11 @@
 
   <nav class="anchorbar" aria-label="Sections on this page">
     <div class="container">
+      <a href="#claims-live">Live</a>
       <a href="#why">Why</a>
       <a href="#moves">Four Moves</a>
       <a href="#calendar">The Clock</a>
       <a href="#start">Start a Claim</a>
-      <a href="#claims-live">Live</a>
       <a href="#capabilities">Skills</a>
       <a href="#ai-era">Why Now</a>
     </div>
@@ -74,6 +75,24 @@
       </div>
     </div>
   </header>
+
+  <!-- ============ CLAIMS LIVE ============
+       Fed client-side from ACO's youth platform:
+         https://africacriesout.org/youth/pack-with-love.json
+       Hidden until the feed exists and returns at least one claim
+       (requires a CORS header on ACO's side — ACO has the spec).
+       Privacy: first names + grade level only, per project rules. -->
+  <section class="claims-live" id="claims-live" hidden data-claims-live>
+    <div class="container">
+      <div class="head" style="text-align:center;max-width:640px;margin:0 auto 36px">
+        <span class="eyebrow center-tick">Live from the shared goal</span>
+        <h2>Kids carrying claims right now</h2>
+        <p class="cl-updated" data-claims-updated></p>
+      </div>
+      <div class="clgrid" data-claims-grid></div>
+      <p class="center" style="margin-top:28px"><a class="btn btn-secondary" href="https://africacriesout.org/youth/pack-with-love.html">Join them &mdash; make a claim &rarr;</a></p>
+    </div>
+  </section>
 
   <!-- ============ WHY ============ -->
   <section class="ji-why" id="why">
@@ -284,23 +303,6 @@
     </div>
   </section>
 
-  <!-- ============ CLAIMS LIVE ============
-       Fed client-side from ACO's youth platform:
-         https://africacriesout.org/youth/pack-with-love.json
-       Hidden until the feed exists and returns at least one claim
-       (requires a CORS header on ACO's side — ACO has the spec).
-       Privacy: first names + grade level only, per project rules. -->
-  <section class="claims-live" id="claims-live" hidden data-claims-live>
-    <div class="container">
-      <div class="head" style="text-align:center;max-width:640px;margin:0 auto 36px">
-        <span class="eyebrow center-tick">Live from the shared goal</span>
-        <h2>Kids carrying claims right now</h2>
-        <p class="cl-updated" data-claims-updated></p>
-      </div>
-      <div class="clgrid" data-claims-grid></div>
-      <p class="center" style="margin-top:28px"><a class="btn btn-secondary" href="https://africacriesout.org/youth/pack-with-love.html">Join them &mdash; make a claim &rarr;</a></p>
-    </div>
-  </section>
 
   <!-- ============ BRICKS ============ -->
   <section class="ji-bricks" id="capabilities">
@@ -409,7 +411,7 @@
     <div class="container footer__bottom"><p>&copy; 2026 Pack with Love Youth Service Club &middot; Founded by Joanna Zhang &middot; Love First. Create with Joy. Serve with Purpose.</p></div>
   </footer>
   <a class="give-fab" href="https://africacriesout.org/give-fund.html?fund=pack_with_love">&hearts; Give</a>
-  <script src="js/main.js?v=95"></script>
+  <script src="js/main.js?v=96"></script>
   <script>
   // Live claims — reads ACO's youth feed; the section stays hidden until the
   // feed exists, parses, and holds at least one claim. All feed text is

@@ -2105,3 +2105,13 @@ p a:not(.btn):not(.read-more),
 [hidden] { display: none !important; }
 .clphoto { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 10px; margin-bottom: 12px; display: block; }
 .clteaser { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin: 6px 0 2px; }
+.nav-live { display: inline-flex; align-items: center; gap: 7px; }
+.nav-live::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--coral); flex: 0 0 auto; }
+@media (prefers-reduced-motion: no-preference) {
+  .nav-live::before { animation: navpulse 2s infinite; }
+  @keyframes navpulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,104,104,.45); }
+    70% { box-shadow: 0 0 0 7px rgba(255,104,104,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,104,104,0); }
+  }
+}
