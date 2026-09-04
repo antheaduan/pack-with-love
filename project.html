@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=94" />
+  <link rel="stylesheet" href="css/styles.css?v=95" />
 </head>
 <body>
 
@@ -364,7 +364,7 @@
       el.textContent = days.toLocaleString('en-US');
     })();
   </script>
-  <script src="js/main.js?v=94"></script>
+  <script src="js/main.js?v=95"></script>
   <script>
   // Live claims strip — reads ACO's youth feed; hidden until the feed exists
   // and holds at least one claim. Feed text rendered via textContent only.
@@ -378,13 +378,14 @@
         var names = [];
         list.forEach(function (c) {
           if (!c || typeof c !== 'object') return;
-          var name = String(c.name || c.first_name || '').trim().slice(0, 40);
-          var claimed = Number(c.claimed != null ? c.claimed : c.claim != null ? c.claim : c.goal_backpacks != null ? c.goal_backpacks : c.goal);
+          var name = String(c.name || c.first_name || '').trim().slice(0, 60);
+          var claimed = Number(c.sets_goal != null ? c.sets_goal : c.claimed != null ? c.claimed : c.claim != null ? c.claim : c.goal_backpacks != null ? c.goal_backpacks : c.goal);
           if (name && isFinite(claimed) && claimed > 0) names.push(name);
         });
         if (!names.length) return;
         strip.querySelector('[data-claims-count]').textContent = names.length;
-        if (names.length === 1) strip.querySelector('[data-claims-label]').textContent = 'kid is carrying a claim';
+        strip.querySelector('[data-claims-label]').textContent =
+          names.length === 1 ? 'claim is live' : 'claims are live';
         strip.querySelector('[data-claims-names]').textContent =
           ' — ' + names.slice(0, 3).join(', ') + (names.length > 3 ? '…' : '');
         strip.hidden = false;

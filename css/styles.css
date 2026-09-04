@@ -2103,3 +2103,5 @@ p a:not(.btn):not(.read-more),
 .live-strip a { color: var(--gold); font-weight: 700; text-decoration: none; font-size: 14px; }
 .ls-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 0 4px rgba(255,104,104,.25); flex: 0 0 auto; }
 [hidden] { display: none !important; }
+.clphoto { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 10px; margin-bottom: 12px; display: block; }
+.clteaser { font-size: 13.5px; color: var(--muted); line-height: 1.55; margin: 6px 0 2px; }
