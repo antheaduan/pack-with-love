@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=101" />
+  <link rel="stylesheet" href="css/styles.css?v=103" />
 </head>
 <body>
 
@@ -69,34 +69,18 @@
        Privacy: first names + grade level only, per project rules. -->
   <section class="claims-live" id="claims-live">
     <div class="container">
-      <div class="head" style="text-align:center;max-width:760px;margin:0 auto 38px" data-reveal>
-        <span class="eyebrow center-tick">Live from the shared goal</span>
-        <h1>Kids raise it <em>themselves</em></h1>
-        <p style="margin:16px auto 0;font-size:17px;line-height:1.65;color:var(--muted)">Any child, free, parent-guided: claim a portion of the shared goal in real backpacks
-        and carry it with one four-move method &mdash; <b style="color:var(--ink)">Claim &rarr; Plan &rarr; Do &rarr;
-        Report.</b> A bake sale, a recital, a car wash. You give &mdash; and your child grows.</p>
-        <p class="cl-updated" data-claims-updated></p>
-      </div>
-      <div data-claims-live hidden>
-      <div class="clsummary" data-claims-summary hidden>
+      <div class="clsummary" data-reveal>
         <div class="cls-main">
-          <p class="cls-eyebrow">Youth fundraise &middot; Pack with Love</p>
-          <p class="cls-title">Youth are packing Love &amp; Hope backpacks</p>
-          <p class="cls-intro">Bake sales, farmers-market music, handmade crafts &mdash; every set our
-          young people fund is a full backpack for a child. Support a youth or team, or start your
-          own page.</p>
+          <p class="cls-eyebrow">Live from the shared goal &middot; Pack with Love</p>
+          <h1 class="cls-title">Kids raise it <em>themselves</em></h1>
+          <p class="cls-intro">Any child, free, parent-guided: claim a portion of the shared goal in
+          real backpacks and carry it with one four-move method &mdash; <b>Claim &rarr; Plan &rarr;
+          Do &rarr; Report.</b> A bake sale, a recital, a car wash. You give &mdash; and your child grows.</p>
+          <div data-cls-live hidden>
           <p class="cls-big" data-cls-big></p>
           <p class="cls-sub" data-cls-sub></p>
           <div class="clsbar"><div class="clsfill" data-cls-fill></div></div>
           <p class="cls-meta" data-cls-meta></p>
-          <div class="cls-set">
-            <p class="cls-set-t">One complete set &asymp; $4.50</p>
-            <div class="cls-chips">
-              <span>Coloring backpack &middot; <b>$2.50</b></span>
-              <span>Coloring book &middot; <b>$0.50</b></span>
-              <span>Wordless Book &middot; <b>$0.50</b></span>
-              <span>Coloring set &middot; <b>$1.00</b></span>
-            </div>
           </div>
         </div>
         <div class="cls-side">
@@ -105,10 +89,18 @@
           <p class="cls-note">Every gift is credited to a youth or team and funds backpack sets &mdash;
           shown here from ACO's live figures.</p>
         </div>
+        <div class="cls-set">
+          <p class="cls-set-t">One complete set &asymp; $4.50</p>
+          <div class="cls-chips">
+            <span>Coloring backpack &middot; <b>$2.50</b></span>
+            <span>Coloring book &middot; <b>$0.50</b></span>
+            <span>Wordless Book &middot; <b>$0.50</b></span>
+            <span>Coloring set &middot; <b>$1.00</b></span>
+          </div>
+        </div>
       </div>
-      <div class="clgrid" data-claims-grid></div>
+      <div class="clgrid" data-claims-grid style="margin-top:22px"></div>
       <p class="center" style="margin-top:28px"><a class="btn btn-secondary" href="https://africacriesout.org/youth/pack-with-love.html">Join them &mdash; make a claim &rarr;</a></p>
-      </div>
     </div>
   </section>
 
@@ -429,13 +421,13 @@
     <div class="container footer__bottom"><p>&copy; 2026 Pack with Love Youth Service Club &middot; Founded by Joanna Zhang &middot; Love First. Create with Joy. Serve with Purpose.</p></div>
   </footer>
   <a class="give-fab" href="https://africacriesout.org/give-fund.html?fund=pack_with_love">&hearts; Give</a>
-  <script src="js/main.js?v=101"></script>
+  <script src="js/main.js?v=103"></script>
   <script>
   // Live claims — reads ACO's youth feed; the section stays hidden until the
   // feed exists, parses, and holds at least one claim. All feed text is
   // rendered via textContent (external data, never markup).
   (function () {
-    var sec = document.querySelector('[data-claims-live]');
+    var sec = document.querySelector('.claims-live');
     if (!sec || !window.fetch) return;
     fetch('https://africacriesout.org/youth/pack-with-love.json')
       .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
@@ -475,14 +467,13 @@
           var craised = Number(camp.raised);
           var claimedTotal = rows.reduce(function (s, r) { return s + r.claimed; }, 0);
           if (isFinite(packed) && packed >= 0 && claimedTotal > 0) {
-            var box = sec.querySelector('[data-claims-summary]');
+            var box = sec;
             box.querySelector('[data-cls-big]').textContent = packed + ' set' + (packed === 1 ? '' : 's') + ' packed together';
             box.querySelector('[data-cls-sub]').textContent = isFinite(craised)
               ? '$' + craised.toLocaleString() + ' raised by our young people through their own effort'
               : 'raised by our young people through their own effort';
             box.querySelector('[data-cls-fill]').style.width = Math.min(100, Math.round(packed / claimedTotal * 100)) + '%';
             box.querySelector('[data-cls-meta]').textContent = packed + ' of ' + claimedTotal + ' claimed sets packed';
-            box.hidden = false;
           }
         }
         var grid = sec.querySelector('[data-claims-grid]');
@@ -521,8 +512,10 @@
           grid.appendChild(card);
         });
         var asof = (d && !Array.isArray(d) && (d.updated || d.as_of)) ? String(d.updated || d.as_of).slice(0, 20) : '';
-        if (asof) document.querySelector('[data-claims-updated]').textContent = 'Every bar below is real and current · updated ' + asof;
-        sec.hidden = false;
+        var meta = sec.querySelector('[data-cls-meta]');
+        if (asof && meta.textContent) meta.textContent += ' · updated ' + asof;
+        var live = sec.querySelector('[data-cls-live]');
+        if (live) live.hidden = false;
       })
       .catch(function () { /* feed not live yet — section stays hidden */ });
   })();
