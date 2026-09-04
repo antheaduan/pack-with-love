@@ -1,0 +1,13 @@
+// Cloudflare Worker configuration — static site + /api/contact form endpoint.
+// The site is deployed as a git-connected Worker (Workers Builds). Static files
+// are served directly from assets; only /api/* invokes the Worker script.
+{
+  "name": "pack-with-love",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  }
+}
