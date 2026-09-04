@@ -2115,3 +2115,14 @@ p a:not(.btn):not(.read-more),
     100% { box-shadow: 0 0 0 0 rgba(255,104,104,0); }
   }
 }
+.clsummary { max-width: 960px; margin: 0 auto 22px; background: linear-gradient(115deg, #33502F 0%, #3F5C40 45%, #6B6B2E 100%);
+  color: #fff; border-radius: var(--radius); padding: 26px 30px; box-shadow: var(--shadow); }
+.cls-big { font-family: var(--font-display); font-weight: 700; font-size: clamp(22px, 3vw, 30px); }
+.cls-sub { font-size: 14px; color: rgba(255,255,255,.85); margin-top: 4px; }
+.clsbar { height: 12px; background: rgba(255,255,255,.22); border-radius: 999px; overflow: hidden; margin: 14px 0 8px; }
+.clsfill { height: 100%; background: #fff; border-radius: 999px; min-width: 12px; }
+.cls-meta { font-size: 13px; color: rgba(255,255,255,.85); }
+.clacts { margin-top: 10px; display: flex; gap: 16px; flex-wrap: wrap; }
+.clacts a { font-weight: 700; text-decoration: none; font-size: 13.5px; }
+.cla-support { color: var(--coral-deep); }
+.cla-view { color: var(--navy); }

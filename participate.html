@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=96" />
+  <link rel="stylesheet" href="css/styles.css?v=97" />
 </head>
 <body>
 
@@ -88,6 +88,12 @@
         <span class="eyebrow center-tick">Live from the shared goal</span>
         <h2>Kids carrying claims right now</h2>
         <p class="cl-updated" data-claims-updated></p>
+      </div>
+      <div class="clsummary" data-claims-summary hidden>
+        <p class="cls-big" data-cls-big></p>
+        <p class="cls-sub" data-cls-sub></p>
+        <div class="clsbar"><div class="clsfill" data-cls-fill></div></div>
+        <p class="cls-meta" data-cls-meta></p>
       </div>
       <div class="clgrid" data-claims-grid></div>
       <p class="center" style="margin-top:28px"><a class="btn btn-secondary" href="https://africacriesout.org/youth/pack-with-love.html">Join them &mdash; make a claim &rarr;</a></p>
@@ -411,7 +417,7 @@
     <div class="container footer__bottom"><p>&copy; 2026 Pack with Love Youth Service Club &middot; Founded by Joanna Zhang &middot; Love First. Create with Joy. Serve with Purpose.</p></div>
   </footer>
   <a class="give-fab" href="https://africacriesout.org/give-fund.html?fund=pack_with_love">&hearts; Give</a>
-  <script src="js/main.js?v=96"></script>
+  <script src="js/main.js?v=97"></script>
   <script>
   // Live claims — reads ACO's youth feed; the section stays hidden until the
   // feed exists, parses, and holds at least one claim. All feed text is
@@ -436,13 +442,37 @@
             var raised = Number(c.raised != null ? c.raised : c.raised_usd);
             funded = isFinite(raised) ? Math.floor(raised / 4.5) : 0;
           }
+          // The participant's own page on ACO's youth platform: prefer an explicit
+          // field, else rebuild it from the ?f= slug in the support link.
+          var view = aco(c.view_url || c.page_url || c.page);
+          if (!view && aco(c.url) && c.url.indexOf('f=') > -1) {
+            var slug = c.url.split('f=')[1].split('&')[0];
+            if (/^[A-Za-z0-9_-]{1,80}$/.test(slug)) view = 'https://africacriesout.org/youth/pack-with-love.html?f=' + slug;
+          }
           if (name && isFinite(claimed) && claimed > 0) {
             rows.push({ name: name, tag: tag, teaser: teaser, claimed: Math.round(claimed),
                         funded: Math.max(0, Math.min(funded || 0, Math.round(claimed))),
-                        url: aco(c.url), photo: aco(c.photo) });
+                        url: aco(c.url), view: view, photo: aco(c.photo) });
           }
         });
         if (!rows.length) return;
+        // Campaign-wide bar — ACO's own totals, mirrored from the feed.
+        var camp = (d && !Array.isArray(d) && d.campaign && typeof d.campaign === 'object') ? d.campaign : null;
+        if (camp) {
+          var packed = Number(camp.sets_packed);
+          var craised = Number(camp.raised);
+          var claimedTotal = rows.reduce(function (s, r) { return s + r.claimed; }, 0);
+          if (isFinite(packed) && packed >= 0 && claimedTotal > 0) {
+            var box = sec.querySelector('[data-claims-summary]');
+            box.querySelector('[data-cls-big]').textContent = packed + ' set' + (packed === 1 ? '' : 's') + ' packed together';
+            box.querySelector('[data-cls-sub]').textContent = isFinite(craised)
+              ? '$' + craised.toLocaleString() + ' raised by our young people through their own effort'
+              : 'raised by our young people through their own effort';
+            box.querySelector('[data-cls-fill]').style.width = Math.min(100, Math.round(packed / claimedTotal * 100)) + '%';
+            box.querySelector('[data-cls-meta]').textContent = packed + ' of ' + claimedTotal + ' claimed sets packed · ACO’s live figures';
+            box.hidden = false;
+          }
+        }
         var grid = sec.querySelector('[data-claims-grid]');
         rows.forEach(function (c) {
           var card = document.createElement('article'); card.className = 'clcard';
@@ -464,9 +494,17 @@
           var meta = document.createElement('p'); meta.className = 'clmeta';
           meta.textContent = c.funded + ' of ' + c.claimed + ' backpacks';
           card.appendChild(meta);
-          if (c.url) {
-            var a = document.createElement('a'); a.href = c.url; a.rel = 'noopener';
-            a.textContent = 'Support ' + c.name + ' →'; card.appendChild(a);
+          if (c.url || c.view) {
+            var row = document.createElement('p'); row.className = 'clacts';
+            if (c.url) {
+              var a = document.createElement('a'); a.href = c.url; a.rel = 'noopener';
+              a.className = 'cla-support'; a.textContent = '♥ Support →'; row.appendChild(a);
+            }
+            if (c.view) {
+              var v = document.createElement('a'); v.href = c.view; v.rel = 'noopener';
+              v.className = 'cla-view'; v.textContent = 'View their page →'; row.appendChild(v);
+            }
+            card.appendChild(row);
           }
           grid.appendChild(card);
         });
