@@ -2141,3 +2141,6 @@ p a:not(.btn):not(.read-more),
 .clacts a { font-weight: 700; text-decoration: none; font-size: 13.5px; }
 .cla-support { color: var(--coral-deep); }
 .cla-view { color: var(--navy); }
+.claims-live h1 { font-family: var(--font-display); font-weight: 600; color: var(--ink);
+  font-size: clamp(38px, 5vw, 58px); line-height: 1.08; letter-spacing: normal; margin: 0; }
+.claims-live h1 em { font-style: italic; color: var(--coral-display); }
