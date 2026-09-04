@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=97" />
+  <link rel="stylesheet" href="css/styles.css?v=98" />
 </head>
 <body>
 
@@ -90,10 +90,32 @@
         <p class="cl-updated" data-claims-updated></p>
       </div>
       <div class="clsummary" data-claims-summary hidden>
-        <p class="cls-big" data-cls-big></p>
-        <p class="cls-sub" data-cls-sub></p>
-        <div class="clsbar"><div class="clsfill" data-cls-fill></div></div>
-        <p class="cls-meta" data-cls-meta></p>
+        <div class="cls-main">
+          <p class="cls-eyebrow">Youth fundraise &middot; Pack with Love</p>
+          <p class="cls-title">Youth are packing Love &amp; Hope backpacks</p>
+          <p class="cls-intro">Bake sales, farmers-market music, handmade crafts &mdash; every set our
+          young people fund is a full backpack for a child. Support a youth or team, or start your
+          own page.</p>
+          <p class="cls-big" data-cls-big></p>
+          <p class="cls-sub" data-cls-sub></p>
+          <div class="clsbar"><div class="clsfill" data-cls-fill></div></div>
+          <p class="cls-meta" data-cls-meta></p>
+          <div class="cls-set">
+            <p class="cls-set-t">One complete set &asymp; $4.50</p>
+            <div class="cls-chips">
+              <span>Coloring backpack &middot; <b>$2.50</b></span>
+              <span>Coloring book &middot; <b>$0.50</b></span>
+              <span>Wordless Book &middot; <b>$0.50</b></span>
+              <span>Coloring set &middot; <b>$1.00</b></span>
+            </div>
+          </div>
+        </div>
+        <div class="cls-side">
+          <a class="cls-btn cls-btn-white" href="https://africacriesout.org/youth/pack-with-love.html">Start a fundraiser &rarr;</a>
+          <a class="cls-btn cls-btn-gold" href="/project">About the Love &amp; Hope backpack &rarr;</a>
+          <p class="cls-note">Every gift is credited to a youth or team and funds backpack sets &mdash;
+          shown here from ACO's live figures.</p>
+        </div>
       </div>
       <div class="clgrid" data-claims-grid></div>
       <p class="center" style="margin-top:28px"><a class="btn btn-secondary" href="https://africacriesout.org/youth/pack-with-love.html">Join them &mdash; make a claim &rarr;</a></p>
@@ -417,7 +439,7 @@
     <div class="container footer__bottom"><p>&copy; 2026 Pack with Love Youth Service Club &middot; Founded by Joanna Zhang &middot; Love First. Create with Joy. Serve with Purpose.</p></div>
   </footer>
   <a class="give-fab" href="https://africacriesout.org/give-fund.html?fund=pack_with_love">&hearts; Give</a>
-  <script src="js/main.js?v=97"></script>
+  <script src="js/main.js?v=98"></script>
   <script>
   // Live claims — reads ACO's youth feed; the section stays hidden until the
   // feed exists, parses, and holds at least one claim. All feed text is
@@ -469,7 +491,7 @@
               ? '$' + craised.toLocaleString() + ' raised by our young people through their own effort'
               : 'raised by our young people through their own effort';
             box.querySelector('[data-cls-fill]').style.width = Math.min(100, Math.round(packed / claimedTotal * 100)) + '%';
-            box.querySelector('[data-cls-meta]').textContent = packed + ' of ' + claimedTotal + ' claimed sets packed · ACO’s live figures';
+            box.querySelector('[data-cls-meta]').textContent = packed + ' of ' + claimedTotal + ' claimed sets packed';
             box.hidden = false;
           }
         }
