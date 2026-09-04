@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Claim & Do · 招募海报</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&family=Instrument+Sans:wght@400;600;700;800&family=Caveat:wght@700&family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0F3A5D;--navy-deep:#0A2A44;--coral:#FF6868;--gold:#DBB978;
+    --coral-text:#C63F39;--coral-btn:#C23F39;--gold-text:#7F6122;
+    --cream:#FFF8F1;--sand:#F6ECDD;--blush:#FCEDE8;--ink:#1C2E3D;--text:#4A4038;--line:#EBDFCF;--sage:#3F5C40;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{width:1080px;min-height:1440px;margin:0 auto;background:var(--cream);
+    font-family:'Noto Sans SC','Instrument Sans',system-ui,sans-serif;color:var(--text);
+    display:flex;flex-direction:column;position:relative;}
+  body::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(700px 320px at 92% 0%,rgba(219,185,120,.22),transparent 60%),
+    radial-gradient(520px 300px at 2% 30%,rgba(255,104,104,.09),transparent 55%);pointer-events:none;}
+  .top{padding:22px 64px 0;text-align:center;position:relative;}
+  .brand{font-family:'Fraunces',serif;font-weight:700;font-size:26px;color:var(--navy);}
+  .brand .love{font-family:'Caveat',cursive;color:var(--coral-text);font-size:29px;}
+  .kicker{margin-top:6px;font-size:13.5px;letter-spacing:.26em;text-transform:uppercase;font-weight:800;color:var(--gold-text);}
+  h1{font-family:'Fraunces',serif;font-weight:600;color:var(--ink);font-size:52px;line-height:1.04;margin-top:10px;}
+  h1 em{font-style:italic;color:#EC554F;}
+  h1 .cn{font-family:'Noto Serif SC',serif;font-size:28px;color:var(--gold-text);font-style:normal;display:block;margin-top:6px;font-weight:600;}
+  .free{position:absolute;right:74px;top:70px;background:var(--sage);color:#fff;border-radius:999px;padding:14px 20px;transform:rotate(6deg);text-align:center;box-shadow:0 10px 26px rgba(63,92,64,.35);}
+  .free b{display:block;font-size:26px;font-weight:800;}
+  .free span{font-size:12px;letter-spacing:.1em;}
+
+  .oneliner{margin:14px 64px 0;background:var(--navy);border-radius:20px;padding:18px 32px;text-align:center;}
+  .oneliner .cn{font-family:'Noto Serif SC',serif;font-weight:700;font-size:28px;line-height:1.5;color:#fff;}
+  .oneliner .cn b{color:var(--gold);}
+  .oneliner .en{margin-top:6px;font-size:15px;color:#BCD0E2;}
+
+  .whystat{margin:12px 64px 0;background:var(--blush);border:1.5px solid rgba(198,63,57,.35);border-radius:16px;padding:11px 24px;}
+  .whystat p{font-size:15px;line-height:1.62;text-align:center;}
+  .whystat b{color:var(--coral-text);}
+
+  .cols{margin:14px 64px 0;display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .col{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:16px 22px;}
+  .col h2{font-family:'Noto Serif SC',serif;font-weight:700;font-size:21px;color:var(--navy);margin-bottom:9px;}
+  .col h2 small{font-family:'Instrument Sans',sans-serif;font-size:11px;letter-spacing:.18em;color:var(--gold-text);display:block;margin-bottom:3px;font-weight:800;}
+  .col ul{list-style:none;}
+  .col li{position:relative;padding:4px 0 4px 22px;font-size:14.5px;line-height:1.5;}
+  .col li::before{content:"";position:absolute;left:4px;top:11px;width:9px;height:9px;border-radius:50%;background:var(--coral);}
+  .col.b li::before{background:var(--gold);}
+  .col li b{color:var(--ink);}
+
+  .story{margin:12px 64px 0;background:var(--sand);border-radius:18px;padding:15px 24px;display:grid;grid-template-columns:1fr 300px;gap:20px;align-items:center;}
+  .story h2{font-family:'Noto Serif SC',serif;font-weight:700;font-size:21px;color:var(--coral-text);margin-bottom:8px;}
+  .story p{font-size:14px;line-height:1.62;}
+  .story b{color:var(--ink);}
+  .story .win{margin-top:7px;font-family:'Noto Serif SC',serif;font-weight:700;font-size:16px;color:var(--sage);}
+  .story svg{width:100%;height:auto;}
+
+  .facts{margin:12px 64px 0;display:flex;gap:0;background:var(--navy-deep);border-radius:16px;padding:14px 10px;justify-content:space-around;text-align:center;color:#fff;}
+  .facts .f{padding:0 12px;}
+  .facts small{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:var(--gold);margin-bottom:3px;}
+  .facts b{font-size:17px;font-weight:700;display:block;line-height:1.3;}
+  .facts span{font-size:11.5px;color:#8EA6BD;}
+
+  .cta{margin:12px 64px 0;background:var(--coral-btn);border-radius:18px;padding:16px 30px;text-align:center;color:#fff;}
+  .cta .zh{font-weight:700;font-size:21px;}
+  .cta .url{margin-top:4px;font-weight:800;font-size:20px;font-family:'Instrument Sans',sans-serif;}
+  .cta .mail{margin-top:3px;font-size:13.5px;color:#FFD9D0;}
+
+  .foot{margin-top:auto;background:var(--navy-deep);color:#8EA6BD;text-align:center;padding:12px 40px 15px;font-size:12.5px;}
+  .foot .motto{font-family:'Caveat',cursive;font-size:21px;color:var(--gold);}
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="brand">Pack <span class="love">with Love</span></div>
+    <div class="kicker">Kids Raise It Themselves · Fall 2026</div>
+    <h1>Claim <em>&amp;</em> Do<span class="cn">认领一个小目标，孩子自己挣到它</span></h1>
+    <div class="free"><b>免费</b><span>FREE · 全程家长护航</span></div>
+  </div>
+
+  <div class="oneliner">
+    <p class="cn">认领<b>几个书包</b>的小目标，用<b>四步法</b>亲手挣到它：<br><b>Claim → Plan → Do → Report</b></p>
+    <p class="en">Any child claims a real goal — a few backpacks — and earns it with one four-move method. Free, parent-guided.</p>
+  </div>
+
+  <div class="whystat">
+    <p><b>为什么让孩子自己募款？</b>募款不是伸手要钱。在一代代公民教育的传统里，它一直被视为<b>领导力、沟通、创业精神与公民意识</b>的训练场。表面上，孩子在筹钱；底下，他要直面一个再真实不过的问题：<b>"我相信这件事值得做——可别人凭什么支持我？"</b>诚实地回答这个问题，就是全部课程。做到位的募款，是一条完整的真实工作链：从发现一个需要，到向每一位支持者交代结果。</p>
+  </div>
+
+  <div class="cols">
+    <div class="col">
+      <h2><small>THE FOUR MOVES</small>四步法做什么？</h2>
+      <ul>
+        <li><b>① Claim 认领</b>——盘点自己会什么（才艺 / 烘焙 / 奶茶转卖 / 洗车劳动）；经初步可行性分析后定目标——一个人 10 或 20 个书包，组队可到 50、80、100；家长确认后生效</li>
+        <li><b>② Plan 计划</b>——三件套：一段话的理由（凭什么支持我）、日程表、记账表</li>
+        <li><b>③ Do 执行</b>——真摆摊、真开口、真被拒绝；每周对账，<b>只算净利润</b>；12 月中 RESIZE 检查点，诚实调整目标</li>
+        <li><b>④ Report 交代</b>——最终账目 + 亲手感谢每位支持者："<b>你的信任变成了 __ 个书包</b>"</li>
+      </ul>
+    </div>
+    <div class="col b">
+      <h2><small>WHAT THEY PRACTICE</small>孩子练到什么？</h2>
+      <ul>
+        <li><b>承诺与兑现</b>——用真实数量许诺，用一季努力兑现</li>
+        <li><b>向陌生人开口</b>——把自己的理由讲给不认识的人听</li>
+        <li><b>记账与对账</b>——每一分钱可追溯；成本和利润分得清</li>
+        <li><b>诚实修正</b>——中途 resize 不是失败，是带着真实数据重新决策</li>
+        <li><b>有始有终</b>——不让任何支持者从沉默中得知结果</li>
+        <li><b>认领即会员</b>——自动成为 Pack with Love 社团成员，永远免费</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="story">
+    <div>
+      <h2>孩子挣的钱去哪里？</h2>
+      <p><b>Pack with Love</b> 是一群横跨美国东西两岸的学生创立的青少年公益社团（成人顾问护航）。每个孩子认领的目标，都汇入首个公益项目
+      <b>Love &amp; Hope Backpack Project</b> 的 <b>$5,300 共享目标</b>——为<b>塞内加尔十个村庄</b>的孩子送去
+      <b>1,000 套可涂色书包</b>，随 2027 年 3 月医疗宣教队亲手送达。所有资金经成人管理的正规渠道，孩子从不经手钱款。<b>认领是承诺努力，不是欠债</b>——没完成的部分由整个社区兜底。</p>
+      <p class="win">孩子练出真本事，远方的孩子背上书包——win-win。</p>
+    </div>
+    <svg viewBox="30 60 510 310" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="140" cy="342" rx="100" ry="12" fill="#FCEDE8"/>
+      <ellipse cx="424" cy="344" rx="92" ry="12" fill="#EFE4D2"/>
+      <g stroke="#0F3A5D" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="140" cy="188" r="33" fill="#FFF8F1"/>
+        <path d="M107 186 A33 33 0 0 1 173 186 Z" fill="#0F3A5D" stroke="none"/>
+      </g>
+      <circle cx="129" cy="192" r="4.6" fill="#0F3A5D"/><circle cx="151" cy="192" r="4.6" fill="#0F3A5D"/>
+      <path d="M130 206 Q140 214 150 206" stroke="#0F3A5D" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+      <circle cx="118" cy="202" r="6.5" fill="#FF6868" opacity=".4"/><circle cx="162" cy="202" r="6.5" fill="#FF6868" opacity=".4"/>
+      <rect x="110" y="216" width="60" height="24" rx="12" fill="#FFF8F1" stroke="#0F3A5D" stroke-width="5.5"/>
+      <g stroke="#0F3A5D" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="52" y="232" width="180" height="16" rx="8" fill="#DBB978"/>
+        <rect x="64" y="248" width="156" height="86" rx="12" fill="#FCEDE8"/>
+        <path d="M186 200 L212 200 L206 232 L192 232 Z" fill="#DBB978"/>
+        <path d="M212 204 Q222 208 212 216" fill="none"/>
+        <path d="M78 210 L98 210 L94 232 L82 232 Z" fill="#FFFFFF"/>
+        <line x1="92" y1="212" x2="98" y2="196" stroke="#C63F39" stroke-width="4"/>
+      </g>
+      <g fill="#0F3A5D" stroke="none">
+        <circle cx="84" cy="227" r="2.6"/><circle cx="89" cy="228" r="2.6"/><circle cx="94" cy="227" r="2.6"/><circle cx="87" cy="222" r="2.6"/><circle cx="92" cy="222" r="2.6"/>
+      </g>
+      <text x="142" y="298" text-anchor="middle" font-family="Caveat,cursive" font-weight="700" font-size="22" fill="#C63F39">bubble tea sale!</text>
+      <path d="M236 216 Q296 158 344 204" fill="none" stroke="#C63F39" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 14"/>
+      <path d="M332 188 L348 206 L324 212 Z" fill="#C63F39"/>
+      <g stroke="#0F3A5D" stroke-width="4.5">
+        <circle cx="266" cy="186" r="14" fill="#DBB978"/><circle cx="300" cy="174" r="14" fill="#DBB978"/><circle cx="330" cy="182" r="14" fill="#DBB978"/>
+      </g>
+      <g font-family="Instrument Sans,DejaVu Sans,sans-serif" font-weight="700" font-size="15" fill="#0F3A5D" text-anchor="middle">
+        <text x="266" y="191">$</text><text x="300" y="179">$</text><text x="330" y="187">$</text>
+      </g>
+      <g stroke="#0F3A5D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M400 128 Q424 102 448 128" fill="none" stroke="#DBB978" stroke-width="9"/>
+        <path d="M400 128 Q424 102 448 128" fill="none"/>
+        <path d="M366 184 Q352 230 364 278" fill="none" stroke="#DBB978" stroke-width="9"/>
+        <path d="M366 184 Q352 230 364 278" fill="none"/>
+        <rect x="362" y="126" width="122" height="184" rx="42" fill="#FFFFFF"/>
+        <rect x="382" y="206" width="82" height="80" rx="19" fill="#FFFFFF"/>
+      </g>
+      <g stroke="#0F3A5D" stroke-width="6.5" stroke-linecap="round">
+        <line x1="423" y1="152" x2="423" y2="186"/><line x1="409" y1="164" x2="437" y2="164"/>
+      </g>
+      <path d="M423 268 C412 255 398 246 407 233 C413 224 423 230 423 238 C423 230 433 224 439 233 C448 246 434 255 423 268 Z" fill="#FF6868"/>
+      <g stroke="#FF6868" stroke-width="5" stroke-linecap="round">
+        <line x1="350" y1="106" x2="340" y2="92"/><line x1="368" y1="96" x2="362" y2="80"/><line x1="334" y1="126" x2="318" y2="118"/>
+      </g>
+      <text x="424" y="332" text-anchor="middle" font-family="Instrument Sans,DejaVu Sans,sans-serif" font-weight="800" font-size="11" letter-spacing="1.6" fill="#7F6122">MY CLAIM &#183; 10 BACKPACKS</text>
+      <rect x="356" y="340" width="136" height="12" rx="6" fill="#F6ECDD" stroke="#0F3A5D" stroke-width="3.5"/>
+      <rect x="356" y="340" width="102" height="12" rx="6" fill="#FF6868"/>
+    </svg>
+  </div>
+
+  <div class="facts">
+    <div class="f"><small>对象</small><b>任何孩子</b><span>家长确认与护航</span></div>
+    <div class="f"><small>费用</small><b>免费</b><span>认领即会员</span></div>
+    <div class="f"><small>学季</small><b>9 月 – 3/1</b><span>12 月中 RESIZE</span></div>
+    <div class="f"><small>形式</small><b>认领制</b><span>个人或组队 · 10 个起</span></div>
+    <div class="f"><small>安全</small><b>成人管钱</b><span>孩子从不经手资金</span></div>
+  </div>
+
+  <div class="cta">
+    <p class="zh">认领入口 · Make a Claim</p>
+    <p class="url">africacriesout.org/youth/pack-with-love.html</p>
+    <p class="mail">认领后请发一封邮件到 hello@packwithlove.org 报到 · 四步法全文：packwithlove.org/participate</p>
+  </div>
+
+  <div class="foot">
+    <span class="motto">a claim is a commitment to effort, not a debt</span> &nbsp; Pack with Love Youth Service Club · Love First. Create with Joy. Serve with Purpose.
+  </div>
+</body>
+</html>
