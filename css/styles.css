@@ -1377,7 +1377,8 @@ p a:not(.btn):not(.read-more),
 
 /* Why (sage) */
 .ji-why { background: #3F5C40; color: #fff; padding: 88px 0; }
-.ji-why .inner { max-width: 820px; margin: 0 auto; }
+.ji-why .inner { max-width: none; margin: 0; }
+.ji-why .lede, .ji-why .close { max-width: 900px; }
 .ji-why .eyebrow { color: #FFF3D6; }
 .ji-why .eyebrow--dash::before { background: var(--gold); }
 .ji-why h2 { color: #fff; font-size: clamp(30px, 4.2vw, 46px); margin: 14px 0 8px; }
