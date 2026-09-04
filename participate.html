@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=93" />
+  <link rel="stylesheet" href="css/styles.css?v=94" />
 </head>
 <body>
 
@@ -52,6 +52,7 @@
       <a href="#moves">Four Moves</a>
       <a href="#calendar">The Clock</a>
       <a href="#start">Start a Claim</a>
+      <a href="#claims-live">Live</a>
       <a href="#capabilities">Skills</a>
       <a href="#ai-era">Why Now</a>
     </div>
@@ -279,6 +280,24 @@
     </div>
   </section>
 
+  <!-- ============ CLAIMS LIVE ============
+       Fed client-side from ACO's youth platform:
+         https://africacriesout.org/youth/pack-with-love.json
+       Hidden until the feed exists and returns at least one claim
+       (requires a CORS header on ACO's side — ACO has the spec).
+       Privacy: first names + grade level only, per project rules. -->
+  <section class="claims-live" id="claims-live" hidden data-claims-live>
+    <div class="container">
+      <div class="head" style="text-align:center;max-width:640px;margin:0 auto 36px">
+        <span class="eyebrow center-tick">Live from the shared goal</span>
+        <h2>Kids carrying claims right now</h2>
+        <p class="cl-updated" data-claims-updated></p>
+      </div>
+      <div class="clgrid" data-claims-grid></div>
+      <p class="center" style="margin-top:28px"><a class="btn btn-secondary" href="https://africacriesout.org/youth/pack-with-love.html">Join them &mdash; make a claim &rarr;</a></p>
+    </div>
+  </section>
+
   <!-- ============ BRICKS ============ -->
   <section class="ji-bricks" id="capabilities">
     <div class="container">
@@ -386,7 +405,63 @@
     <div class="container footer__bottom"><p>&copy; 2026 Pack with Love Youth Service Club &middot; Founded by Joanna Zhang &middot; Love First. Create with Joy. Serve with Purpose.</p></div>
   </footer>
   <a class="give-fab" href="https://africacriesout.org/give-fund.html?fund=pack_with_love">&hearts; Give</a>
-  <script src="js/main.js?v=93"></script>
+  <script src="js/main.js?v=94"></script>
+  <script>
+  // Live claims — reads ACO's youth feed; the section stays hidden until the
+  // feed exists, parses, and holds at least one claim. All feed text is
+  // rendered via textContent (external data, never markup).
+  (function () {
+    var sec = document.querySelector('[data-claims-live]');
+    if (!sec || !window.fetch) return;
+    fetch('https://africacriesout.org/youth/pack-with-love.json')
+      .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
+      .then(function (d) {
+        var list = Array.isArray(d) ? d : (d && (d.claims || d.fundraisers)) || [];
+        var rows = [];
+        list.forEach(function (c) {
+          if (!c || typeof c !== 'object') return;
+          var name = String(c.name || c.first_name || '').trim().slice(0, 40);
+          var grade = String(c.grade || c.grade_level || '').trim().slice(0, 24);
+          var claimed = Number(c.claimed != null ? c.claimed : c.claim != null ? c.claim : c.goal_backpacks != null ? c.goal_backpacks : c.goal);
+          var funded = Number(c.funded != null ? c.funded : c.backpacks_funded);
+          if (!isFinite(funded)) {
+            var raised = Number(c.raised != null ? c.raised : c.raised_usd);
+            funded = isFinite(raised) ? Math.floor(raised / 4.5) : 0;
+          }
+          var url = (typeof c.url === 'string' && c.url.indexOf('https://africacriesout.org') === 0) ? c.url : null;
+          if (name && isFinite(claimed) && claimed > 0) {
+            rows.push({ name: name, grade: grade, claimed: Math.round(claimed),
+                        funded: Math.max(0, Math.min(funded || 0, Math.round(claimed))), url: url });
+          }
+        });
+        if (!rows.length) return;
+        var grid = sec.querySelector('[data-claims-grid]');
+        rows.forEach(function (c) {
+          var card = document.createElement('article'); card.className = 'clcard';
+          var head = document.createElement('p');
+          var n = document.createElement('b'); n.className = 'cln'; n.textContent = c.name; head.appendChild(n);
+          if (c.grade) { var g = document.createElement('span'); g.className = 'clg'; g.textContent = c.grade; head.appendChild(g); }
+          card.appendChild(head);
+          var bar = document.createElement('div'); bar.className = 'clbar';
+          var fill = document.createElement('div'); fill.className = 'clfill';
+          fill.style.width = Math.min(100, Math.round(c.funded / c.claimed * 100)) + '%';
+          bar.appendChild(fill); card.appendChild(bar);
+          var meta = document.createElement('p'); meta.className = 'clmeta';
+          meta.textContent = c.funded + ' of ' + c.claimed + ' backpacks';
+          card.appendChild(meta);
+          if (c.url) {
+            var a = document.createElement('a'); a.href = c.url; a.rel = 'noopener';
+            a.textContent = 'Support ' + c.name + ' →'; card.appendChild(a);
+          }
+          grid.appendChild(card);
+        });
+        var asof = (d && !Array.isArray(d) && (d.updated || d.as_of)) ? String(d.updated || d.as_of).slice(0, 20) : '';
+        if (asof) sec.querySelector('[data-claims-updated]').textContent = 'Every bar below is real and current · updated ' + asof;
+        sec.hidden = false;
+      })
+      .catch(function () { /* feed not live yet — section stays hidden */ });
+  })();
+  </script>
   <!-- Structured data: who we are (for search engines) -->
   <script type="application/ld+json">
   {

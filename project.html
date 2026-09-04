@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=93" />
+  <link rel="stylesheet" href="css/styles.css?v=94" />
 </head>
 <body>
 
@@ -186,6 +186,12 @@
           <a class="go" href="/data-to-impact">Explore the course &rarr;</a>
           <span class="fine">Middle school &middot; Sundays 5 PM PT / 8 PM ET &middot; 15 seats</span>
         </div>
+      </div>
+      <!-- Live claims strip — fed from ACO's youth feed; hidden until the feed exists. -->
+      <div class="live-strip" hidden data-claims-strip>
+        <span class="ls-dot" aria-hidden="true"></span>
+        <p><b data-claims-count>0</b> <span data-claims-label>kids are carrying claims</span> on the shared goal right now<span data-claims-names></span></p>
+        <a href="/participate#claims-live">See them live &rarr;</a>
       </div>
     </div>
   </section>
@@ -358,7 +364,34 @@
       el.textContent = days.toLocaleString('en-US');
     })();
   </script>
-  <script src="js/main.js?v=93"></script>
+  <script src="js/main.js?v=94"></script>
+  <script>
+  // Live claims strip — reads ACO's youth feed; hidden until the feed exists
+  // and holds at least one claim. Feed text rendered via textContent only.
+  (function () {
+    var strip = document.querySelector('[data-claims-strip]');
+    if (!strip || !window.fetch) return;
+    fetch('https://africacriesout.org/youth/pack-with-love.json')
+      .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
+      .then(function (d) {
+        var list = Array.isArray(d) ? d : (d && (d.claims || d.fundraisers)) || [];
+        var names = [];
+        list.forEach(function (c) {
+          if (!c || typeof c !== 'object') return;
+          var name = String(c.name || c.first_name || '').trim().slice(0, 40);
+          var claimed = Number(c.claimed != null ? c.claimed : c.claim != null ? c.claim : c.goal_backpacks != null ? c.goal_backpacks : c.goal);
+          if (name && isFinite(claimed) && claimed > 0) names.push(name);
+        });
+        if (!names.length) return;
+        strip.querySelector('[data-claims-count]').textContent = names.length;
+        if (names.length === 1) strip.querySelector('[data-claims-label]').textContent = 'kid is carrying a claim';
+        strip.querySelector('[data-claims-names]').textContent =
+          ' — ' + names.slice(0, 3).join(', ') + (names.length > 3 ? '…' : '');
+        strip.hidden = false;
+      })
+      .catch(function () { /* feed not live yet — strip stays hidden */ });
+  })();
+  </script>
   <!-- Structured data: who we are (for search engines) -->
   <script type="application/ld+json">
   {
