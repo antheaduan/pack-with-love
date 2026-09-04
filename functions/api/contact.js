@@ -46,7 +46,7 @@ export async function onRequestPost({ request, env }) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: env.CONTACT_FROM || 'Pack with Love <hello@packwithlove.org>',
+      from: env.CONTACT_FROM || 'Pack with Love <contact@packwithlove.org>',
       to: [env.CONTACT_TO || 'hello@packwithlove.org'],
       reply_to: email,
       subject: `[packwithlove.org] ${reason} — ${name}`,

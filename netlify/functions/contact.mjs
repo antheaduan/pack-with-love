@@ -54,7 +54,7 @@ export default async (request) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: process.env.CONTACT_FROM || 'Pack with Love <hello@packwithlove.org>',
+      from: process.env.CONTACT_FROM || 'Pack with Love <contact@packwithlove.org>',
       to: [process.env.CONTACT_TO || 'hello@packwithlove.org'],
       reply_to: email,
       subject: `[packwithlove.org] ${reason} — ${name}`,
