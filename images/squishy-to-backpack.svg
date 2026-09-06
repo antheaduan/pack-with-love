@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg viewBox="0 64 560 356" xmlns="http://www.w3.org/2000/svg" role="img"
-             aria-label="The class designs and sells squishies; the profit sponsors backpacks for children in Senegal."
+             aria-label="Diagram: the class chooses and sells a product — a squishy is one example — and the profit helps buy color-it-yourself backpacks for children in Senegal."
              style="width:100%;height:auto;display:block;">
           <!-- containment line, painted in -->
           <g font-family="Instrument Sans,system-ui,sans-serif" font-weight="800" text-anchor="middle">
@@ -29,7 +29,7 @@
             <rect x="178" y="178" width="44" height="30" rx="7" fill="#DBB978" stroke="#0F3A5D" stroke-width="4.5"/>
             <text x="200" y="200" text-anchor="middle" font-family="Instrument Sans,system-ui,sans-serif" font-weight="700" font-size="19" fill="#0F3A5D">$5</text>
           </g>
-          <text x="128" y="366" text-anchor="middle" font-family="Caveat,cursive" font-weight="700" font-size="23" fill="#7F6122">the class designs &amp; sells</text>
+          <text x="128" y="366" text-anchor="middle" font-family="Caveat,cursive" font-weight="700" font-size="23" fill="#7F6122">the class chooses &amp; sells</text>
 
           <!-- PROFIT ARROW with coins -->
           <path d="M212 236 Q280 176 342 224" fill="none" stroke="#C63F39" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 14"/>
