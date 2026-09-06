@@ -1961,6 +1961,7 @@ p a:not(.btn):not(.read-more),
 .mvcard .mcap.m2 { color: var(--gold-text); }
 .mvcard .mcap.m3 { color: var(--navy); }
 .mvcard .mcap.m4 { color: #3F5C40; }
+.mvcard .mcap.m5 { color: var(--coral-display, #EC554F); }
 .mvcard h3 { font-family: var(--font-display); font-weight: 600; color: var(--ink); font-size: 21px; line-height: normal; margin: 5px 0 8px; }
 .mvcard .essence { font-size: 14.5px; line-height: 1.68; margin: 0; }
 .mvcard .essence b, .mvcard .produce b, .mvfull p b, .mvfull li b { color: var(--ink); }
