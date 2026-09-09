@@ -4,7 +4,7 @@
 
 # Member portfolios: every /members/<id> serves the same template,
 # which reads the id from the path client-side.
-/members/*  /members.html  200
+/members/*  /members  200
 
 /support  /give  301
 /poster  /promo/data-to-impact-poster.html  301

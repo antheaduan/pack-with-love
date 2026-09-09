@@ -52,7 +52,7 @@
 # which reads the id from the path client-side.
 [[redirects]]
   from = "/members/*"
-  to = "/members.html"
+  to = "/members"
   status = 200
 
 # /support retired — its chooser duplicated the Three Ways In ladder.
