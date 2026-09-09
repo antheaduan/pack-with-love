@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css?v=112" />
+  <link rel="stylesheet" href="/css/styles.css?v=113" />
 </head>
 <body>
 
@@ -81,6 +81,7 @@
         <p class="mp-eyebrow">Project portfolio</p>
         <h1 class="mp-title" data-mp-name></h1>
         <p class="mp-sub" data-mp-sub></p>
+        <blockquote class="mp-bio" data-mp-bio hidden></blockquote>
         <div class="mp-stats" data-mp-stats hidden>
           <div class="mp-stat"><b data-mp-projects>0</b><span>projects</span></div>
           <div class="mp-stat"><b data-mp-raised>$0</b><span>raised all-time</span></div>
@@ -214,6 +215,14 @@
                  mem.member_since ? 'Pack with Love member since ' + String(mem.member_since).slice(0, 4) : '']
                 .filter(Boolean).join(' · ');
       document.querySelector('[data-mp-sub]').textContent = sub;
+
+      // Optional parent-written public intro (bio: string | null).
+      var bio = String(mem.bio || '').trim().slice(0, 1500);
+      if (bio) {
+        var bq = document.querySelector('[data-mp-bio]');
+        bq.textContent = bio;
+        bq.hidden = false;
+      }
 
       var t = (d && d.totals) || null;
       if (t) {
