@@ -48,6 +48,13 @@
   status = 301
   force = true
 
+# Member portfolios: every /members/<id> serves the same template,
+# which reads the id from the path client-side.
+[[redirects]]
+  from = "/members/*"
+  to = "/members.html"
+  status = 200
+
 # /support retired — its chooser duplicated the Three Ways In ladder.
 [[redirects]]
   from = "/poster"
