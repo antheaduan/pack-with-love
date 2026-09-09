@@ -2152,3 +2152,26 @@ p a:not(.btn):not(.read-more),
 .claims-live h1.cls-title { font-family: var(--font-display); font-weight: 600; color: #fff;
   font-size: clamp(26px, 3vw, 34px); line-height: 1.1; letter-spacing: normal; margin: 6px 0 8px; }
 .claims-live h1.cls-title em { font-style: italic; color: var(--gold); }
+
+/* ---- 30. Member portfolios (/members, fed from ACO's youth platform) ---- */
+.mems { padding: 64px 0 96px; background: var(--sand); min-height: 60vh; }
+.mp-eyebrow { font-size: 11.5px; letter-spacing: .18em; text-transform: uppercase; font-weight: 800; color: var(--gold-text); }
+.mp-title { font-family: var(--font-display); font-weight: 600; color: var(--ink); font-size: clamp(34px, 4.6vw, 52px); line-height: 1.08; margin: 10px 0 8px; }
+.mp-title em { font-style: italic; color: var(--coral-display, #EC554F); }
+.mp-sub { font-size: 15px; color: var(--muted); }
+.mp-intro { margin-top: 12px; max-width: 640px; font-size: 16px; line-height: 1.65; color: var(--text); }
+.mp-stats { margin: 26px 0 8px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 640px; }
+.mp-stat { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 16px 18px; box-shadow: var(--shadow); }
+.mp-stat b { display: block; font-family: var(--font-display); font-weight: 700; font-size: clamp(24px, 3vw, 32px); color: var(--ink); }
+.mp-stat span { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 800; color: var(--muted); }
+.mp-year { font-family: var(--font-display); font-weight: 700; color: var(--gold-text); font-size: 22px; margin: 34px 0 14px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+.mp-reflect { margin-top: 12px; background: var(--blush); border-left: 4px solid var(--coral); border-radius: 0 10px 10px 0; padding: 10px 14px; }
+.mp-reflect b { display: block; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--coral-text); margin-bottom: 4px; }
+.mp-reflect p { font-family: var(--font-display); font-style: italic; font-size: 14.5px; line-height: 1.6; color: var(--text); }
+.mp-dir { margin-top: 28px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; max-width: 900px; }
+.mp-card { display: flex; flex-direction: column; gap: 4px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 18px 20px; box-shadow: var(--shadow); text-decoration: none; transition: transform .15s, box-shadow .15s; }
+.mp-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg, 0 30px 70px rgba(28,46,61,.14)); }
+.mp-card b { font-family: var(--font-display); font-weight: 600; color: var(--ink); font-size: 19px; }
+.mp-card span { font-size: 13px; color: var(--muted); }
+.mp-card i { font-style: normal; font-weight: 700; font-size: 13px; color: var(--coral-deep); margin-top: 6px; }
+@media (max-width: 700px) { .mp-stats, .mp-dir { grid-template-columns: 1fr; } }

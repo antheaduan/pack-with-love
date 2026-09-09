@@ -17,6 +17,11 @@ export default {
       if (request.method !== 'POST') return json({ ok: false, error: 'Method not allowed' }, 405);
       return contact({ request, env });
     }
+    // /members and /members/<id> both serve the members template; the page
+    // reads the member id from the path client-side.
+    if (url.pathname === '/members' || url.pathname.startsWith('/members/')) {
+      return env.ASSETS.fetch(new Request(new URL('/members.html', url), request));
+    }
     return env.ASSETS.fetch(request);
   },
 };
