@@ -2165,7 +2165,7 @@ p a:not(.btn):not(.read-more),
 .mp-stat + .mp-stat { border-left: 1px solid var(--line); }
 .mp-stat b { display: block; font-family: var(--font-display); font-weight: 700; font-size: clamp(26px, 3.2vw, 36px); color: var(--ink); }
 .mp-stat span { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 800; color: var(--muted); }
-.mp-bio { margin: 20px 0 0; max-width: 920px; border-left: 4px solid var(--coral); padding: 4px 0 4px 22px; font-family: var(--font-display); font-style: italic; font-size: 16.5px; line-height: 1.75; color: var(--text); }
+.mp-bio { margin: 20px 0 0; border-left: 4px solid var(--coral); padding: 4px 0 4px 24px; font-family: var(--font-display); font-style: italic; font-size: 18px; line-height: 1.75; color: var(--text); }
 .mp-year { font-family: var(--font-display); font-weight: 700; color: var(--gold-text); font-size: 22px; margin: 34px 0 14px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
 .mp-reflect { margin-top: 12px; background: var(--blush); border-left: 4px solid var(--coral); border-radius: 0 10px 10px 0; padding: 10px 14px; }
 .mp-reflect b { display: block; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--coral-text); margin-bottom: 4px; }
