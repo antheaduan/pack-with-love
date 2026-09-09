@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css?v=113" />
+  <link rel="stylesheet" href="/css/styles.css?v=114" />
 </head>
 <body>
 
@@ -232,66 +232,61 @@
         document.querySelector('[data-mp-stats]').hidden = false;
       }
 
-      // Group projects by year, newest first.
-      var byYear = {};
-      ((d && d.projects) || []).forEach(function (p) {
-        if (!p || typeof p !== 'object') return;
-        var y = String(p.year || '').slice(0, 4);
-        if (!/^\d{4}$/.test(y)) y = 'Earlier';
-        (byYear[y] = byYear[y] || []).push(p);
-      });
-      var years = Object.keys(byYear).sort(function (a, b) { return b.localeCompare(a); });
+      // One full-width row card per project (ACO's portfolio layout,
+      // our palette): photo left, body right, year as an in-card chip.
+      var projects = ((d && d.projects) || []).filter(function (p) { return p && typeof p === 'object'; });
+      projects.sort(function (a, b) { return (Number(b.year) || 0) - (Number(a.year) || 0); });
       var wrap = document.querySelector('[data-mp-years]');
-      years.forEach(function (y) {
-        wrap.appendChild(el('h2', 'mp-year', y));
-        var grid = el('div', 'clgrid');
-        byYear[y].forEach(function (p) {
-          var card = el('article', 'clcard');
-          var photo = aco(p.photo);
-          if (photo) {
-            var img = el('img', 'clphoto');
-            img.src = photo; img.alt = ''; img.loading = 'lazy';
-            img.onerror = function () { img.remove(); };
-            card.appendChild(img);
-          }
-          var head = el('p');
-          head.appendChild(el('b', 'cln', String(p.title || p.name || '').trim().slice(0, 90) || 'Project'));
-          var tags = [String(p.campaign || '').trim().slice(0, 40)];
-          if (String(p.type || '').toLowerCase() === 'member' && (p.team_name || p.team_id)) {
-            tags.push('Team · ' + String(p.team_name || p.team_id).trim().slice(0, 40));
-          }
-          if (String(p.status || '').toLowerCase() === 'completed') tags.push('Completed');
-          var tagline = tags.filter(Boolean).join(' · ');
-          if (tagline) head.appendChild(el('span', 'clg', tagline));
-          card.appendChild(head);
+      projects.forEach(function (p) {
+        var card = el('article', 'mpp-card');
+        var ph = el('div', 'mpp-ph');
+        var photo = aco(p.photo);
+        if (photo) ph.style.backgroundImage = 'url("' + photo.replace(/"/g, '%22') + '")';
+        card.appendChild(ph);
 
-          var goal = Number(p.sets_goal), packed = Number(p.sets_packed);
-          if (isFinite(goal) && goal > 0) {
-            var bar = el('div', 'clbar'), fill = el('div', 'clfill');
-            fill.style.width = Math.min(100, Math.round((Math.max(0, packed) || 0) / goal * 100)) + '%';
-            bar.appendChild(fill); card.appendChild(bar);
-            card.appendChild(el('p', 'clmeta',
-              money(p.raised) + ' raised · ' + (Math.max(0, packed) || 0) + ' of ' + Math.round(goal) + ' sets'));
-          }
+        var bd = el('div', 'mpp-bd');
+        var chips = el('p', 'mpp-chips');
+        var y = String(p.year || '').slice(0, 4);
+        if (/^\d{4}$/.test(y)) chips.appendChild(el('span', 'mpp-yr', y));
+        var camp = String(p.campaign || '').trim().slice(0, 40);
+        if (camp) chips.appendChild(el('span', 'mpp-pill camp', camp));
+        if (String(p.type || '').toLowerCase() === 'member' && (p.team_name || p.team_id)) {
+          chips.appendChild(el('span', 'mpp-pill team', 'Team · ' + String(p.team_name || p.team_id).trim().slice(0, 40)));
+        }
+        if (String(p.status || '').toLowerCase() === 'completed') chips.appendChild(el('span', 'mpp-pill done', 'Completed'));
+        bd.appendChild(chips);
+        bd.appendChild(el('h3', 'mpp-title', String(p.title || p.name || '').trim().slice(0, 90) || 'Project'));
 
-          var reflection = String(p.reflection || '').trim().slice(0, 600);
-          if (reflection) {
-            var q = el('div', 'mp-reflect');
-            q.appendChild(el('b', null, 'Move 5 · Reflection'));
-            q.appendChild(el('p', null, reflection));
-            card.appendChild(q);
-          }
+        var goal = Number(p.sets_goal), packed = Math.max(0, Number(p.sets_packed) || 0);
+        if (isFinite(goal) && goal > 0) {
+          var pct = Math.min(100, Math.round(packed / goal * 100));
+          var nums = el('div', 'mpp-nums');
+          var left = el('span'); left.appendChild(el('b', null, money(p.raised))); left.appendChild(document.createTextNode(' raised'));
+          nums.appendChild(left);
+          nums.appendChild(el('span', 'r', packed + ' / ' + Math.round(goal) + ' sets · ' + pct + '%'));
+          bd.appendChild(nums);
+          var bar = el('div', 'mpp-bar'), fill = el('i');
+          fill.style.width = pct + '%';
+          bar.appendChild(fill); bd.appendChild(bar);
+        }
 
-          var support = aco(p.support_url || p.url), story = aco(p.story_url);
-          if (support || story) {
-            var row = el('p', 'clacts');
-            if (support) { var a1 = el('a', 'cla-support', '♥ Support →'); a1.href = support; a1.rel = 'noopener'; row.appendChild(a1); }
-            if (story) { var a2 = el('a', 'cla-view', 'Read their story →'); a2.href = story; a2.rel = 'noopener'; row.appendChild(a2); }
-            card.appendChild(row);
-          }
-          grid.appendChild(card);
-        });
-        wrap.appendChild(grid);
+        var reflection = String(p.reflection || '').trim().slice(0, 600);
+        if (reflection) {
+          var q = el('div', 'mp-reflect');
+          q.appendChild(el('b', null, 'Move 5 · Reflection'));
+          q.appendChild(el('p', null, reflection));
+          bd.appendChild(q);
+        }
+
+        var support = aco(p.support_url || p.url), story = aco(p.story_url);
+        if (support || story) {
+          var row = el('p', 'clacts');
+          if (support) { var a1 = el('a', 'cla-support', '♥ Support →'); a1.href = support; a1.rel = 'noopener'; row.appendChild(a1); }
+          if (story) { var a2 = el('a', 'cla-view', 'Read their story →'); a2.href = story; a2.rel = 'noopener'; row.appendChild(a2); }
+          bd.appendChild(row);
+        }
+        card.appendChild(bd);
+        wrap.appendChild(card);
       });
 
       show('[data-mp-member]');

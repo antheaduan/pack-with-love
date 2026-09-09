@@ -2160,11 +2160,12 @@ p a:not(.btn):not(.read-more),
 .mp-title em { font-style: italic; color: var(--coral-display, #EC554F); }
 .mp-sub { font-size: 15px; color: var(--muted); }
 .mp-intro { margin-top: 12px; max-width: 640px; font-size: 16px; line-height: 1.65; color: var(--text); }
-.mp-stats { margin: 26px 0 8px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 640px; }
-.mp-stat { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 16px 18px; box-shadow: var(--shadow); }
-.mp-stat b { display: block; font-family: var(--font-display); font-weight: 700; font-size: clamp(24px, 3vw, 32px); color: var(--ink); }
+.mp-stats { margin: 28px 0 8px; display: grid; grid-template-columns: repeat(3, 1fr); background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-sm); overflow: hidden; }
+.mp-stat { padding: 22px 28px; }
+.mp-stat + .mp-stat { border-left: 1px solid var(--line); }
+.mp-stat b { display: block; font-family: var(--font-display); font-weight: 700; font-size: clamp(26px, 3.2vw, 36px); color: var(--ink); }
 .mp-stat span { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 800; color: var(--muted); }
-.mp-bio { margin: 18px 0 0; max-width: 780px; background: var(--blush); border-left: 4px solid var(--coral); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 16px 22px; font-family: var(--font-display); font-style: italic; font-size: 16px; line-height: 1.7; color: var(--text); }
+.mp-bio { margin: 20px 0 0; max-width: 920px; border-left: 4px solid var(--coral); padding: 4px 0 4px 22px; font-family: var(--font-display); font-style: italic; font-size: 16.5px; line-height: 1.75; color: var(--text); }
 .mp-year { font-family: var(--font-display); font-weight: 700; color: var(--gold-text); font-size: 22px; margin: 34px 0 14px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
 .mp-reflect { margin-top: 12px; background: var(--blush); border-left: 4px solid var(--coral); border-radius: 0 10px 10px 0; padding: 10px 14px; }
 .mp-reflect b { display: block; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--coral-text); margin-bottom: 4px; }
@@ -2188,3 +2189,27 @@ p a:not(.btn):not(.read-more),
 .mp-cta p { font-size: 14.5px; line-height: 1.65; color: var(--text); max-width: 560px; }
 .mp-cta-btns { display: flex; gap: 12px; flex-wrap: wrap; }
 @media (max-width: 700px) { .mp-stats { grid-template-columns: 1fr; } .mp-card { flex-wrap: wrap; } .mp-mini { flex-basis: 100%; } }
+
+/* Portfolio project rows (ACO's layout, our palette) */
+.mpp-card { display: flex; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; margin-top: 18px; }
+.mpp-ph { flex: 0 0 340px; min-height: 230px; background: var(--sand) center / cover no-repeat; }
+.mpp-bd { flex: 1; min-width: 0; padding: 24px 30px; display: flex; flex-direction: column; gap: 10px; }
+.mpp-chips { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.mpp-yr { font-size: 13px; letter-spacing: .12em; font-weight: 800; color: var(--gold-text); }
+.mpp-pill { border-radius: 999px; padding: 4px 12px; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 800; }
+.mpp-pill.camp { background: #3F5C40; color: #fff; }
+.mpp-pill.team { background: var(--blush); color: var(--coral-text); }
+.mpp-pill.done { background: var(--sand); color: var(--gold-text); }
+.mpp-title { font-family: var(--font-display); font-weight: 600; color: var(--ink); font-size: 22px; }
+.mpp-nums { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-top: 2px; }
+.mpp-nums b { font-size: 17px; color: var(--ink); }
+.mpp-nums span { font-size: 14px; color: var(--text); }
+.mpp-nums .r { color: var(--muted); }
+.mpp-bar { height: 10px; background: var(--sand); border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+.mpp-bar i { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--coral), var(--gold)); }
+@media (max-width: 760px) {
+  .mpp-card { flex-direction: column; }
+  .mpp-ph { flex: none; width: 100%; height: 200px; }
+  .mp-stats { grid-template-columns: 1fr; }
+  .mp-stat + .mp-stat { border-left: 0; border-top: 1px solid var(--line); }
+}
