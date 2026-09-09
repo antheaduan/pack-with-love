@@ -147,16 +147,34 @@
           if (name && isFinite(claimed) && claimed > 0) {
             rows.push({ name: name, tag: tag, teaser: teaser, claimed: Math.round(claimed),
                         funded: Math.max(0, Math.min(funded || 0, Math.round(claimed))),
-                        url: aco(c.url), view: view, photo: aco(c.photo) });
+                        url: aco(c.url), view: view, photo: aco(c.photo),
+                        // Team-membership extension (see ACO feed spec): optional
+                        // id / type:"team"|"member" / team_id / team_name fields.
+                        id: String(c.id || '').trim().slice(0, 80),
+                        kind: String(c.type || '').trim().toLowerCase(),
+                        teamId: String(c.team_id || '').trim().slice(0, 80),
+                        teamName: String(c.team_name || '').trim().slice(0, 60) });
           }
         });
         if (!rows.length) return;
+        // A team row's numbers are the authoritative rollup of its members, so a
+        // member whose team is present in the feed is display-only: exclude it
+        // from campaign totals and badge it with its team's name.
+        var teamNames = {};
+        rows.forEach(function (r) { if (r.kind === 'team' && r.id) teamNames[r.id] = r.name; });
+        rows.forEach(function (r) {
+          if (r.kind === 'member' && r.teamId && teamNames[r.teamId]) {
+            r.subRow = true;
+            r.tag = 'Member · ' + (r.teamName || teamNames[r.teamId]);
+          } else if (r.kind === 'team') { r.tag = 'Team claim'; }
+          else if (r.kind === 'individual') { r.tag = 'Individual claim'; }
+        });
         // Campaign-wide bar — ACO's own totals, mirrored from the feed.
         var camp = (d && !Array.isArray(d) && d.campaign && typeof d.campaign === 'object') ? d.campaign : null;
         if (camp) {
           var packed = Number(camp.sets_packed);
           var craised = Number(camp.raised);
-          var claimedTotal = rows.reduce(function (s, r) { return s + r.claimed; }, 0);
+          var claimedTotal = rows.reduce(function (s, r) { return s + (r.subRow ? 0 : r.claimed); }, 0);
           if (isFinite(packed) && packed >= 0 && claimedTotal > 0) {
             var box = sec;
             box.querySelector('[data-cls-big]').textContent = packed + ' set' + (packed === 1 ? '' : 's') + ' packed together';

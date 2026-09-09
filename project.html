@@ -376,9 +376,16 @@
       .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
       .then(function (d) {
         var list = Array.isArray(d) ? d : (d && (d.claims || d.fundraisers)) || [];
+        // Team rows roll up their members (see ACO feed spec), so a member whose
+        // team is also in the feed is not counted as a separate live claim.
+        var teamIds = {};
+        list.forEach(function (c) {
+          if (c && typeof c === 'object' && String(c.type || '').toLowerCase() === 'team' && c.id) teamIds[String(c.id)] = 1;
+        });
         var names = [];
         list.forEach(function (c) {
           if (!c || typeof c !== 'object') return;
+          if (String(c.type || '').toLowerCase() === 'member' && c.team_id && teamIds[String(c.team_id)]) return;
           var name = String(c.name || c.first_name || '').trim().slice(0, 60);
           var claimed = Number(c.sets_goal != null ? c.sets_goal : c.claimed != null ? c.claimed : c.claim != null ? c.claim : c.goal_backpacks != null ? c.goal_backpacks : c.goal);
           if (name && isFinite(claimed) && claimed > 0) names.push(name);
