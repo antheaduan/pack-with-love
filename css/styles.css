@@ -2195,7 +2195,7 @@ p a:not(.btn):not(.read-more),
 .mpp-ph { flex: 0 0 340px; min-height: 230px; background: var(--sand) center / cover no-repeat; }
 .mpp-bd { flex: 1; min-width: 0; padding: 24px 30px; display: flex; flex-direction: column; gap: 10px; }
 .mpp-chips { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.mpp-yr { font-size: 13px; letter-spacing: .12em; font-weight: 800; color: var(--gold-text); }
+.mpp-yr { font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 800; color: var(--gold-text); }
 .mpp-pill { border-radius: 999px; padding: 4px 12px; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; font-weight: 800; }
 .mpp-pill.camp { background: #3F5C40; color: #fff; }
 .mpp-pill.team { background: var(--blush); color: var(--coral-text); }
