@@ -2213,3 +2213,10 @@ p a:not(.btn):not(.read-more),
   .mp-stats { grid-template-columns: 1fr; }
   .mp-stat + .mp-stat { border-left: 0; border-top: 1px solid var(--line); }
 }
+
+/* "They ask for it themselves" block inside the dark chain section */
+.ask-block { max-width: 760px; margin: 38px auto 0; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); border-radius: var(--radius); padding: 26px 30px; }
+.ask-block h3 { font-family: var(--font-display); font-weight: 600; color: #fff; font-size: 22px; margin-bottom: 10px; }
+.ask-block p { color: #BCD0E2; font-size: 14.5px; line-height: 1.7; margin-top: 10px; }
+.ask-block .ask-link a { color: var(--gold); font-weight: 700; text-decoration: none; }
+.ask-block .ask-link a:hover { text-decoration: underline; }
