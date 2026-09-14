@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=118" />
+  <link rel="stylesheet" href="css/styles.css?v=119" />
 </head>
 <body>
 
@@ -211,13 +211,16 @@
           var meta = document.createElement('p'); meta.className = 'clmeta';
           meta.textContent = c.funded + ' of ' + c.claimed + ' backpacks';
           card.appendChild(meta);
-          if (c.url || c.view) {
+          if (c.url || c.view || (c.kind === 'team' && c.id)) {
             var row = document.createElement('p'); row.className = 'clacts';
             if (c.url) {
               var a = document.createElement('a'); a.href = c.url; a.rel = 'noopener';
               a.className = 'cla-support'; a.textContent = '♥ Support →'; row.appendChild(a);
             }
-            if (c.view) {
+            if (c.kind === 'team' && c.id) {
+              var tp = document.createElement('a'); tp.href = '/team?t=' + c.id;
+              tp.className = 'cla-view'; tp.textContent = 'Their class page →'; row.appendChild(tp);
+            } else if (c.view) {
               var v = document.createElement('a'); v.href = c.view; v.rel = 'noopener';
               v.className = 'cla-view'; v.textContent = 'View their page →'; row.appendChild(v);
             }
