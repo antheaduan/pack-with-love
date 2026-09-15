@@ -2247,3 +2247,11 @@ p a:not(.btn):not(.read-more),
 .tm-up-ph { margin-top: 10px; max-width: 380px; border-radius: var(--radius-sm); display: block; }
 @media (max-width: 880px) { .tm-students { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .tm-students { grid-template-columns: 1fr; } }
+
+/* Team hero card (photo left, details right — ACO's layout, our palette) */
+.tm-hero2 { margin-top: 24px; }
+.tm-hero2-ph { flex: 0 0 44%; min-height: 320px; }
+.tm-hero2-name { font-family: var(--font-display); font-weight: 600; color: var(--ink); font-size: clamp(30px, 3.8vw, 42px); line-height: 1.1; margin: 6px 0 2px; }
+.tm-note { font-size: 13px; line-height: 1.6; color: var(--muted); margin-top: 12px; max-width: 520px; }
+.tm-copy { cursor: pointer; font-family: var(--font-body); }
+@media (max-width: 760px) { .tm-hero2-ph { flex: none; width: 100%; min-height: 0; height: 220px; } }

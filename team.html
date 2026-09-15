@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/styles.css?v=119" />
+  <link rel="stylesheet" href="/css/styles.css?v=120" />
 </head>
 <body>
 
@@ -56,21 +56,28 @@
     <div class="container">
 
       <div data-tm hidden>
-        <p class="mp-eyebrow">Youth team &middot; with Africa Cries Out</p>
-        <h1 class="mp-title" data-tm-name></h1>
-        <p class="mp-sub" data-tm-teaser></p>
-
-        <div class="tm-hero" data-tm-progress hidden>
-          <div class="mpp-nums">
-            <span><b data-tm-packed>0</b> of <span data-tm-goal>0</span> sets packed</span>
-            <span class="r" data-tm-raised>$0 raised</span>
+        <div class="mpp-card tm-hero2">
+          <div class="mpp-ph tm-hero2-ph" data-tm-photo></div>
+          <div class="mpp-bd">
+            <p class="mpp-chips"><span class="mpp-pill camp">Youth team &middot; with Africa Cries Out</span></p>
+            <h1 class="tm-hero2-name" data-tm-name></h1>
+            <p class="mp-sub" data-tm-teaser></p>
+            <div data-tm-progress hidden style="margin-top:6px">
+              <div class="mpp-nums">
+                <span><b data-tm-packed>0</b> of <span data-tm-goal>0</span> sets packed</span>
+                <span class="r" data-tm-raised>$0 raised</span>
+              </div>
+              <div class="mpp-bar"><i data-tm-fill style="width:0%"></i></div>
+            </div>
+            <p class="mp-cta-btns" style="margin-top:14px">
+              <a class="btn btn-primary" data-tm-support hidden>&hearts; Support this team &rarr;</a>
+              <a class="btn btn-secondary" href="/data-to-impact" data-tm-course hidden>About the class course &rarr;</a>
+              <a class="btn btn-secondary" data-tm-view hidden>Their page on ACO &rarr;</a>
+              <button class="btn btn-secondary tm-copy" type="button" data-tm-copy>Copy share link</button>
+            </p>
+            <p class="tm-note">Payments are handled securely on our partner ACO's page &mdash; every
+            dollar lands on this team's progress and the shared $5,300 goal together.</p>
           </div>
-          <div class="mpp-bar"><i data-tm-fill style="width:0%"></i></div>
-          <p class="mp-cta-btns" style="margin-top:16px">
-            <a class="btn btn-primary" data-tm-support hidden>&hearts; Support &rarr;</a>
-            <a class="btn btn-secondary" href="/data-to-impact" data-tm-course hidden>About the class course &rarr;</a>
-            <a class="btn btn-secondary" data-tm-view hidden>Their page on ACO &rarr;</a>
-          </p>
         </div>
 
         <div data-tm-who hidden class="tm-card">
@@ -79,8 +86,8 @@
           <p data-tm-who-text></p>
         </div>
 
-        <h2 class="tm-h2" data-tm-students-h hidden>The students</h2>
-        <p class="mp-sub" data-tm-students-sub hidden>Each student runs their own part of the team's claim.</p>
+        <h2 class="tm-h2" data-tm-students-h hidden><span data-tm-students-name>The students</span></h2>
+        <p class="mp-sub" data-tm-students-sub hidden>Each student runs their own part of the class business. Tap any name to see their page.</p>
         <div class="tm-students" data-tm-students></div>
 
         <div data-tm-claim hidden class="tm-card">
@@ -179,6 +186,16 @@
         var teaser = String((team && team.teaser) || '').trim().slice(0, 140);
         if (teaser) q('[data-tm-teaser]').textContent = teaser;
 
+        var photo = team && aco(team.photo);
+        if (photo) q('[data-tm-photo]').style.backgroundImage = 'url("' + photo.replace(/"/g, '%22') + '")';
+
+        var copyBtn = q('[data-tm-copy]');
+        copyBtn.addEventListener('click', function () {
+          var link = location.origin + '/team?t=' + t;
+          var done = function () { copyBtn.textContent = 'Link copied!'; setTimeout(function () { copyBtn.textContent = 'Copy share link'; }, 2000); };
+          if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(link).then(done, function () {});
+        });
+
         if (team) {
           var goal = Number(team.sets_goal), packed = Math.max(0, Number(team.sets_packed) || 0);
           if (isFinite(goal) && goal > 0) {
@@ -200,6 +217,7 @@
         }
 
         if (students.length) {
+          q('[data-tm-students-name]').textContent = 'The ' + name + ' students';
           show('[data-tm-students-h]'); show('[data-tm-students-sub]');
           var wrap = q('[data-tm-students]');
           students.forEach(function (c) {
