@@ -192,6 +192,9 @@
         }
         var grid = sec.querySelector('[data-claims-grid]');
         rows.forEach(function (c) {
+          // A member whose team row is present is shown on the team's class
+          // page instead of as its own card here.
+          if (c.subRow) return;
           var card = document.createElement('article'); card.className = 'clcard';
           if (c.photo) {
             var img = document.createElement('img'); img.className = 'clphoto';
